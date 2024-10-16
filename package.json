@@ -58,7 +58,7 @@
 		"pagefind": "^1.0.3",
 		"prettier": "^3.0.3",
 		"prettier-config-standard": "^7.0.0",
-		"prettier-plugin-astro": "^0.12.0",
+		"prettier-plugin-astro": "^0.14.1",
 		"reading-time": "^1.5.0",
 		"slugify": "^1.6.6",
 		"tailwind-merge": "2.0.0",
