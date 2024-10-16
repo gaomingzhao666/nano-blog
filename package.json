@@ -55,7 +55,7 @@
 		"lint-staged": "^15.2.0",
 		"mdast-util-to-string": "^4.0.0",
 		"motion": "^10.16.4",
-		"pagefind": "^1.0.3",
+		"pagefind": "^1.1.1",
 		"prettier": "^3.0.3",
 		"prettier-config-standard": "^7.0.0",
 		"prettier-plugin-astro": "^0.12.0",
