@@ -41,7 +41,7 @@
 	},
 	"devDependencies": {
 		"@astrojs/mdx": "2.0.3",
-		"@astrojs/sitemap": "3.0.4",
+		"@astrojs/sitemap": "3.2.1",
 		"@astrojs/tailwind": "5.1.0",
 		"@pagefind/default-ui": "^1.0.4",
 		"@tailwindcss/typography": "0.5.10",
