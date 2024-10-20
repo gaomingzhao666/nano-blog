@@ -5,7 +5,6 @@ import Footer from '@/components/Footer'
 import ProviderTheme from '@/components/ProviderTheme'
 import ProviderAnimations from '@/components/ProviderAnimations'
 import TwSizeIndicator from '@/components/TwSizeIndicator'
-import EditBlog from '@/components/editBlog'
 const { title, description, image, articleDate } = Astro.props
 ---
 
@@ -25,7 +24,6 @@ const { title, description, image, articleDate } = Astro.props
 			<Footer />
 		</main>
 		<TwSizeIndicator />
-		<EditBlog />
 		<style>
 			body {
 				margin-left: calc(100vw - 100%); /* prevent layout shift */
