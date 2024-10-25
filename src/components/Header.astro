@@ -3,29 +3,33 @@ import HeaderLink from '@/components/HeaderLink'
 import GithubIcon from '@/components/icons/GithubIcon'
 import Search from '@/components/Search'
 import ToggleTheme from './ToggleTheme.astro'
+import LanguagePicker from '@/components/LanguagePicker'
+import { getLangFromUrl, useTranslations } from '../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <header class='flex justify-between items-center h-12 font-semibold'>
 	<a class='text-xl mr-auto transition-all hover:font-bold' href='/'>nano-blog</a>
 
-	<div
-		class='rounded-l-lg md:bg-transparent dark:md:bg-transparent bg-white dark:bg-[#0a0910] pl-4 pt-6 pb-4 md:p-0 z-50'
-	>
+	<div class='dark:bg-[#0a0910] pl-4 pt-6 pb-4 md:p-0 z-50'>
 		<nav class='flex justify-between gap-3'>
 			<div class='flex gap-3 border-black mr-3 dark:border-white'>
-				<HeaderLink href='/' class='flex items-center gap-1'> Home </HeaderLink>
-				<HeaderLink href='/tags' class='flex items-center gap-1'> Tags </HeaderLink>
-				<HeaderLink href='/about' class='flex items-center gap-1'> About </HeaderLink>
+				<HeaderLink href='/' class='flex items-center gap-1'> {t('nav.home')} </HeaderLink>
+				<HeaderLink href='/tags' class='flex items-center gap-1'> {t('nav.tags')} </HeaderLink>
+				<HeaderLink href='/about' class='flex items-center gap-1'> {t('nav.about')} </HeaderLink>
 			</div>
 
+			<LanguagePicker />
 			<HeaderLink
 				class={''}
 				target={'_blank'}
 				href={'https://github.com/gaomingzhao666/nano-blog'}
 				aria-label={'Github'}><GithubIcon /></HeaderLink
 			>
-			<Search />
 
+			<Search />
 			<ToggleTheme />
 		</nav>
 	</div>
