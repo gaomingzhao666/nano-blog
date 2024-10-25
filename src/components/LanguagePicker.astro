@@ -12,21 +12,10 @@ const lang = getLangFromUrl(Astro.url)
 
 	<label for='dropdown-toggle' class='cursor-pointer block'>
 		<Language />
-		<!-- <span class='text-gray-900 dark:text-white'>{lang}</span>
-		<svg
-			class='w-4 h-4 float-right mt-1 transition-transform duration-200 peer-checked:rotate-180'
-			xmlns='http://www.w3.org/2000/svg'
-			fill='none'
-			viewBox='0 0 24 24'
-			stroke='currentColor'
-		>
-			<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 10l5 5 5-5H7z'
-			></path>
-		</svg> -->
 	</label>
 
 	<div
-		class='select-options w-32 absolute left-0 mt-1 border border-gray-300 dark:border-gray-600 rounded-xl hidden peer-checked:block'
+		class='select-options w-36 absolute left-0 mt-1 border border-gray-300 dark:border-gray-600 rounded-xl hidden peer-checked:block'
 	>
 		{
 			Object.entries(languages).map(([lang, label]) => (
