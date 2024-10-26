@@ -1,5 +1,4 @@
 ---
-import ListCategories from '@/components/ListCategories'
 import ListPosts from '@/components/ListPosts'
 import TitlePage from '@/components/TitlePage'
 import BaseLayout from '@/layouts/BaseLayout'
@@ -11,7 +10,6 @@ const posts = await getPosts(MAX_POSTS)
 
 <BaseLayout title='Home'>
 	<TitlePage title='Blogs' />
-	<ListCategories />
 
 	<div>
 		<h2 class='text-lg font-medium tracking-wide text-end'>Latest Posts</h2>

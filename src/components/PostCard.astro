@@ -5,7 +5,7 @@ import ArrowUp from '@/components/icons/ArrowUp'
 
 const {
 	id,
-	data: { title, description, pubDate, heroImage, category },
+	data: { title, description, pubDate, heroImage },
 	readTime,
 	slug
 } = Astro.props
@@ -29,8 +29,6 @@ const {
 					<FormattedDate date={pubDate} />
 					<span class='text-sm'> {readTime}</span>
 				</div>
-
-				<span class='pb-4'>{category}</span>
 			</div>
 		</div>
 	</a>
