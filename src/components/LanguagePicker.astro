@@ -19,6 +19,13 @@ const lang = getLangFromUrl(Astro.url)
 	>
 		{
 			Object.entries(languages).map(([lang, label]) => (
+				lang === 'en' ? <a
+					href={`/`}
+					class='option cursor-pointer p-2 block hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-900 dark:text-white'
+				>
+					{label}
+				</a>
+				:
 				<a
 					href={`/${lang}/`}
 					class='option cursor-pointer p-2 block hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-900 dark:text-white'
