@@ -11,7 +11,11 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, '')
 
 <a
   href={href}
-  class={cn(isActive ? 'text-opacity-100' : 'text-opacity-60', className)}
+  class={cn(
+    'hover:text-gray-600 dark:hover:text-gray-400 transition-colors',
+    isActive ? 'text-opacity-100' : 'text-opacity-60',
+    className,
+  )}
   rel="noopener noreferrer "
   {...props}
 >
