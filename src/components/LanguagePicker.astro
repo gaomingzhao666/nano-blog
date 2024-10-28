@@ -15,7 +15,7 @@ const lang = getLangFromUrl(Astro.url)
   </label>
 
   <div
-    class="select-options w-36 absolute left-0 mt-1 border border-gray-300 dark:border-gray-600 rounded-xl hidden peer-checked:block"
+    class="w-36 absolute left-0 mt-1 border-gray-400 border dark:border-gray-600 rounded-xl overflow-hidden hidden peer-checked:block"
   >
     {
       Object.entries(languages).map(([lang, label]) =>
