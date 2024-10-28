@@ -5,12 +5,12 @@ import TitlePage from '@/components/TitlePage'
 import { getTags, getPostByTag } from '@/utils'
 
 export async function getStaticPaths() {
-	const tags = await getTags()
+  const tags = await getTags()
 
-	return tags.map((tag) => ({
-		params: { tag },
-		props: { tag }
-	}))
+  return tags.map((tag) => ({
+    params: { tag },
+    props: { tag },
+  }))
 }
 
 const { tag } = Astro.props
@@ -19,6 +19,6 @@ const posts = await getPostByTag(tag)
 ---
 
 <BaseLayout title={tag}>
-	<TitlePage title={tag} />
-	<ListPosts posts={posts} />
+  <TitlePage title={tag} />
+  <ListPosts posts={posts} />
 </BaseLayout>

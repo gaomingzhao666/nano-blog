@@ -6,33 +6,35 @@ import Language from '@/components/icons/Language'
 const lang = getLangFromUrl(Astro.url)
 ---
 
-<div class='relative'>
-	<!-- Hidden checkbox to toggle the dropdown -->
-	<input type='checkbox' id='dropdown-toggle' class='peer hidden' />
+<div class="relative">
+  <!-- Hidden checkbox to toggle the dropdown -->
+  <input type="checkbox" id="dropdown-toggle" class="peer hidden" />
 
-	<label for='dropdown-toggle' class='cursor-pointer block'>
-		<Language />
-	</label>
+  <label for="dropdown-toggle" class="cursor-pointer block">
+    <Language />
+  </label>
 
-	<div
-		class='select-options w-36 absolute left-0 mt-1 border border-gray-300 dark:border-gray-600 rounded-xl hidden peer-checked:block'
-	>
-		{
-			Object.entries(languages).map(([lang, label]) => (
-				lang === 'en' ? <a
-					href={`/`}
-					class='option cursor-pointer p-2 block hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-900 dark:text-white'
-				>
-					{label}
-				</a>
-				:
-				<a
-					href={`/${lang}/`}
-					class='option cursor-pointer p-2 block hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-900 dark:text-white'
-				>
-					{label}
-				</a>
-			))
-		}
-	</div>
+  <div
+    class="select-options w-36 absolute left-0 mt-1 border border-gray-300 dark:border-gray-600 rounded-xl hidden peer-checked:block"
+  >
+    {
+      Object.entries(languages).map(([lang, label]) =>
+        lang === 'en' ? (
+          <a
+            href={`/`}
+            class="option cursor-pointer p-2 block hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-900 dark:text-white"
+          >
+            {label}
+          </a>
+        ) : (
+          <a
+            href={`/${lang}/`}
+            class="option cursor-pointer p-2 block hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-900 dark:text-white"
+          >
+            {label}
+          </a>
+        ),
+      )
+    }
+  </div>
 </div>
