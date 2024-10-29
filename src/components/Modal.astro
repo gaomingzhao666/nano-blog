@@ -1,9 +1,14 @@
 ---
 import { cn } from '@/utils'
 
+type Contents = {
+  label: string
+  link: string
+}
+
 interface Props {
   title: string
-  contents: string | string[]
+  contents: Contents[]
   type: string
   color: string
 }
@@ -29,10 +34,18 @@ const { title, contents, type, color }: Props = Astro.props
       id="modalContent"
       class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-300 scale-95 flex flex-col items-center justify-center"
     >
-      <h1 class="text-2xl font-bold mb-4">Full-Screen Modal</h1>
-      <p class="mb-4">
-        This is a full-screen modal example using Tailwind CSS!
-      </p>
+      <h1 class="text-2xl font-bold mb-4">{title}</h1>
+
+      <section class="mb-4 text-start">
+        {
+          contents.map((content) => (
+            <a href={content.link}>
+              <p class="mb-2">{content.label}</p>
+            </a>
+          ))
+        }
+      </section>
+
       <button
         id="closeModalButton"
         class="bg-red-500 text-white px-4 py-2 rounded-md"
@@ -57,7 +70,6 @@ const { title, contents, type, color }: Props = Astro.props
       if (modal && modalContent) {
         modal.style.display = 'flex' // Show the modal
         requestAnimationFrame(() => {
-          modal.classList.add('flex') // Allow for flex display
           modal.style.opacity = '1' // Fully opaque
           modalContent.classList.remove('scale-95') // Set scale to normal size
           modalContent.classList.add('transition-transform', 'show') // Trigger scale animation
