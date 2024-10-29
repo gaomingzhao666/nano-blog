@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full-Screen Modal Example</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <!-- Button to open the modal -->
+    <button
+      id="openModalButton"
+      class="bg-blue-500 text-white px-6 py-3 rounded-md"
+    >
+      Open Full-Screen Modal
+    </button>
+
+    <!-- Modal Container -->
+    <div
+      id="modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-70 justify-center items-center transition-opacity duration-300 opacity-0"
+    >
+      <div
+        id="modalContent"
+        class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-300 scale-95 flex flex-col items-center justify-center"
+      >
+        <h1 class="text-2xl font-bold mb-4">Full-Screen Modal</h1>
+        <p class="mb-4">
+          This is a full-screen modal example using Tailwind CSS!
+        </p>
+        <button
+          id="closeModalButton"
+          class="bg-red-500 text-white px-4 py-2 rounded-md"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Select modal elements
+      const modal = document.getElementById('modal')
+      const modalContent = document.getElementById('modalContent')
+      const openModalButton = document.getElementById('openModalButton')
+      const closeModalButton = document.getElementById('closeModalButton')
+
+      // Function to open the modal
+      const openModal = () => {
+        modal.style.display = 'flex' // Show the modal
+        requestAnimationFrame(() => {
+          modal.classList.add('flex') // Allow for flex display
+          modal.style.opacity = '1' // Fully opaque
+          modalContent.classList.remove('scale-95') // Set scale to normal size
+          modalContent.classList.add('transition-transform', 'show') // Trigger scale animation
+        })
+      }
+
+      // Function to close the modal
+      const closeModal = () => {
+        modalContent.classList.add('scale-95') // Scale down
+        modal.style.opacity = '0' // Fade out
+        setTimeout(() => {
+          modal.style.display = 'none' // Hide modal
+          modalContent.classList.remove('scale-95') // Reset scale for next open
+          modalContent.classList.remove('transition-transform', 'show') // Reset show class
+        }, 300) // Match this duration with the CSS transition duration
+      }
+
+      // Event listeners
+      openModalButton.addEventListener('click', openModal)
+      closeModalButton.addEventListener('click', closeModal)
+    </script>
+  </body>
+</html>
