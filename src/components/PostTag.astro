@@ -1,0 +1,11 @@
+---
+import Tag from '@/components/Tag'
+export interface Props {
+  tag: string
+}
+const { tag }: Props = Astro.props
+---
+
+<a href={`/tags/${encodeURIComponent(tag.toLowerCase())}`} aria-label={tag}>
+  <Tag label={tag} color="green" />
+</a>

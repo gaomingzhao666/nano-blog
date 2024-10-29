@@ -1,14 +1,19 @@
 ---
-export interface Props {
-  tag: string
+import { cn } from '@/utils'
+
+interface Props {
+  size?: 'sm' | 'md' | 'lg'
+  color?: 'red' | 'yellow' | 'green' | 'blue' | 'pink'
+  label?: string
 }
-const { tag } = Astro.props
+const { label, size, color } = Astro.props
 ---
 
-<a href={`/tags/${encodeURIComponent(tag.toLowerCase())}`} aria-label={tag}>
-  <span
-    class="bg-indigo-600 font-semibold text-white dark:bg-indigo-900 dark:text-white shadow text-sm w-fit px-2 py-1 md:px-5 md:py-2 rounded-full"
-  >
-    {tag ?? 'Blog Tag'}
-  </span>
-</a>
+<span
+  class={cn(
+    `text-${color}-800 bg-${color}-200 inline-flex items-center px-3 py-1 text-sm rounded-full`,
+    size ? `text-${size}` : 'text-sm',
+  )}
+>
+  {label ?? 'Unknown Tag'}
+</span>
