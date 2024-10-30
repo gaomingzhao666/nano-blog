@@ -2,16 +2,16 @@
 import { cn } from '@/utils'
 
 interface Props {
-  size?: 'sm' | 'md' | 'lg'
-  color?: 'red' | 'yellow' | 'green' | 'blue' | 'pink'
-  label?: string
+  size?: string
+  color: string
+  label: string
 }
 const { label, size, color } = Astro.props
 ---
 
 <span
   class={cn(
-    `text-${color}-800 bg-${color}-200 inline-flex items-center px-3 py-1 text-sm rounded-full`,
+    `text-${color}-800 bg-${color}-200 dark:text-black dark:bg-white inline-flex items-center px-3 py-1 text-sm rounded-full`,
     size ? `text-${size}` : 'text-sm',
   )}
 >
