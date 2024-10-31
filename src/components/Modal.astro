@@ -9,89 +9,89 @@ type Contents = {
 interface Props {
   title: string
   contents: Contents[]
-  type: string
-  color: string
+  type: 'solid' | 'outline' // change the type of modal button
+  color?: string // change the color of modal button
 }
 const { title, contents, type, color }: Props = Astro.props
 ---
 
-<div class="bg-gray-100 flex items-center justify-center min-h-screen">
-  <!-- Button to open the modal -->
-  <button
-    id="openModalButton"
-    class="bg-blue-500 text-white px-6 py-3 rounded-md"
-  >
-    <!-- the text of the button that to open modal -->
-    <slot />
-  </button>
+<!-- Button to open the modal -->
+<button
+  id="openModalButton"
+  class-={cn(
+    'text-white px-6 py-3',
+    type === 'solid' && color ? `bg-${color}-500  rounded-md` : ``,
+  )}
+>
+  <!-- the text of the button that to open modal -->
+  <slot />
+</button>
 
-  <!-- Modal Container -->
+<!-- Modal Container -->
+<div
+  id="modal"
+  class="hidden fixed inset-0 bg-black bg-opacity-70 justify-center items-center transition-opacity opacity-0"
+>
   <div
-    id="modal"
-    class="hidden fixed inset-0 bg-black bg-opacity-70 justify-center items-center transition-opacity duration-300 opacity-0"
+    id="modalContent"
+    class="bg-white p-8 rounded-lg shadow-lg transform transition-transform scale-95 flex flex-col items-center justify-center"
   >
-    <div
-      id="modalContent"
-      class="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-300 scale-95 flex flex-col items-center justify-center"
-    >
-      <h1 class="text-2xl font-bold mb-4">{title}</h1>
+    <h1 class="text-2xl font-bold mb-4">{title}</h1>
 
-      <section class="mb-4 text-start">
-        {
-          contents.map((content) => (
-            <a href={content.link}>
-              <p class="mb-2">{content.label}</p>
-            </a>
-          ))
-        }
-      </section>
-
-      <button
-        id="closeModalButton"
-        class="bg-red-500 text-white px-4 py-2 rounded-md"
-      >
-        Close
-      </button>
-    </div>
+    <section class="mb-4 text-start">
+      {
+        contents.map((content) => (
+          <a href={content.link}>
+            <p class="mb-2">{content.label}</p>
+          </a>
+        ))
+      }
+    </section>
   </div>
-
-  <script>
-    // Select modal elements
-    const modal: HTMLElement | null = document.getElementById('modal')
-    const modalContent: HTMLElement | null =
-      document.getElementById('modalContent')
-    const openModalButton: HTMLElement | null =
-      document.getElementById('openModalButton')
-    const closeModalButton: HTMLElement | null =
-      document.getElementById('closeModalButton')
-
-    // Function to open the modal
-    const openModal = () => {
-      if (modal && modalContent) {
-        modal.style.display = 'flex' // Show the modal
-        requestAnimationFrame(() => {
-          modal.style.opacity = '1' // Fully opaque
-          modalContent.classList.remove('scale-95') // Set scale to normal size
-          modalContent.classList.add('transition-transform', 'show') // Trigger scale animation
-        })
-      }
-    }
-
-    // Function to close the modal
-    const closeModal = () => {
-      if (modal && modalContent) {
-        modalContent.classList.add('scale-95') // Scale down
-        modal.style.opacity = '0' // Fade out
-        setTimeout(() => {
-          modal.style.display = 'none' // Hide modal
-          modalContent.classList.remove('scale-95') // Reset scale for next open
-          modalContent.classList.remove('transition-transform', 'show') // Reset show class
-        }, 300) // Match this duration with the CSS transition duration
-      }
-    }
-
-    // Event listeners
-    if (openModalButton) openModalButton.addEventListener('click', openModal)
-    if (closeModalButton) closeModalButton.addEventListener('click', closeModal)
-  </script>
 </div>
+
+<script>
+  // Select modal elements
+  const modal: HTMLElement | null = document.getElementById('modal')
+  const modalContent: HTMLElement | null =
+    document.getElementById('modalContent')
+  const openModalButton: HTMLElement | null =
+    document.getElementById('openModalButton')
+  const closeModalButton: HTMLElement | null =
+    document.getElementById('closeModalButton')
+
+  // Function to open the modal
+  const openModal = () => {
+    if (modal && modalContent) {
+      modal.style.display = 'flex' // Show the modal
+      requestAnimationFrame(() => {
+        modal.style.opacity = '1' // Fully opaque
+        modalContent.classList.remove('scale-95') // Set scale to normal size
+        modalContent.classList.add('transition-transform', 'show') // Trigger scale animation
+      })
+    }
+  }
+
+  // Function to close the modal
+  const closeModal = () => {
+    if (modal && modalContent) {
+      modalContent.classList.add('scale-95') // Scale down
+      modal.style.opacity = '0' // Fade out
+      setTimeout(() => {
+        modal.style.display = 'none' // Hide modal
+        modalContent.classList.remove('scale-95') // Reset scale for next open
+        modalContent.classList.remove('transition-transform', 'show') // Reset show class
+      }, 300) // Match this duration with the CSS transition duration
+    }
+  }
+
+  if (modal)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal()
+      }
+    })
+
+  // Event listeners
+  if (openModalButton) openModalButton.addEventListener('click', openModal)
+</script>
