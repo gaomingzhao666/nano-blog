@@ -7,7 +7,8 @@ import { remarkReadingTime } from './src/utils/readTime.ts'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://blog-template-gray.vercel.app/', // Write here your website url
+  site: 'https://blog-template-gray.vercel.app/',
+
   markdown: {
     remarkPlugins: [remarkReadingTime],
     shikiConfig: {
@@ -15,6 +16,7 @@ export default defineConfig({
       wrap: true,
     },
   },
+
   integrations: [
     mdx({
       syntaxHighlight: 'shiki',
@@ -27,9 +29,10 @@ export default defineConfig({
       },
       drafts: true,
     }),
+
     sitemap({
       i18n: {
-        defaultLocale: 'en', // 所有不包含 `es` 或 `fr` 的链接都将被视为默认语言环境，即 `en`
+        defaultLocale: 'en',
         locales: {
           en: 'en',
           ja: 'ja',
@@ -37,6 +40,7 @@ export default defineConfig({
         },
       },
     }),
+
     tailwind(),
   ],
 })
