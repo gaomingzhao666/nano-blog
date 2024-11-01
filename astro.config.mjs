@@ -10,7 +10,6 @@ export default defineConfig({
   site: 'https://blog-template-gray.vercel.app/', // Write here your website url
   markdown: {
     remarkPlugins: [remarkReadingTime],
-    drafts: true,
     shikiConfig: {
       theme: 'material-theme-palenight',
       wrap: true,
@@ -28,7 +27,16 @@ export default defineConfig({
       },
       drafts: true,
     }),
-    sitemap(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'en', // 所有不包含 `es` 或 `fr` 的链接都将被视为默认语言环境，即 `en`
+        locales: {
+          en: 'en',
+          ja: 'ja',
+          cn: 'cn',
+        },
+      },
+    }),
     tailwind(),
   ],
 })
