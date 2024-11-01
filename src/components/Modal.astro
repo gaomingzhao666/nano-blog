@@ -1,5 +1,6 @@
 ---
 import { cn } from '@/utils'
+import Close from './icons/close.astro'
 
 type Contents = {
   label: string
@@ -30,19 +31,24 @@ const { title, contents, type, color }: Props = Astro.props
 <!-- Modal Container -->
 <div
   id="modal"
-  class="hidden fixed inset-0 bg-black bg-opacity-70 justify-center items-center transition-opacity opacity-0"
+  class="hidden fixed dark:text-black inset-0 bg-black bg-opacity-70 justify-center items-center transition-opacity opacity-0"
 >
   <div
     id="modalContent"
-    class="bg-white p-8 rounded-lg shadow-lg transform transition-transform scale-95 flex flex-col items-center justify-center"
+    class="w-screen h-screen bg-white p-8 transform transition-transform scale-95"
   >
-    <h1 class="text-2xl font-bold mb-4">{title}</h1>
+    <section class="flex justify-between items-center mb-10">
+      <h1 class="text-3xl">{title}</h1>
+      <button id="closeModalButton">
+        <Close />
+      </button>
+    </section>
 
-    <section class="mb-4 text-start">
+    <section class="text-center">
       {
         contents.map((content) => (
           <a href={content.link}>
-            <p class="mb-2">{content.label}</p>
+            <h1 class="my-5 text-xl">{content.label}</h1>
           </a>
         ))
       }
@@ -85,13 +91,15 @@ const { title, contents, type, color }: Props = Astro.props
     }
   }
 
-  if (modal)
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeModal()
-      }
-    })
+  // click outside of modal content to close modal
+  // if (modal)
+  //   modal.addEventListener('click', (e) => {
+  //     if (e.target === modal) {
+  //       closeModal()
+  //     }
+  //   })
 
   // Event listeners
+  if (closeModalButton) closeModalButton.addEventListener('click', closeModal)
   if (openModalButton) openModalButton.addEventListener('click', openModal)
 </script>

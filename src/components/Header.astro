@@ -2,8 +2,10 @@
 import HeaderLink from '@/components/HeaderLink'
 import GithubIcon from '@/components/icons/GithubIcon'
 import Search from '@/components/Search'
+import Burger from './icons/Burger.astro'
 import ToggleTheme from './ToggleTheme.astro'
 import LanguagePicker from '@/components/LanguagePicker'
+import Modal from '@/components/Modal'
 import { getLangFromUrl, useTranslations } from '../i18n/utils'
 
 const lang = getLangFromUrl(Astro.url)
@@ -17,7 +19,7 @@ const t = useTranslations(lang)
 
   <div class="dark:bg-[#0a0910] pl-4 pt-6 pb-4 md:p-0 z-50">
     <nav class="flex justify-between gap-3">
-      <div class="flex gap-3 border-black mr-3 dark:border-white">
+      <div class="hidden md:flex gap-3 border-black mr-3 dark:border-white">
         <HeaderLink href="/">
           {t('nav.home')}
         </HeaderLink>
@@ -39,14 +41,23 @@ const t = useTranslations(lang)
 
       <Search />
       <ToggleTheme />
+
+      <nav class="md:hidden">
+        <Modal
+          title="test"
+          contents={[
+            { label: t('nav.home'), link: '/' },
+            {
+              label: t('nav.tags'),
+              link: '/tags',
+            },
+            { label: t('nav.about'), link: '/about' },
+          ]}
+          type="outline"
+        >
+          <Burger />
+        </Modal>
+      </nav>
     </nav>
   </div>
-
-  <!-- <div class='flex items-center gap-3 md:pl-3' transition:persist='navbar'>
-		<Search />
-
-		<ToggleTheme />
-
-		<Drawer classList='md:hidden' items={[{ label: 'Tags', href: '/tags' }]} />
-	</div> -->
 </header>
