@@ -1,5 +1,7 @@
 {
   "nav.home": "Home",
   "nav.about": "About",
-  "nav.tags": "Tags"
+  "nav.tags": "Tags",
+
+  "tags.title": "Tags"
 }

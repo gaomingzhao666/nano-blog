@@ -1,5 +1,7 @@
 {
   "nav.home": "ホーム",
   "nav.about": "アバウト",
-  "nav.tags": "タッグ"
+  "nav.tags": "タッグ",
+
+  "tags.title": "タッグス"
 }
