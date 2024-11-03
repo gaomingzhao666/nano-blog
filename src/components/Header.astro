@@ -6,7 +6,7 @@ import Burger from './icons/Burger.astro'
 import ToggleTheme from './ToggleTheme.astro'
 import LanguagePicker from '@/components/LanguagePicker'
 import Modal from '@/components/Modal'
-import { getLangFromUrl, useTranslations } from '../i18n/utils'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -20,13 +20,13 @@ const t = useTranslations(lang)
   <div class="dark:bg-[#0a0910] pl-4 pt-6 pb-4 md:p-0 z-50">
     <nav class="flex justify-between gap-3">
       <div class="hidden md:flex gap-3 border-black mr-3 dark:border-white">
-        <HeaderLink href="/">
+        <HeaderLink href=`/${lang}`>
           {t('nav.home')}
         </HeaderLink>
-        <HeaderLink href="/tags">
+        <HeaderLink href=`/${lang}/tags`>
           {t('nav.tags')}
         </HeaderLink>
-        <HeaderLink href="/about">
+        <HeaderLink href=`/${lang}/about`>
           {t('nav.about')}
         </HeaderLink>
       </div>
