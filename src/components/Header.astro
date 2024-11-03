@@ -20,13 +20,13 @@ const t = useTranslations(lang)
   <div class="dark:bg-[#0a0910] pl-4 pt-6 pb-4 md:p-0 z-50">
     <nav class="flex justify-between gap-3">
       <div class="hidden md:flex gap-3 border-black mr-3 dark:border-white">
-        <HeaderLink href=`/${lang}`>
+        <HeaderLink href={lang === 'en' ? '/' : `/${lang}`}>
           {t('nav.home')}
         </HeaderLink>
-        <HeaderLink href=`/${lang}/tags`>
+        <HeaderLink href={lang === 'en' ? '/tags' : `/${lang}/tags`}>
           {t('nav.tags')}
         </HeaderLink>
-        <HeaderLink href=`/${lang}/about`>
+        <HeaderLink href={lang === 'en' ? '/about' : `/${lang}/about`}>
           {t('nav.about')}
         </HeaderLink>
       </div>
@@ -46,12 +46,15 @@ const t = useTranslations(lang)
         <Modal
           title="test"
           contents={[
-            { label: t('nav.home'), link: '/' },
+            { label: t('nav.home'), link: lang === 'en' ? '/' : `/${lang}` },
             {
               label: t('nav.tags'),
-              link: '/tags',
+              link: lang === 'en' ? '/tags' : `/${lang}/tags`,
             },
-            { label: t('nav.about'), link: '/about' },
+            {
+              label: t('nav.about'),
+              link: lang === 'en' ? '/about' : `/${lang}/about`,
+            },
           ]}
           type="outline"
         >
