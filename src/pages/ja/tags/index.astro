@@ -2,11 +2,16 @@
 import BaseLayout from '@/layouts/BaseLayout'
 import TitlePage from '@/components/TitlePage'
 import { getTags } from '@/utils'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
 const tags = await getTags()
 ---
 
 <BaseLayout title="Tags">
-  <TitlePage title="Tags" />
+  <TitlePage title={t('tags.title')} />
   <div class="flex justify-center flex-wrap gap-4">
     {
       tags.map((tag) => (

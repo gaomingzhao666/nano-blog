@@ -4,7 +4,7 @@ import BaseLayout from '@/layouts/BaseLayout'
 import Browser from '@/components/icons/Browser'
 import coding from '@/components/icons/Coding'
 import Server from '@/components/icons/Server'
-import hachiware from '../../assets/images/hachiware.jpg'
+import hachiware from '../../../assets/images/hachiware.jpg'
 
 interface WorkingOn {
   label: string
@@ -14,22 +14,22 @@ interface WorkingOn {
 
 const workingOn: WorkingOn[] = [
   {
-    label: 'Frontend Dev',
+    label: 'フロントエンド',
     icon: Browser,
     description:
-      'Frontend dev is my major work and the thing I always focusing on, I am so passionate with creating user-interface and improve user experience.',
+      'フロントエンド開発は私の主な仕事であり、常に注力している分野です。ユーザーインターフェースの作成とユーザーエクスペリエンスの向上に対して非常に情熱を持っています。',
   },
   {
-    label: 'Backend Dev',
+    label: 'バックエンド',
     icon: Server,
     description:
-      'Backend dev is non-major work but I love to use JS-like programming languages such as NodeJS or PHP to build something Full-Stack projects. ',
+      'バックエンド開発は主要な仕事ではありませんが、NodeJSやPHPなどのJavaScriptに似たプログラミング言語を使ってフルスタックプロジェクトを構築するのが好きです。',
   },
   {
-    label: 'Python Script',
+    label: '自動化スクリプト',
     icon: coding,
     description:
-      'I am intersted in scripting python to make some boring things automatically, it will not be deep learning about it but just for something funny.',
+      '私は、退屈な作業を自動化するためにPythonのスクリプトを書くことに興味があります。深層学習について学ぶわけではなく、ただ面白いことをするためです。',
   },
 ]
 ---
@@ -38,19 +38,16 @@ const workingOn: WorkingOn[] = [
   <main class="space-y-10">
     <section class="flex flex-wrap md:flex-nowrap items-center">
       <section class="space-y-5">
-        <span class="font-semibold">Hello, I am</span>
-        <h1 class="text-3xl font-bold">Nano@Gaomingzhao</h1>
+        <span class="font-semibold">こんにちは、私は</span>
+        <h1 class="text-3xl font-bold">なの@Gaomingzhao</h1>
         <article class="md:w-8/12 text-slate-500">
           <p>
-            There have many opinions about the stuffs like web development,
-            scripts, technologies, life philosophy etc.
+            ここはウェブ開発、スクリプト、ウェブ開発技術、人生哲学などについて多くの意見がここで発表されます。
           </p>
           <p>
-            We do not provide muti-language translation to every paper, those
-            contents will be written in a single languages such as english or
-            japanese depends on my mood.
+            すべての文書に多言語翻訳を提供しているわけではなく、内容は私の気分に応じて英語または日本語のいずれかの単一言語で書かれます。
           </p>
-          <p>Enjoy and have fun!</p>
+          <p>どうぞ楽しんでください！</p>
         </article>
       </section>
 
@@ -58,12 +55,12 @@ const workingOn: WorkingOn[] = [
         src={hachiware}
         format="webp"
         class="hidden md:block md:size-4/12 rounded-3xl hover:scale-105 transition-transform"
-        alt={`img of Hachiware chan`}
+        alt="可愛ハチワレの写真"
       />
     </section>
 
     <section>
-      <h1 class="text-3xl font-bold mb-10">Working on</h1>
+      <h1 class="text-3xl font-bold mb-10">熱中していること</h1>
 
       <section class="flex items-center flex-wrap md:flex-nowrap gap-4">
         {
