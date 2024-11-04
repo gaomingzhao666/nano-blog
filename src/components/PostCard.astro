@@ -4,6 +4,7 @@ import { Image } from 'astro:assets'
 import FormattedDate from '@/components/FormattedDate'
 // import ArrowUp from '@/components/icons/ArrowUp'
 import { getTags } from '@/utils'
+import { getLangFromUrl } from '@/i18n/utils'
 
 const {
   id,
@@ -12,11 +13,16 @@ const {
   slug,
 } = Astro.props
 
+const lang = getLangFromUrl(Astro.url)
+
 const tags = await getTags()
 ---
 
 <article class="grid grid-rows-[300px_0] min-h-full group">
-  <a class="rounded-xl relative overflow-hidden" href={`/post/${slug}/`}>
+  <a
+    class="rounded-xl relative overflow-hidden"
+    href={lang === 'en' ? `/post/${slug}` : `/${lang}/post/${slug}`}
+  >
     <Image
       src={heroImage}
       width={1000}
