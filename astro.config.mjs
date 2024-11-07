@@ -36,7 +36,6 @@ export default defineConfig({
         locales: {
           en: 'en',
           ja: 'ja',
-          cn: 'cn',
         },
       },
     }),
