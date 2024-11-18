@@ -28,11 +28,9 @@ import { join } from 'path'
 import { AstroFont } from 'astro-font'
 ---
 
-<meta
-  http-equiv="refresh"
-  content="0;url=/"
-  id="redirectMeta"
-/><!-- Global Metadata -->
+<meta http-equiv="refresh" content="" id="redirectMeta" />
+
+<!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
@@ -146,10 +144,14 @@ import { AstroFont } from 'astro-font'
   ]}
 />
 
-<script>
+<!-- <script>
   import { getLang } from '@/utils'
-  const lang = getLang()
+  import { getLangFromUrl } from '@/i18n/utils'
+
+  const lang = getLang(false)
+  const langFromUrl = getLangFromUrl(Astro.url)
 
   const redirectMeta = document.getElementById('redirectMeta')
-  if (redirectMeta) redirectMeta.setAttribute('content', `0;url=/${lang}/`)
-</script>
+  if (redirectMeta && lang !== langFromUrl)
+    redirectMeta.setAttribute('content', `0;url=/${getLang(true)}`)
+</script> -->
