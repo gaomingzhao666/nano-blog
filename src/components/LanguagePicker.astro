@@ -45,18 +45,18 @@ import Language from '@/components/icons/Language'
   </div>
 </div>
 
-<!-- <script>
+<script>
   import { setLang } from '@/utils'
   const setLangBtn = document.getElementById('setLangBtn')
 
   window.addEventListener('DOMContentLoaded', () => {
     if (setLangBtn) {
-      setLangBtn.addEventListener('click', async () => {
+      setLangBtn.addEventListener('click', () => {
         const lang = setLangBtn.textContent?.toLowerCase() || 'en'
-        await setLang(lang)
+        setLang(lang)
 
         console.log('clicked')
       })
     }
   })
-</script> -->
+</script>
