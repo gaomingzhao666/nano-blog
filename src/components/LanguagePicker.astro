@@ -44,15 +44,3 @@ import Language from '@/components/icons/Language'
     }
   </div>
 </div>
-
-<script>
-  import { setLang } from '@/utils'
-  const setLangBtn = document.querySelector('#setLangBtn')
-
-  if (setLangBtn) {
-    setLangBtn.addEventListener('click', () => {
-      const lang = setLangBtn.textContent?.toLowerCase() || 'en'
-      setLang(lang)
-    })
-  }
-</script>
