@@ -4,7 +4,7 @@ import { Image } from 'astro:assets'
 import FormattedDate from '@/components/FormattedDate'
 // import ArrowUp from '@/components/icons/ArrowUp'
 import { getTags } from '@/utils'
-import { getLangFromUrl } from '@/i18n/utils'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
 const {
   id,
@@ -14,6 +14,7 @@ const {
 } = Astro.props
 
 const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 
 const tags = await getTags()
 ---
@@ -35,7 +36,7 @@ const tags = await getTags()
 
   <div class="flex gap-2 mt-4 font-semibold">
     <FormattedDate date={pubDate} />
-    <span class="text-sm"> • {readTime}</span>
+    <span class="text-sm"> • {readTime} {t('minutes')}</span>
   </div>
 
   <div class="gap-4 md:gap-0 my-10">

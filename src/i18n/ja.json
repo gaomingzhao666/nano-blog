@@ -3,5 +3,8 @@
   "nav.about": "アバウト",
   "nav.tags": "タッグ",
 
-  "tags.title": "タッグス"
+  "tags.title": "タッグス",
+
+  "published": "レリーズ オン",
+  "minutes": "分くらい"
 }

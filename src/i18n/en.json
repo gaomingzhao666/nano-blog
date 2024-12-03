@@ -3,5 +3,8 @@
   "nav.about": "About",
   "nav.tags": "Tags",
 
-  "tags.title": "Tags"
+  "tags.title": "Tags",
+
+  "published": "Published on",
+  "minutes": "min read"
 }

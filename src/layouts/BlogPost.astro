@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content'
 import FormattedDate from '@/components/FormattedDate'
 import BaseLayout from '@/layouts/BaseLayout'
 import PostTag from '@/components/PostTag'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 import type { MarkdownHeading } from 'astro'
 import { Image } from 'astro:assets'
 
@@ -17,6 +18,9 @@ const { data, readTime, headings, id } = Astro.props
 const { title, description, pubDate, heroImage, tags } = data
 
 const articleDate = pubDate.toISOString()
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <BaseLayout
@@ -30,10 +34,12 @@ const articleDate = pubDate.toISOString()
       <div class="flex flex-col gap-2">
         <div class="flex items-center justify-center gap-x-1">
           <p class="text-center text-sm text-opacity-50">
-            Published <FormattedDate date={pubDate} />
+            {t('published')}
+            <FormattedDate date={pubDate} />
           </p>
           <p class="text-center text-sm text-opacity-50 font-bold">
             - {readTime}
+            {t('minutes')}
           </p>
         </div>
         <h1 class="text-center text-4xl md:text-6xl md:pb-2.5 font-semibold">
