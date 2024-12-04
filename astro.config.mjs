@@ -16,7 +16,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkReadingTime],
     shikiConfig: {
-      theme: 'material-theme-palenight',
+      theme: 'github-dark',
       wrap: true,
     },
   },
@@ -25,13 +25,13 @@ export default defineConfig({
     mdx({
       syntaxHighlight: 'shiki',
       shikiConfig: {
-        experimentalThemes: {
-          light: 'vitesse-light',
-          dark: 'material-theme-palenight',
-        },
+        // experimentalThemes: {
+        //   light: 'vitesse-light',
+        //   dark: 'material-theme-palenight',
+        // },
+        theme: 'github-dark',
         wrap: true,
       },
-      drafts: true,
     }),
 
     sitemap({
