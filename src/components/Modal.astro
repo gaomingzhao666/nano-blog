@@ -35,7 +35,7 @@ const { title, contents, type, color }: Props = Astro.props
 >
   <div
     id="modalContent"
-    class="w-screen h-screen bg-white p-8 transform transition-transform scale-95"
+    class="w-screen h-screen bg-white p-8 transform transition-transform"
   >
     <section class="flex justify-between items-center mb-10">
       <h1 class="text-3xl">{title}</h1>
@@ -48,7 +48,7 @@ const { title, contents, type, color }: Props = Astro.props
       {
         contents.map((content) => (
           <a href={content.link}>
-            <h1 class="my-5 text-xl">{content.label}</h1>
+            <h1 class="mb-4 text-xl">{content.label}</h1>
           </a>
         ))
       }
@@ -72,7 +72,6 @@ const { title, contents, type, color }: Props = Astro.props
       modal.style.display = 'flex' // Show the modal
       requestAnimationFrame(() => {
         modal.style.opacity = '1' // Fully opaque
-        modalContent.classList.remove('scale-95') // Set scale to normal size
         modalContent.classList.add('transition-transform', 'show') // Trigger scale animation
       })
     }
@@ -81,11 +80,9 @@ const { title, contents, type, color }: Props = Astro.props
   // Function to close the modal
   const closeModal = () => {
     if (modal && modalContent) {
-      modalContent.classList.add('scale-95') // Scale down
       modal.style.opacity = '0' // Fade out
       setTimeout(() => {
         modal.style.display = 'none' // Hide modal
-        modalContent.classList.remove('scale-95') // Reset scale for next open
         modalContent.classList.remove('transition-transform', 'show') // Reset show class
       }, 300) // Match this duration with the CSS transition duration
     }
