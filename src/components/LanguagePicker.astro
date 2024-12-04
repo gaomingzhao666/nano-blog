@@ -1,5 +1,6 @@
 ---
 import { languages } from '@/i18n/ui'
+import HeaderLink from '@/components/HeaderLink'
 import Language from '@/components/icons/Language'
 ---
 
@@ -12,34 +13,18 @@ import Language from '@/components/icons/Language'
   </label>
 
   <div
-    class="w-36 absolute left-0 mt-1 border-gray-400 border dark:border-gray-600 rounded-xl overflow-hidden hidden peer-checked:block"
+    class="w-36 absolute left-0 mt-2 p-2 border-gray-400 border dark:border-gray-600 rounded-xl overflow-hidden hidden backdrop-blur peer-checked:block"
   >
     {
       Object.entries(languages).map(([lang, label]) => (
-        // old codes
-        // lang === 'en' ? (
-        //   <a
-        //     href={`/`}
-        //     class="option cursor-pointer p-2 block hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-900 dark:text-white"
-        //   >
-        //     <button>{label}</button>
-        //   </a>
-        // ) : (
-        //   <a
-        //     href={`/${lang}/`}
-        //     class="option cursor-pointer p-2 block hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-900 dark:text-white"
-        //   >
-        //     <button>{label}</button>
-        //   </a>
-        // ),
-
-        // new codes
-        <a
-          href={lang === 'en' ? `/` : `/${lang}/`}
-          class="option cursor-pointer p-2 block hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-900 dark:text-white"
+        <HeaderLink
+          href={lang === 'en' ? '/' : `/${lang}`}
+          class={
+            'option cursor-pointer p-2 block rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-white'
+          }
         >
-          <button id="setLangBtn">{label}</button>
-        </a>
+          <button>{label}</button>
+        </HeaderLink>
       ))
     }
   </div>
