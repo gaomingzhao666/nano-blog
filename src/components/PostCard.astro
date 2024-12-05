@@ -21,7 +21,7 @@ const tags = await getTags()
 
 <article class="grid grid-rows-[300px_0] min-h-full group">
   <a
-    class="rounded-xl relative overflow-hidden"
+    class="rounded-xl overflow-hidden"
     href={lang === 'en' ? `/post/${slug}` : `/${lang}/post/${slug}`}
   >
     <Image
@@ -29,7 +29,7 @@ const tags = await getTags()
       width={1000}
       height={200}
       format="webp"
-      class="h-full min-w-full object-cover hover:scale-[111%] transition-all duration-200 rounded-[2px]"
+      class="h-full min-w-full object-cover hover:scale-110 transition-transform duration-200"
       alt={`img of ${title}`}
     />
   </a>
