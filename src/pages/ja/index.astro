@@ -2,16 +2,23 @@
 import ListPosts from '@/components/ListPosts'
 import TitlePage from '@/components/TitlePage'
 import BaseLayout from '@/layouts/BaseLayout'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 import { getPosts } from '@/utils'
 
+const MAX_POSTS = null // max number of posts to show on the home page
 const posts = await getPosts()
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <BaseLayout title="Home">
-  <TitlePage title="Blogs" />
+  <TitlePage title={t('index.title')} />
 
   <div>
-    <h2 class="text-lg font-medium tracking-wide text-end">Latest Posts</h2>
+    <h2 class="text-lg font-medium tracking-wide text-end">
+      {t('index.latestPosts')}
+    </h2>
     <ListPosts FirstBig={true} posts={posts} />
   </div>
 </BaseLayout>
