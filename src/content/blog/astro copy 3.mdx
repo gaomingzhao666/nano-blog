@@ -1,5 +1,5 @@
 ---
-title: 'tesdt'
+title: 't'
 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non dia'
 pubDate: 'Jul 02 2022'
 heroImage: '../../assets/images/book.jpg'
@@ -24,14 +24,26 @@ See below for more examples of [differences between Astro and JSX](#differences-
 
 Local variables can be added into the HTML using the curly braces syntax:
 
+import MyComponent from '@/components/mdx/Blockquote'
+
+<MyComponent>test</MyComponent>
+
+# My MDX File
+
+<img
+  className="rounded-3xl"
+  src="../../assets/images/book.jpg"
+  alt="Example Image"
+/>
+
 ```astro
 ---
 const name = 'Astro'
 ---
 
 <div>
-	<h1>Hello {name}!</h1>
-	<!-- Outputs <h1>Hello Astro!</h1> -->
+  <h1>Hello {name}!</h1>
+  <!-- Outputs <h1>Hello Astro!</h1> -->
 </div>
 ```
 
@@ -57,7 +69,7 @@ For example, you can't assign an event handler to an HTML element in an Astro co
 ---
 // dont-do-this.astro
 function handleClick() {
-	console.log('button clicked!')
+  console.log('button clicked!')
 }
 ---
 
@@ -72,12 +84,12 @@ Instead, use a client-side script to add the event handler, like you would in va
 // do-this-instead.astro
 ---
 
-<button id='button'>Click Me</button>
+<button id="button">Click Me</button>
 <script>
-	function handleClick() {
-		console.log('button clicked!')
-	}
-	document.getElementById('button').addEventListener('click', handleClick)
+  function handleClick() {
+    console.log('button clicked!')
+  }
+  document.getElementById('button').addEventListener('click', handleClick)
 </script>
 ```
 
@@ -93,7 +105,7 @@ const items = ['Dog', 'Cat', 'Platypus']
 ---
 
 <ul>
-	{items.map((item) => <li>{item}</li>)}
+  {items.map((item) => <li>{item}</li>)}
 </ul>
 ```
 
@@ -181,7 +193,9 @@ In Astro, you can use standard HTML comments or JavaScript-style comments.
 
 ---
 
-<!-- HTML comment syntax is valid in .astro files -->{/* JS comment syntax is also valid */}
+<!-- HTML comment syntax is valid in .astro files -->{
+  /* JS comment syntax is also valid */
+}
 ```
 
 :::caution
