@@ -47,8 +47,14 @@ const workingOn: WorkingOn[] = [
           <p>
             すべての文書に多言語翻訳を提供しているわけではなく、内容は私の気分に応じて英語または日本語のいずれかの単一言語で書かれます。
           </p>
-          <p>どうぞ楽しんでください！</p>
+          <p>どうぞお気楽に使って～</p>
         </article>
+
+        <button
+          class="bg-gray-800 text-white font-semibold py-2 px-4 rounded-xl"
+        >
+          Github で私のことを見る
+        </button>
       </section>
 
       <Image
@@ -60,12 +66,12 @@ const workingOn: WorkingOn[] = [
     </section>
 
     <section>
-      <h1 class="text-3xl font-bold mb-10">熱中していること</h1>
+      <h1 class="text-3xl font-bold mb-10">やていること</h1>
 
       <section class="flex items-center flex-wrap md:flex-nowrap gap-4">
         {
           workingOn.map((work) => (
-            <section class="size-full md:size-1/3 p-10 flex flex-col items-center gap-y-4 justify-center bg-slate-800 rounded-3xl">
+            <section class="size-full md:size-1/3 p-10 flex flex-col items-center gap-y-4 justify-center bg-slate-100 dark:bg-slate-800 rounded-3xl">
               <work.icon />
 
               <h2 class="text-2xl font-semibold">{work.label}</h2>
