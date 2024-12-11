@@ -2,13 +2,18 @@
 import { siteConfig } from '@/data/site.config'
 import TwitterColorIcon from './icons/TwitterColorIcon.astro'
 import LinkedinIcon from './icons/linkedinIcon.astro'
-const message = siteConfig.shareMessage
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const message = siteConfig.shareMessage
 const URL = Astro.url.href
 ---
 
 <div class="flex flex-col gap-2">
-  <span class="mb-1 font-bold text-2xl">Share</span>
+  <span class="mb-1 font-bold text-2xl">{t('share')}</span>
+
   <ul class="flex gap-3 text-black dark:text-white">
     <li>
       <a
@@ -16,6 +21,7 @@ const URL = Astro.url.href
         aria-label="Share on Twitter"><TwitterColorIcon /></a
       >
     </li>
+
     <li>
       <a
         href={`https://www.linkedin.com/shareArticle?mini=true&url=${URL}`}
