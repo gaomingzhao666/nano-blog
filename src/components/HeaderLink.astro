@@ -3,7 +3,7 @@ import type { HTMLAttributes } from 'astro/types'
 import { cn } from '@/utils'
 type Props = HTMLAttributes<'a'>
 
-const { href, class: className, ...props } = Astro.props
+const { href, class: className, ...props }: Props = Astro.props
 
 const { pathname } = Astro.url
 const isActive = href === pathname || href === pathname.replace(/\/$/, '')

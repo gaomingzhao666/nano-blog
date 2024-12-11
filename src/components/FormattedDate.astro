@@ -4,9 +4,9 @@ export interface Props {
   date: Date
 }
 
-const { date } = Astro.props
+const { date }: Props = Astro.props
 
-let lang: string = getLangFromUrl(Astro.url)
+let lang = getLangFromUrl(Astro.url)
 ---
 
 <time class="text-sm font-bold text-opacity-60" datetime={date.toISOString()}>

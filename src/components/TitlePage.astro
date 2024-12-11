@@ -1,10 +1,11 @@
 ---
 import Title from './Title.astro'
+
 type Props = {
   title: string
 }
 
-const { title } = Astro.props
+const { title }: Props = Astro.props
 ---
 
 <Title># {title}</Title>

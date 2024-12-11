@@ -15,7 +15,7 @@ const {
   description = siteConfig.description,
   ogImage,
   articleDate,
-} = Astro.props
+}: Props = Astro.props
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const socialImageURL = new URL(ogImage ? ogImage : '/open-graph.png', Astro.url)
   .href

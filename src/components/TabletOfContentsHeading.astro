@@ -1,17 +1,18 @@
 ---
 import { cn } from '@/utils'
-const { heading } = Astro.props
 
-type Heading = {
+export interface Heading {
   depth: number
   text: string
   slug: string
   subheadings: Heading[]
 }
 
-export interface Props {
+interface Props {
   heading: Heading
 }
+
+const { heading }: Props = Astro.props
 ---
 
 <li class="flex flex-col">

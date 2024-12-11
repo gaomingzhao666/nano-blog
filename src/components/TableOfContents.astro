@@ -1,19 +1,24 @@
 ---
 import TableOfContentsHeading from '@/components/TabletOfContentsHeading'
+import type { Heading } from '@/components/TabletOfContentsHeading'
 
-const { headings } = Astro.props
-
-type TableOfContent = {
+interface TableOfContent {
   depth: number
   text: string
   slug: string
   subheadings: TableOfContent[]
 }
+interface Props {
+  headings: Heading[]
+}
+
+const { headings }: Props = Astro.props
 
 const toc = buildToc(headings)
 function buildToc(headings: TableOfContent[]) {
   let toc: TableOfContent[] = []
   let parentHeadings = new Map()
+
   headings.forEach((h) => {
     let heading = { ...h, subheadings: [] }
     parentHeadings.set(heading.depth, heading)

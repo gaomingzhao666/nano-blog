@@ -6,12 +6,24 @@ import FormattedDate from '@/components/FormattedDate'
 import { getTags } from '@/utils'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
+interface Props {
+  id: string
+  data: {
+    title: string
+    description: string
+    pubDate: Date
+    heroImage: string
+  }
+  readTime: number
+  slug: string
+}
+
 const {
   id,
   data: { title, description, pubDate, heroImage },
   readTime,
   slug,
-} = Astro.props
+}: Props = Astro.props
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)

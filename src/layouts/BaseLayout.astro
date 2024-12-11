@@ -6,9 +6,10 @@ import ProviderTheme from '@/components/ProviderTheme'
 import ProviderAnimations from '@/components/ProviderAnimations'
 import TwSizeIndicator from '@/components/TwSizeIndicator'
 import { getLangFromUrl } from '../i18n/utils'
+import type { Props } from '@/components/BaseHead'
 
 const lang = getLangFromUrl(Astro.url)
-const { title, description, image, articleDate } = Astro.props
+const { title, description, ogImage, articleDate }: Props = Astro.props
 ---
 
 <html lang={lang} class="scroll-smooth">
@@ -16,7 +17,7 @@ const { title, description, image, articleDate } = Astro.props
     <BaseHead
       title={title}
       description={description}
-      ogImage={image}
+      ogImage={ogImage}
       articleDate={articleDate}
     />
     <ProviderTheme />

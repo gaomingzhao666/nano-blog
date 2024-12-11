@@ -26,7 +26,7 @@ const t = useTranslations(lang)
 <BaseLayout
   title={title}
   description={description}
-  image={heroImage?.src}
+  ogImage={heroImage?.src}
   articleDate={articleDate}
 >
   <article class="min-w-full md:py-4 sm:max-w-none md:max-w-none">
@@ -42,9 +42,10 @@ const t = useTranslations(lang)
             {t('minutes')}
           </p>
         </div>
-        <h1 class="text-center text-4xl md:text-6xl md:pb-2.5 font-semibold">
+
+        <title class="text-center text-4xl md:text-6xl md:pb-2.5 font-semibold">
           {title}
-        </h1>
+        </title>
       </div>
 
       <div
