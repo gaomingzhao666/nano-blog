@@ -8,10 +8,11 @@ interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  author: 'DanielCG', // Site author
-  title: 'Astro Theme OpenBlog', // Site title.
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', // Description to display in the meta tags
-  lang: 'en-GB',
-  ogLocale: 'en_GB',
+  author: 'Nano', // Site author
+  title: 'Nano Blog', // Site title.
+  description:
+    'Nano Blog is a performant, lightweight, less dependency and SEO friendly open source developer blog made by Astro, the content mainly focuses on technology, web development, and life', // Description to display in the meta tags
+  lang: 'en',
+  ogLocale: 'en',
   shareMessage: 'Share this post', // Message to share a post on social media
 }
