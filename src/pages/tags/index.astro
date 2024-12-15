@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout'
 import TitlePage from '@/components/TitlePage'
+import PostTag from '@/components/PostTag'
 import { getTags } from '@/utils'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
@@ -12,14 +13,11 @@ const tags = await getTags()
 
 <BaseLayout title="Tags">
   <TitlePage title={t('tags.title')} />
-  <div class="flex justify-center flex-wrap gap-4">
+  <div class="flex justify-center flex-wrap gap-2">
     {
       tags.map((tag) => (
-        <a
-          href={`/tags/${tag}`}
-          class="inline-block bg-gray-200  rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-        >
-          #{tag}
+        <a href={`/tags/${tag}`}>
+          <PostTag tag={tag} size="lg" />
         </a>
       ))
     }
