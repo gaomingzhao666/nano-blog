@@ -82,10 +82,10 @@ const t = useTranslations(lang)
 
 <script>
   const fnObserver = () => {
-    function handleIntersection(
+    const handleIntersection = (
       entries: IntersectionObserverEntry[],
       observer: IntersectionObserver,
-    ) {
+    ) => {
       entries.forEach((entry) => {
         const index = document.querySelector(
           `aside a[href="#${entry.target.id}"]`,

@@ -9,7 +9,7 @@ import { getPosts } from '@/utils'
 import SButton from '@/components/mdx/SButton'
 
 const posts = await getCollection('blog')
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const posts = await getPosts()
 
   return posts.map((post) => ({

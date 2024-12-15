@@ -52,7 +52,7 @@ import MoonIcon from '@/components/icons/MoonIcon'
 <script is:inline>
   const button = document.getElementById('toggle-theme')
 
-  function setButtonPresssed() {
+  const setButtonPresssed = () => {
     const bodyThemeIsDark = document.documentElement.classList.contains('dark')
     button.setAttribute('aria-pressed', String(bodyThemeIsDark))
   }

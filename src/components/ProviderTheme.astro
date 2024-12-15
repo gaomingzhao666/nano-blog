@@ -1,5 +1,5 @@
 <script is:inline>
-  function getTheme() {
+  const getTheme = () => {
     const storedTheme =
       typeof localStorage !== 'undefined' && localStorage.getItem('theme')
 
@@ -11,7 +11,7 @@
     )
   }
 
-  function setTheme(newTheme) {
+  const setTheme = (newTheme) => {
     const html = document.documentElement
     const isDark = newTheme === 'dark'
 

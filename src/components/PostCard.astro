@@ -80,7 +80,7 @@ const tags = await getTags()
 
   const images = document.querySelectorAll('img')
 
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', () => {
     const showAnimations = localStorage.getItem('animations') === 'true'
 
     if (showAnimations) {

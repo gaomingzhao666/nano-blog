@@ -1,7 +1,7 @@
-export function sluglify(text: string) {
+export const sluglify = (text: string) => {
   return text.replace(/\s+/g, '-')
 }
 
-export function unsluglify(text: string) {
+export const unsluglify = (text: string) => {
   return text.replace(/-/g, ' ')
 }

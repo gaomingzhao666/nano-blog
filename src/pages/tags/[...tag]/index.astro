@@ -4,7 +4,7 @@ import ListPosts from '@/components/ListPosts'
 import TitlePage from '@/components/TitlePage'
 import { getTags, getPostByTag } from '@/utils'
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const tags = await getTags()
 
   return tags.map((tag) => ({
