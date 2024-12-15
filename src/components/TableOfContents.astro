@@ -14,8 +14,7 @@ interface Props {
 
 const { headings }: Props = Astro.props
 
-const toc = buildToc(headings)
-function buildToc(headings: TableOfContent[]) {
+const buildToc = (headings: TableOfContent[]) => {
   let toc: TableOfContent[] = []
   let parentHeadings = new Map()
 
@@ -31,6 +30,7 @@ function buildToc(headings: TableOfContent[]) {
   })
   return toc
 }
+const toc = buildToc(headings)
 ---
 
 <nav class="max-w-xs dark:text-black">
