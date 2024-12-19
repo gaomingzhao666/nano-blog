@@ -1,13 +1,16 @@
-/** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme')
+import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
-module.exports = {
-  darkMode: 'class',
+export default {
+  darkMode: 'selector',
   content: ['./src/**/*.{astro,html,js,md,mdx,ts}'],
+
   theme: {
     extend: {
       colors: {
-        white: '#f8f9fa',
+        grayDeep: '#273444',
+        gray: '#8492a6',
+        grayLight: '#d3dce6',
       },
       fontFamily: {
         body: ['Manrope', ...defaultTheme.fontFamily.sans],
@@ -17,5 +20,6 @@ module.exports = {
       },
     },
   },
+
   plugins: [require('@tailwindcss/typography')],
-}
+} satisfies Config
