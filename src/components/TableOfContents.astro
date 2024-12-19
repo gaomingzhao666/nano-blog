@@ -1,6 +1,5 @@
 ---
 import TableOfContentsHeading from '@/components/TabletOfContentsHeading'
-import type { Heading } from '@/components/TabletOfContentsHeading'
 
 interface TableOfContent {
   depth: number
@@ -8,11 +7,8 @@ interface TableOfContent {
   slug: string
   subheadings: TableOfContent[]
 }
-interface Props {
-  headings: Heading[]
-}
 
-const { headings }: Props = Astro.props
+const { headings } = Astro.props
 
 const buildToc = (headings: TableOfContent[]) => {
   let toc: TableOfContent[] = []
