@@ -9,7 +9,7 @@ const { date }: Props = Astro.props
 let lang = getLangFromUrl(Astro.url)
 ---
 
-<time class="text-sm font-bold text-opacity-60" datetime={date.toISOString()}>
+<time class="text-sm font-bold" datetime={date.toISOString()}>
   {
     date.toLocaleDateString(lang, {
       year: 'numeric',

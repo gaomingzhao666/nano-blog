@@ -13,13 +13,11 @@ const t = useTranslations(lang)
 ---
 
 <header class="flex justify-between items-center h-12 font-semibold">
-  <a class="text-xl mr-auto transition-all hover:font-bold" href="/"
-    >nano-blog</a
-  >
+  <a class="text-xl transition-all hover:font-bold" href="/">nano-blog</a>
 
-  <div class="dark:bg-[#0a0910] pl-4 pt-6 pb-4 md:p-0 z-50">
+  <section class="z-50">
     <nav class="flex justify-between gap-3">
-      <div class="hidden md:flex gap-3 border-black mr-3 dark:border-white">
+      <section class="hidden md:flex gap-3 mr-3">
         <HeaderLink href={lang === 'en' ? '/' : `/${lang}`}>
           {t('nav.home')}
         </HeaderLink>
@@ -29,7 +27,7 @@ const t = useTranslations(lang)
         <HeaderLink href={lang === 'en' ? '/about' : `/${lang}/about`}>
           {t('nav.about')}
         </HeaderLink>
-      </div>
+      </section>
 
       <LanguagePicker />
 
@@ -60,5 +58,5 @@ const t = useTranslations(lang)
         </Modal>
       </nav>
     </nav>
-  </div>
+  </section>
 </header>
