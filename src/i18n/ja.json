@@ -2,6 +2,7 @@
   "nav.home": "ホーム",
   "nav.about": "アバウト",
   "nav.tags": "タッグ",
+  "nav.navigation": "ナビゲーション",
 
   "tags.title": "タッグス",
   "index.title": "ブログス",
@@ -9,5 +10,6 @@
 
   "published": "レリーズ オン",
   "minutes": "分くらい",
-  "share": "シェア"
+  "share": "シェア",
+  "index": "索引"
 }
