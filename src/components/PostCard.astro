@@ -36,7 +36,7 @@ const t = useTranslations(lang)
 const tags = await getTags()
 ---
 
-<article class="grid grid-rows-[300px_0] min-h-full group">
+<article class="grid grid-rows-[300px_0] group">
   <a
     class="rounded-xl overflow-hidden"
     href={lang === 'en' ? `/post/${slug}` : `/${lang}/post/${slug}`}
@@ -64,12 +64,12 @@ const tags = await getTags()
     </div>
 
     <p
-      class="overflow-hidden line-clamp-3 text-gray-700 dark:text-white mb-5 font-[400] md:pr-[15%]"
+      class="overflow-hidden line-clamp-3 text-grayDeep dark:text-grayLight mb-5 text-sm"
     >
       {description}
     </p>
 
-    <footer class="flex justify-start flex-wrap gap-[2px] gap-y-[6px]">
+    <footer class="flex justify-start flex-wrap gap-1 gap-y-2">
       {
         tags.map((tag) => (
           <a href={`/tags/${tag}`}>

@@ -31,13 +31,13 @@ const { title, contents, type, color }: Props = Astro.props
 <!-- Modal Container -->
 <div
   id="modal"
-  class="hidden fixed dark:text-black inset-0 bg-black bg-opacity-70 justify-center items-center transition-opacity opacity-0"
+  class="hidden fixed inset-0 justify-center items-center transition-opacity opacity-0"
 >
   <div
     id="modalContent"
-    class="w-screen h-screen bg-white p-8 transform transition-transform"
+    class="w-screen h-screen bg-white dark:bg-black p-8 transform transition-transform"
   >
-    <section class="flex justify-between items-center mb-10">
+    <section class="flex justify-between items-center mb-20">
       <h1 class="text-3xl">{title}</h1>
       <button id="closeModalButton">
         <Close />
@@ -48,7 +48,7 @@ const { title, contents, type, color }: Props = Astro.props
       {
         contents.map((content) => (
           <a href={content.link}>
-            <h1 class="mb-4 text-xl">{content.label}</h1>
+            <h1 class="mb-10 text-xl">{content.label}</h1>
           </a>
         ))
       }
