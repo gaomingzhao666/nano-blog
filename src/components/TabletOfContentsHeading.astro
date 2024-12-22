@@ -15,18 +15,18 @@ interface Props {
 const { heading }: Props = Astro.props
 ---
 
-<li class="flex flex-col">
+<li class="">
   <a
     href={'#' + heading.slug}
     class={cn(
-      `bg-slate-200 dark:bg-slate-800 dark:hover:bg-indigo-400 hover:bg-indigo-300 hover:text-white  py-1 px-4 dark:text-white rounded-full mb-2 first-letter:uppercase w-fit line-clamp-2`,
+      `bg-gray hover:bg-grayDeep hover:text-white py-2 px-4 rounded-xl mb-2 first-letter:uppercase w-fit line-clamp-2`,
     )}
   >
     {heading.text}
   </a>
   {
     heading.subheadings.length > 0 && (
-      <ul class="ml-3">
+      <ul class="ml-4">
         {heading.subheadings.map((subheading) => (
           <Astro.self heading={subheading} />
         ))}
