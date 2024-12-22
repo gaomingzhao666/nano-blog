@@ -40,7 +40,7 @@ const t = useTranslations(lang)
 
       <nav class="md:hidden">
         <Modal
-          title="test"
+          title={t('nav.navigation')}
           contents={[
             { label: t('nav.home'), link: lang === 'en' ? '/' : `/${lang}` },
             {
