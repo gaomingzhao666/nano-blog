@@ -32,7 +32,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.65;
 }
-.theme-light {
+.embla {
   --brand-primary: rgb(47, 112, 193);
   --brand-secondary: rgb(116, 97, 195);
   --brand-alternative: rgb(19, 120, 134);
