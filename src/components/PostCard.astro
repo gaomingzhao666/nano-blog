@@ -46,30 +46,30 @@ const tags = await getTags()
       width={1000}
       height={200}
       format="webp"
-      class="h-full min-w-full object-cover hover:scale-110 transition-transform duration-200"
+      class="h-full min-w-full object-cover hover:scale-110 transition-transform"
       alt={`img of ${title}`}
     />
   </a>
 
-  <div class="flex gap-2 mt-4 font-semibold">
+  <section class="flex gap-2 mt-5 font-semibold">
     <FormattedDate date={pubDate} />
     <span class="text-sm"> • {readTime} {t('minutes')}</span>
-  </div>
+  </section>
 
-  <div class="gap-4 md:gap-0 my-10">
-    <div>
-      <a class="text-2xl font-semibold -tracking-wider" href={`/post/${slug}/`}>
+  <section class="mt-10">
+    <a href={lang === 'en' ? `/post/${slug}` : `/${lang}/post/${slug}`}>
+      <p class="text-2xl font-semibold -tracking-wider">
         {title}
-      </a>
-    </div>
+      </p>
 
-    <p
-      class="overflow-hidden line-clamp-3 text-grayDeep dark:text-grayLight mb-5 text-sm"
-    >
-      {description}
-    </p>
+      <p
+        class="overflow-hidden line-clamp-3 text-grayDeep dark:text-grayLight mb-5 text-sm"
+      >
+        {description}
+      </p>
+    </a>
 
-    <footer class="flex justify-start flex-wrap gap-1 gap-y-2">
+    <footer class="flex flex-wrap gap-x-1 gap-y-2">
       {
         tags.map((tag) => (
           <a href={`/tags/${tag}`}>
@@ -78,7 +78,7 @@ const tags = await getTags()
         ))
       }
     </footer>
-  </div>
+  </section>
 </article>
 
 <script>
