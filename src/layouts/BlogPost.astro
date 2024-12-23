@@ -29,30 +29,30 @@ const t = useTranslations(lang)
   ogImage={heroImage?.src}
   articleDate={articleDate}
 >
-  <article class="min-w-full md:py-4 sm:max-w-none md:max-w-none">
-    <header class="mb-3 flex flex-col justify-center items-center gap-6">
-      <div class="flex flex-col gap-2">
-        <div class="flex items-center justify-center gap-x-1">
+  <article class="min-w-full">
+    <header class="mb-3 space-y-6">
+      <section class="space-2">
+        <section class="flex items-center justify-center gap-x-1">
           <p class="text-center text-sm text-opacity-50">
             {t('published')}
             <FormattedDate date={pubDate} />
           </p>
-          <p class="text-center text-sm text-opacity-50 font-bold">
+          <p class="text-center text-sm font-semibold">
             - {readTime}
             {t('minutes')}
           </p>
-        </div>
+        </section>
 
-        <title class="text-center text-4xl md:text-6xl md:pb-2.5 font-semibold">
+        <h1 class="text-center text-3xl font-bold">
           {title}
-        </title>
-      </div>
+        </h1>
+      </section>
 
-      <div
-        class="flex flex-wrap justify-center items-center gap-2 gap-y-4 md:gap-5"
+      <section
+        class="flex flex-wrap justify-center items-center gap-x-2 gap-y-4"
       >
         {tags.map((tag) => <PostTag tag={tag} />)}
-      </div>
+      </section>
     </header>
 
     <>
