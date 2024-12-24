@@ -29,11 +29,11 @@ const { title, contents, type, color }: Props = Astro.props
 </button>
 
 <!-- Modal Container -->
-<div
+<section
   id="modal"
   class="hidden fixed inset-0 justify-center items-center transition-opacity opacity-0"
 >
-  <div
+  <section
     id="modalContent"
     class="w-screen h-screen bg-white dark:bg-black p-8 transform transition-transform"
   >
@@ -53,8 +53,8 @@ const { title, contents, type, color }: Props = Astro.props
         ))
       }
     </section>
-  </div>
-</div>
+  </section>
+</section>
 
 <script>
   // Select modal elements

@@ -17,8 +17,8 @@ const { posts }: Props = Astro.props
     posts.length > 0 ? (
       posts.map((post) => {
         return (
-          <div class="flex flex-wrap gap-2">
-            <div class="min-h-full">
+          <section class="flex flex-wrap gap-2">
+            <section class="min-h-full">
               <Image
                 src={post.data.heroImage}
                 width={200}
@@ -27,7 +27,7 @@ const { posts }: Props = Astro.props
                 class="w-16 h-16 object-cover rounded-full  "
                 alt={`img of ${post.data.title}`}
               />
-            </div>
+            </section>
             <header class="flex justify-center items-center">
               <a
                 class="font-medium  hover:underline"
@@ -36,7 +36,7 @@ const { posts }: Props = Astro.props
                 {post.data.title}
               </a>
             </header>
-          </div>
+          </section>
         )
       })
     ) : (

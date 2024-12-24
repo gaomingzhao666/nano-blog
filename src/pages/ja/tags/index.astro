@@ -12,7 +12,7 @@ const tags = await getTags()
 
 <BaseLayout title="タッグス">
   <TitlePage title={t('tags.title')} />
-  <div class="flex justify-center flex-wrap gap-4">
+  <section class="flex justify-center flex-wrap gap-4">
     {
       tags.map((tag) => (
         <a
@@ -23,5 +23,5 @@ const tags = await getTags()
         </a>
       ))
     }
-  </div>
+  </section>
 </BaseLayout>

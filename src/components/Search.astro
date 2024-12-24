@@ -18,7 +18,7 @@ import SearchIcon from '@/components/icons/SearchIcon'
     aria-label="search"
     class="h-full max-h-full w-full max-w-full border border-zinc-400 bg-white dark:bg-[#0a0910ec] shadow backdrop:backdrop-blur sm:mx-auto sm:mb-auto sm:mt-16 sm:h-max sm:max-h-[calc(100%-8rem)] sm:min-h-[15rem] sm:w-5/6 sm:max-w-[48rem] sm:rounded-md opacity-0"
   >
-    <div class="dialog-frame flex flex-col gap-4 p-6 pt-12 sm:pt-6">
+    <section class="dialog-frame flex flex-col gap-4 p-6 pt-12 sm:pt-6">
       <button
         data-close-modal
         class="ms-auto cursor-pointer rounded-full bg-black text-white px-4 py-2 dark:bg-white dark:text-black"
@@ -26,19 +26,19 @@ import SearchIcon from '@/components/icons/SearchIcon'
       >
       {
         import.meta.env.DEV ? (
-          <div class="mx-auto text-center dark:text-white">
+          <section class="mx-auto text-center dark:text-white">
             <p>
               Search is only available in production builds. <br />
               Try building and previewing the site to test it out locally.
             </p>
-          </div>
+          </section>
         ) : (
-          <div class="search-container dark:text-white">
-            <div id="pagefind__search" />
-          </div>
+          <section class="search-container dark:text-white">
+            <section id="pagefind__search" />
+          </section>
         )
       }
-    </div>
+    </section>
   </dialog>
 </site-search>
 

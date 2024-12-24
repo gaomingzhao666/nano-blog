@@ -16,12 +16,12 @@ const t = useTranslations(lang)
   <TitlePage title={t('index.title')} />
   <hr />
 
-  <div>
+  <section>
     <h2 class="text-lg font-medium tracking-wide text-end">
       {t('index.latestPosts')}
     </h2>
     <ListPosts FirstBig={true} posts={posts} />
-  </div>
+  </section>
 </BaseLayout>
 
 <script>

@@ -74,9 +74,9 @@ const t = useTranslations(lang)
 
     <hr />
 
-    <div>
+    <section>
       <slot />
-    </div>
+    </section>
   </article>
 </BaseLayout>
 
@@ -116,7 +116,7 @@ const t = useTranslations(lang)
     }
 
     const headings = document.querySelectorAll(
-      'div.prose h1, div.prose h2, div.prose h3, div.prose h4, div.prose h5, div.prose h6',
+      'section.prose h1, section.prose h2, section.prose h3, section.prose h4, section.prose h5, section.prose h6',
     )
 
     const options = {
