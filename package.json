@@ -11,12 +11,12 @@
   "dependencies": {
     "@astrojs/check": "0.9.4",
     "@astrojs/rss": "4.0.10",
-    "astro": "4.16.18",
+    "astro": "5.1.1",
     "astro-font": "0.1.81",
     "embla-carousel": "^8.5.1"
   },
   "devDependencies": {
-    "@astrojs/mdx": "3.1.9",
+    "@astrojs/mdx": "4.0.3",
     "@astrojs/sitemap": "3.2.1",
     "@astrojs/tailwind": "5.1.4",
     "@pagefind/default-ui": "1.2.0",
