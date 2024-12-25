@@ -8,9 +8,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        grayDeep: '#273444',
-        // gray: '#8492a6',
-        grayLight: '#d3dce6',
+        grayDeep: '#1f2b3a',
+        gray: '#d3d3d3',
+        grayLight: '#f8f8f8',
       },
       fontFamily: {
         body: ['Manrope', ...defaultTheme.fontFamily.sans],
