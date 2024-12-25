@@ -9,7 +9,6 @@ export default {
     extend: {
       colors: {
         grayDeep: '#1f2b3a',
-        gray: '#d3d3d3',
         grayLight: '#f8f8f8',
       },
       fontFamily: {
