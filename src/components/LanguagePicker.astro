@@ -13,14 +13,14 @@ import Language from '@/components/icons/Language'
   </label>
 
   <section
-    class="w-36 absolute left-0 mt-2 p-2 border-grayLight ring-1 dark:border-grayDeep rounded-xl overflow-hidden hidden backdrop-blur peer-checked:block"
+    class="w-36 absolute left-0 mt-2 p-2 border-grayLight ring-1 dark:border-grayDeep bg-white dark:bg-black rounded-xl overflow-hidden hidden peer-checked:block"
   >
     {
       Object.entries(languages).map(([lang, label]) => (
         <HeaderLink
           href={lang === 'en' ? '/' : `/${lang}`}
           class={
-            'option cursor-pointer p-2 block rounded-lg hover:bg-grayLight dark:hover:bg-grayDeep dark:text-white'
+            'option cursor-pointer p-2 block rounded-lg hover:bg-gray dark:hover:bg-grayDeep dark:text-white'
           }
         >
           <button>{label}</button>
