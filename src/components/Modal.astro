@@ -39,7 +39,7 @@ const { title, contents, type, color }: Props = Astro.props
   >
     <section class="flex justify-between items-center mb-20">
       <h1 class="text-3xl">{title}</h1>
-      <button id="closeModalButton">
+      <button id="closeModalButton" aria-label="Close Modal">
         <Close />
       </button>
     </section>

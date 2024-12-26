@@ -31,12 +31,14 @@ const t = useTranslations(lang)
 
       <LanguagePicker />
 
-      <a href="https://github.com/gaomingzhao666/nano-blog" target="_blank"
-        ><GithubIcon /></a
+      <a
+        href="https://github.com/gaomingzhao666/nano-blog"
+        target="_blank"
+        aria-label="Open Github"><GithubIcon /></a
       >
 
-      <Search />
-      <ToggleTheme />
+      <Search aria-label="Search Blog Contents" />
+      <ToggleTheme aria-label="Switch Blog Theme" />
 
       <nav class="md:hidden">
         <Modal
@@ -54,7 +56,7 @@ const t = useTranslations(lang)
           ]}
           type="outline"
         >
-          <Burger />
+          <Burger aria-label="Open Navigation on Mobile Devices" />
         </Modal>
       </nav>
     </nav>
