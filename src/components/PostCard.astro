@@ -51,19 +51,19 @@ const tags = await getTags()
     />
   </a>
 
-  <section class="flex gap-2 mt-5 font-semibold">
+  <section class="flex gap-2 mt-3 font-semibold">
     <FormattedDate date={pubDate} />
     <span class="text-sm"> • {readTime} {t('minutes')}</span>
   </section>
 
-  <section class="mt-10">
+  <section class="mt-8">
     <a href={lang === 'en' ? `/post/${slug}` : `/${lang}/post/${slug}`}>
       <p class="text-2xl font-semibold -tracking-wider">
         {title}
       </p>
 
       <p
-        class="overflow-hidden line-clamp-3 text-grayDeep dark:text-grayLight mb-5 text-sm"
+        class="overflow-hidden line-clamp-3 text-grayDeep dark:text-grayLight mb-3 text-sm"
       >
         {description}
       </p>
