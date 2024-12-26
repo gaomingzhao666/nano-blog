@@ -8,5 +8,5 @@ const { tag, size }: Props = Astro.props
 ---
 
 <a href={`/tags/${encodeURIComponent(tag.toLowerCase())}`} aria-label={tag}>
-  <Tag label={tag} color="slate" size={size} />
+  <Tag label={tag} color="gray" size={size} />
 </a>
