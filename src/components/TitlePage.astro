@@ -1,6 +1,4 @@
 ---
-import Title from './Title.astro'
-
 type Props = {
   title: string
 }
@@ -8,4 +6,4 @@ type Props = {
 const { title }: Props = Astro.props
 ---
 
-<Title># {title}</Title>
+<h1 class="text-5xl font-bold first-letter:uppercase"># {title}</h1>
