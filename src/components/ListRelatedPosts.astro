@@ -1,7 +1,7 @@
 ---
 // THIS COMPONENT NEEDS TO BE REWRITE!!
 import type { CollectionEntry } from 'astro:content'
-
+import CarrouselPerView from '@/components/CarouselPerView/CarouselPerView'
 import { cn } from '@/utils'
 import { Image } from 'astro:assets'
 
@@ -12,34 +12,17 @@ type Props = {
 const { posts }: Props = Astro.props
 ---
 
-<section class={cn(`flex flex-col md:flex-row sm:justify-between gap-8`)}>
+<section class={cn()}>
   {
     posts.length > 0 ? (
-      posts.map((post) => {
-        return (
-          <section class="flex flex-wrap gap-2">
-            <section class="min-h-full">
-              <Image
-                src={post.data.heroImage}
-                width={200}
-                height={200}
-                format="webp"
-                class="w-16 h-16 object-cover rounded-full  "
-                alt={`img of ${post.data.title}`}
-              />
-            </section>
-            <header class="flex justify-center items-center">
-              <a
-                class="font-medium  hover:underline"
-                href={`/post/${post.slug}/`}
-              >
-                {post.data.title}
-              </a>
-            </header>
-          </section>
-        )
-      })
+      // posts.map((post) => {
+      // return (
+      <section class="flex flex-wrap gap-2">
+        <CarrouselPerView posts={posts} />
+      </section>
     ) : (
+      // )
+      // })
       <span class="text-gray-500">There are no related posts yet. 😢</span>
     )
   }

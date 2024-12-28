@@ -3,7 +3,6 @@ import type { EmblaOptionsType } from 'embla-carousel'
 import { addPrevNextBtnsClickHandlers } from './EmblaCarouselArrowButtons'
 import { addDotBtnsAndClickHandlers } from './EmblaCarouselDotButton'
 import '../css/base.css'
-import '../css/sandbox.css'
 import '../css/embla.css'
 
 const OPTIONS: EmblaOptionsType = { align: 'start' }
