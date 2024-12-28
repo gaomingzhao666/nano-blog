@@ -1,28 +1,39 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { Image } from 'astro:assets'
+import PostCard from '@/components/PostCard'
+interface Props {
+  posts: CollectionEntry<'blog'>[]
+}
+const { posts }: Props = Astro.props
+---
+
 <!-- thanks to Embla Carousel -->
 <section class="embla">
   <section class="embla__viewport">
     <section class="embla__container">
-      <section class="embla__slide">
-        <section class="embla__slide__number">1</section>
-      </section>
-      <section class="embla__slide">
-        <section class="embla__slide__number">2</section>
-      </section>
-      <section class="embla__slide">
-        <section class="embla__slide__number">3</section>
-      </section>
-      <section class="embla__slide">
-        <section class="embla__slide__number">4</section>
-      </section>
-      <section class="embla__slide">
-        <section class="embla__slide__number">5</section>
-      </section>
-      <section class="embla__slide">
-        <section class="embla__slide__number">6</section>
-      </section>
+      {
+        posts.map(async (post) => {
+          const { remarkPluginFrontmatter } = await post.render()
+
+          return (
+            <section class="embla__slide">
+              <section class="embla__slide__number flex-col">
+                <PostCard
+                  id={post.id}
+                  data={post.data}
+                  slug={post.slug}
+                  readTime={remarkPluginFrontmatter.minutesRead}
+                />
+              </section>
+            </section>
+          )
+        })
+      }
     </section>
   </section>
 
+  <!-- carousel controllers -->
   <section class="embla__controls">
     <section class="embla__buttons">
       <button class="embla__button embla__button--prev" type="button">
