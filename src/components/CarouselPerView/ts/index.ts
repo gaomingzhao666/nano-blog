@@ -1,9 +1,8 @@
 import EmblaCarousel from 'embla-carousel'
 import type { EmblaOptionsType } from 'embla-carousel'
 import { addPrevNextBtnsClickHandlers } from './EmblaCarouselArrowButtons'
-import { addDotBtnsAndClickHandlers } from './EmblaCarouselDotButton'
-import '../css/base.css'
-import '../css/embla.css'
+import '../style/base.css'
+import '../style/embla.css'
 
 const OPTIONS: EmblaOptionsType = { align: 'start' }
 
@@ -20,10 +19,5 @@ const removePrevNextBtnsClickHandlers = addPrevNextBtnsClickHandlers(
   prevBtnNode,
   nextBtnNode,
 )
-const removeDotBtnsAndClickHandlers = addDotBtnsAndClickHandlers(
-  emblaApi,
-  dotsNode,
-)
 
 emblaApi.on('destroy', removePrevNextBtnsClickHandlers)
-emblaApi.on('destroy', removeDotBtnsAndClickHandlers)
