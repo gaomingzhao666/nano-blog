@@ -1,7 +1,6 @@
 import EmblaCarousel from 'embla-carousel'
 import type { EmblaOptionsType } from 'embla-carousel'
 import { addPrevNextBtnsClickHandlers } from './EmblaCarouselArrowButtons'
-import '../style/base.css'
 import '../style/embla.css'
 
 const OPTIONS: EmblaOptionsType = { align: 'start' }
