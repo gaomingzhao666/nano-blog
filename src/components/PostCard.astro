@@ -5,7 +5,7 @@ import FormattedDate from '@/components/FormattedDate'
 import { getTags } from '@/utils'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
-type HeroImage = {
+interface HeroImage {
   height: number
   width: number
   format: 'svg' | 'avif' | 'png' | 'webp' | 'jpeg' | 'jpg' | 'tiff' | 'gif'
@@ -21,6 +21,7 @@ interface Props {
   }
   readTime: number
   slug: string
+  withoutTags?: boolean
 }
 
 const {
@@ -28,6 +29,7 @@ const {
   data: { title, description, pubDate, heroImage },
   readTime,
   slug,
+  withoutTags = false,
 }: Props = Astro.props
 
 const lang = getLangFromUrl(Astro.url)
@@ -71,6 +73,7 @@ const tags = await getTags()
 
     <footer class="flex flex-wrap gap-x-1 gap-y-2">
       {
+        withoutTags ? <></> : 
         tags.map((tag) => (
           <a href={`/tags/${tag}`}>
             <PostTag tag={tag} />

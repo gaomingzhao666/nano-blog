@@ -20,11 +20,12 @@ const { posts }: Props = Astro.props
 
           return (
             <section class="embla__slide">
-              <section class="embla__slide__number w-[600px]">
+              <section class="embla__slide__number w-[450px]">
                 <PostCard
                   id={post.id}
                   data={post.data}
                   slug={post.slug}
+                  withoutTags={true}
                   readTime={remarkPluginFrontmatter.minutesRead}
                 />
               </section>
