@@ -20,7 +20,7 @@ export const getStaticPaths = async () => {
 type Props = CollectionEntry<'blog'>
 
 const post = Astro.props
-const MAX_POSTS = 3
+const MAX_POSTS = 10
 const getRelatedPosts = (post: Props) => {
   const lowercaseTags = post.data.tags.map((tag) => tag.toLowerCase())
   const relatedPosts = posts.filter(

@@ -20,7 +20,7 @@ export const getStaticPaths = async () => {
 type Props = CollectionEntry<'blog'>
 
 const post = Astro.props
-const MAX_POSTS = 3
+const MAX_POSTS = 10
 const getRelatedPosts = (post: Props) => {
   const lowercaseTags = post.data.tags.map((tag) => tag.toLowerCase())
   const relatedPosts = posts.filter(
@@ -46,15 +46,13 @@ const { Content, headings, remarkPluginFrontmatter } = await post.render()
     <!-- aside  -->
     <aside class="md:flex flex-col gap-8 hidden">
       <Share />
-      <section
-        class="sticky top-24 self-start hidden md:block transition-all duration-200"
-      >
+      <section class="sticky top-24 self-start hidden md:block">
         {headings && headings.length > 0 && <TableOfContents {headings} />}
       </section>
     </aside>
 
     <!-- post -->
-    <article class="max-w-full w-full">
+    <article class="w-full">
       <section
         class="prose prose-lg md:prose-xl dark:prose-invert mb-12 min-w-full"
       >
