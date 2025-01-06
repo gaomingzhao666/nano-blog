@@ -1,7 +1,7 @@
 ---
 import { siteConfig } from '@/data/site.config'
-import LinkedinIcon from '@/components/icons/LinkedinIcon'
-import XIcon from '@/components/icons/XIcon'
+import LinkedinIcon from '@/components/icons/Linkedin'
+import XIcon from '@/components/icons/X'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
 const lang = getLangFromUrl(Astro.url)
@@ -25,7 +25,7 @@ const URL = Astro.url.href
     <li>
       <a
         href={`https://www.linkedin.com/shareArticle?mini=true&url=${URL}`}
-        aria-label="Share on LinkedIn"
+        aria-label="Share on Linkedin"
       >
         <LinkedinIcon /></a
       >
