@@ -1,6 +1,6 @@
 ---
 import { siteConfig } from '@/data/site.config'
-import TwitterColorIcon from '@/components/icons/XIcon'
+import XIcon from '@/components/icons/XIcon'
 import LinkedinIcon from '@/components/icons/LinkedinIcon'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
@@ -18,7 +18,7 @@ const URL = Astro.url.href
     <li>
       <a
         href={`https://twitter.com/intent/tweet?text=${message + ' ' + URL}`}
-        aria-label="Share on Twitter"><TwitterColorIcon /></a
+        aria-label="Share on Twitter"><XIcon /></a
       >
     </li>
 
