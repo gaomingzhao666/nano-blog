@@ -8,6 +8,9 @@ import { remarkReadingTime } from './src/utils/readTime'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://blog-template-gray.vercel.app/',
+  devToolbar: {
+    enabled: false,
+  },
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'ja'],
