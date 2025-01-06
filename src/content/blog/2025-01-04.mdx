@@ -1,7 +1,7 @@
 ---
-title: 'Build and Deploy an Modern Portfolio in 10 mins'
-description: 'Step by step guide for Learn how to build and deploy a modern portfolio using an open-source template.'
-pubDate: 'Jan 04 2024'
+title: 'Build and Deploy an Modern Dev Portfolio in 10 mins'
+description: 'Step by step guide for Learn how to build and deploy a modern developer portfolio in a fastest way by using a open-source template.'
+pubDate: 'Jan 04 2025'
 heroImage: '../../assets/images/posts/2025-01-04/title/index.svg'
 tags:
   [
@@ -17,8 +17,11 @@ tags:
 
 import Alert from '@/components/mdx/Alert'
 import { Image } from 'astro:assets'
+import indexImage from '@/assets/images/posts/2025-01-04/contents/index-light.png'
 
-Nano Portfolio is a modern portfolio template that is easy to use and customize, once config can automatically import your Github information. It is built with `Vue`, `Nuxt`, `TypeScript`, `TailwindCSS` and `Github Octokit APIs`.
+Nano Portfolio is a modern open-source portfolio template that is easy to use and customize, once config can automatically import your Github information. It is built with `Vue`, `Nuxt`, `TypeScript`, `TailwindCSS` and `Github Octokit APIs`.
+
+There is the [Github Repository](https://github.com/gaomingzhao666/nano-portfolio) and the [Demo Website](https://nano-portfolio-ruby.vercel.app/).
 
 This tutorial will guide you through the process of building and deploying a modern portfolio using this open-source template.
 
@@ -35,7 +38,7 @@ This tutorial will guide you through the process of building and deploying a mod
   </ul>
 </Alert>
 
-## Clone the template to local
+## Clone the Template to Local
 
 Firstly, you need to clone the template repository to your local machine. You can do this by running the following command in your terminal:
 
@@ -47,10 +50,12 @@ cd nano-portfolio
 Secondly, install the dependencies that are required to run the project, by running one of the following commands depending on your package manager:
 
 ```bash
-# if you are using pnpm as the package manager
+# if you are using pnpm as the package manager - recommend
 pnpm install
+
 # if you are using yarn as the package manager
 yarn
+
 # if you are using npm as the package manager - NodeJS default package manager
 npm install
 ```
@@ -58,11 +63,13 @@ npm install
 lastly, run the project locally by running the following command:
 
 ```bash
-# if you are using pnpm as the package manager
+# pnpm - recommend
 pnpm dev
-# if you are using yarn as the package manager
+
+# yarn
 yarn run dev
-# if you are using npm as the package manager - NodeJS default package manager
+
+# npm - node default package manager
 npm run dev
 ```
 
@@ -73,180 +80,71 @@ And you will see the template looks like the screenshot below:
 {/* ![nano-portfolio](../../assets/images/posts/2025-01-04/contents/index-light.png) */}
 
 <Image
-  src="../../assets/images/posts/2025-01-04/contents/index-light.png"
+  src={indexImage}
   format="png"
-  class="h-full min-w-full object-cover hover:scale-110 transition-transform"
-  alt={`img of ${title}`}
+  class="rounded-xl border shadow dark:ring-1"
+  alt={`img of the home page of nano-portfolio`}
 />
 
-### Variables
+It means you have successfully cloned the template to your local machine and run it locally.
 
-Local variables can be added into the HTML using the curly braces syntax:
+## Customize the Template
 
-# My MDX File
+### Import Github Information
 
-```astro
----
-const name = 'Astro'
----
+The template needs to work with your `Github Personal Access Token` to import your Github information. You can following the steps below to setting up your Token:
 
-<div>
-  <h1>Hello {name}!</h1>
-  <!-- Outputs <h1>Hello Astro!</h1> -->
-</div>
-```
+1. Generate a `Fine-grained Personal Access Token` by following the steps in [Github Docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+2. Copy the token and paste it into the `githubInfo.ts` file in the `/src/server/utils` folder
+3. Restart the project
 
-### Dynamic Attributes
+<Alert>
+  Be notice that the token is sensitive information, please do not allow any
+  write permission but keep it read-only when you generating the token.
+</Alert>
 
-Local variables can be used in curly braces to pass attribute values to both HTML elements and components:
+If you have done the above steps correctly, you will see your repository information displayed on the home page, and your profile information displayed on the about page.
 
-```astro title="src/components/DynamicAttributes.astro" "{name}" "${name}"
----
-const name = 'Astro'
----
+### Customize the Contents
 
-<h1 class={name}>Attribute expressions are supported</h1>
+You can customize any static contents of this template by modifying the files in `i18n/lang` folder. The template supports the [i18n](https://developer.mozilla.org/en-US/docs/Glossary/Internationalization) (which means internationalization or localization) `English`, `Japanese` and `Chinese` by default. You can change any text in the files according to your needs.
 
-<MyComponent templateLiteralNameAttribute={`MyNameIs${name}`} />
-```
+Of course, you can also develop more functionalities or change anything you want by modifying the code in the project even if you just have basic knowledge about web development.
 
-:::caution
-HTML attributes will be converted to strings, so it is not possible to pass functions and objects to HTML elements.
-For example, you can't assign an event handler to an HTML element in an Astro component:
+### Block the Repositories You Don't Want to Show
 
-```astro
----
-// dont-do-this.astro
-function handleClick() {
-  console.log('button clicked!')
-}
----
+If you have some repositories that you don't want to show on the home page, you can block them by adding the topics name to the `getClearedRepo` function in the `info.get.ts` file in the `/server/api/repo` folder, which means the repositories that have those topics you added will not be displayed on home page.
 
-<!-- ❌ This doesn't work! ❌ -->
-<button onClick={handleClick}>Nothing will happen when you click me!</button>
-```
+For example, if you want to block the repositories that have the `config` or `backup` topics, you can modify the function like this:
 
-Instead, use a client-side script to add the event handler, like you would in vanilla JavaScript:
-
-```astro
----
-// do-this-instead.astro
----
-
-<button id="button">Click Me</button>
-<script>
-  function handleClick() {
-    console.log('button clicked!')
-  }
-  document.getElementById('button').addEventListener('click', handleClick)
-</script>
-```
-
-:::
-
-### Dynamic HTML
-
-Local variables can be used in JSX-like functions to produce dynamically-generated HTML elements:
-
-```astro title="src/components/DynamicHtml.astro" "{item}"
----
-const items = ['Dog', 'Cat', 'Platypus']
----
-
-<ul>
-  {items.map((item) => <li>{item}</li>)}
-</ul>
-```
-
-Astro can conditionally display HTML using JSX logical operators and ternary expressions.
-
-```astro title="src/components/ConditionalHtml.astro" "visible"
----
-const visible = true
----
-
-{visible && <p>Show me!</p>}
-
-{visible ? <p>Show me!</p> : <p>Else show me!</p>}
-```
-
-### Dynamic Tags
-
-You can also use dynamic tags by setting a variable to an HTML tag name or a component import:
-
-```astro title="src/components/DynamicTags.astro" /Element|(?<!My)Component/
----
-import MyComponent from './MyComponent.astro'
-const Element = 'div'
-const Component = MyComponent
----
-
-<Element>Hello!</Element>
-<!-- renders as <div>Hello!</div> -->
-<Component />
-<!-- renders as <MyComponent /> -->
-```
-
-When using dynamic tags:
-
-- **Variable names must be capitalized.** For example, use `Element`, not `element`. Otherwise, Astro will try to render your variable name as a literal HTML tag.
-
-- **Hydration directives are not supported.** When using [`client:*` hydration directives](/en/core-concepts/framework-components/#hydrating-interactive-components), Astro needs to know which components to bundle for production, and the dynamic tag pattern prevents this from working.
-
-### Fragments
-
-Astro supports using either `<Fragment> </Fragment>` or the shorthand `<> </>`.
-
-Fragments can be useful to avoid wrapper elements when adding [`set:*` directives](/en/reference/directives-reference/#sethtml), as in the following example:
-
-```astro title="src/components/SetHtml.astro" "Fragment"
----
-const htmlString = '<p>Raw HTML content</p>'
----
-
-<Fragment set:html={htmlString} />
-```
-
-### Differences between Astro and JSX
-
-Astro component syntax is a superset of HTML. It was designed to feel familiar to anyone with HTML or JSX experience, but there are a couple of key differences between `.astro` files and JSX.
-
-#### Attributes
-
-In Astro, you use the standard `kebab-case` format for all HTML attributes instead of the `camelCase` used in JSX. This even works for `class`, which is not supported by React.
-
-```jsx del={1} ins={2} title="example.astro"
-<div className="box" dataValue="3" />
-<div class="box" data-value="3" />
-```
-
-#### Multiple Elements
-
-An Astro component template can render multiple elements with no need to wrap everything in a single `<div>` or `<>`, unlike JavaScript or JSX.
-
-```astro title="src/components/RootElements.astro"
----
-// Template with multiple elements
----
-
-<p>No need to wrap elements in a single containing element.</p>
-<p>Astro supports multiple root elements in a template.</p>
-```
-
-#### Comments
-
-In Astro, you can use standard HTML comments or JavaScript-style comments.
-
-```astro title="example.astro"
----
-
----
-
-<!-- HTML comment syntax is valid in .astro files -->{
-  /* JS comment syntax is also valid */
+```ts
+// repos that have config or backup topics will not be displayed
+const getClearedRepo = (repoInfo: any) => {
+	return repoInfo.data.filter(
+		(data: any) =>
+			!(data.topics.includes('config') || data.topics.includes('backup'))
+	)
 }
 ```
 
-:::caution
-HTML-style comments will be included in browser DOM, while JS ones will be skipped. To leave TODO messages or other development-only explanations, you may wish to use JavaScript-style comments instead.
-:::
+## Deploy the Project
+
+After you have done all of stuffs you needs, you can deploy the project to the cloud platform, which is the most popular solution especially for frontend developer. The major platform have `Vercel`, `Netlify`, `Github Pages` etc.
+
+The [nano-portfolio demo](https://nano-portfolio-ruby.vercel.app/) is deployed on `Vercel`, you can deploy your project to `Vercel` by referring to the detailed [Vercel Docs](https://vercel.com/docs/deployments/deployment-methods), we recommend you to use the `Vercel for Git` solution, which is the easiest way to deploy a project if you have a Github account and already pushed the project to the github repository.
+
+There is some sample steps to deploy the project to `Vercel` by using `Vercel for Git`:
+
+1. Login to `Vercel` by using your Github account
+2. Click the `Start Deploying` button on [Vercel Home](https://vercel.com/home) page
+3. Select the repository you want to deploy and click `Import` button
+4. Settings will be automatically set, but you can still configure the settings according to your needs
+5. Click the `Deploy` button
+6. Wait for the building to complete, and you will see the deployment URL
+7. Open the URL in your browser, everything is done!
+
+<Alert>
+  Be notice that the nano-portfolio have a comment system that build by mongodb have not configured yet.
+</Alert>
+
+If you also want to the comment system work properly, you need to add [Mongodb Atlas](https://vercel.com/integrations/mongodbatlas) integration to the project you just deployed successfully by referring to the [integration documentation](https://www.mongodb.com/developer/products/atlas/how-to-connect-mongodb-atlas-to-vercel-using-the-new-integration/)
