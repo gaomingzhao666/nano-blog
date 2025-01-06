@@ -1,5 +1,8 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "astro/tsconfigs/base",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"],
+
   "compilerOptions": {
     "strictNullChecks": true,
     "baseUrl": ".",
@@ -13,6 +16,5 @@
       "@/i18n/*": ["src/i18n/*.ts"],
       "@/assets/*": ["src/assets/*"]
     }
-  },
-  "exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"]
+  }
 }
