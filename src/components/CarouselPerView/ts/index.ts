@@ -9,7 +9,6 @@ const emblaNode = <HTMLElement>document.querySelector('.embla')
 const viewportNode = <HTMLElement>emblaNode.querySelector('.embla__viewport')
 const prevBtnNode = <HTMLElement>emblaNode.querySelector('.embla__button--prev')
 const nextBtnNode = <HTMLElement>emblaNode.querySelector('.embla__button--next')
-const dotsNode = <HTMLElement>emblaNode.querySelector('.embla__dots')
 
 const emblaApi = EmblaCarousel(viewportNode, OPTIONS)
 
