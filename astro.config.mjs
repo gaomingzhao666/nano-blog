@@ -7,7 +7,7 @@ import { remarkReadingTime } from './src/utils/readTime'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://blog-template-gray.vercel.app/',
+  site: 'https://nano-blog-nine.vercel.app',
   devToolbar: {
     enabled: false,
   },
@@ -26,15 +26,15 @@ export default defineConfig({
 
   integrations: [
     mdx({
-      syntaxHighlight: 'shiki',
-      shikiConfig: {
-        // experimentalThemes: {
-        //   light: 'vitesse-light',
-        //   dark: 'material-theme-palenight',
-        // },
-        theme: 'github-dark',
-        wrap: true,
-      },
+      // syntaxHighlight: 'shiki',
+      // shikiConfig: {
+      //   // experimentalThemes: {
+      //   //   light: 'vitesse-light',
+      //   //   dark: 'material-theme-palenight',
+      //   // },
+      //   theme: 'github-dark',
+      //   wrap: true,
+      // },
     }),
 
     sitemap({
