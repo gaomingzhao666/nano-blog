@@ -16,7 +16,7 @@ tags:
 ---
 
 import Alert from '@/components/mdx/Alert'
-import { Image } from 'astro:assets'
+import Image from '@/components/mdx/Image'
 import indexImage from '@/assets/images/posts/2025-01-04/contents/index-light.png'
 
 Nano Portfolio is a modern open-source portfolio template that is easy to use and customize, once config can automatically import your Github information. It is built with `Vue`, `Nuxt`, `TypeScript`, `TailwindCSS` and `Github Octokit APIs`.
@@ -79,12 +79,7 @@ And you will see the template looks like the screenshot below:
 
 {/* ![nano-portfolio](../../assets/images/posts/2025-01-04/contents/index-light.png) */}
 
-<Image
-  src={indexImage}
-  format="png"
-  class="rounded-xl border shadow dark:ring-1"
-  alt={`img of the home page of nano-portfolio`}
-/>
+<Image src={indexImage} alt={`img of the home page of nano-portfolio`} />
 
 It means you have successfully cloned the template to your local machine and run it locally.
 
@@ -120,10 +115,10 @@ For example, if you want to block the repositories that have the `config` or `ba
 ```ts
 // repos that have config or backup topics will not be displayed
 const getClearedRepo = (repoInfo: any) => {
-	return repoInfo.data.filter(
-		(data: any) =>
-			!(data.topics.includes('config') || data.topics.includes('backup'))
-	)
+  return repoInfo.data.filter(
+    (data: any) =>
+      !(data.topics.includes('config') || data.topics.includes('backup')),
+  )
 }
 ```
 
@@ -144,7 +139,8 @@ There is some sample steps to deploy the project to `Vercel` by using `Vercel fo
 7. Open the URL in your browser, everything is done!
 
 <Alert>
-  Be notice that the nano-portfolio have a comment system that build by mongodb have not configured yet.
+  Be notice that the nano-portfolio have a comment system that build by mongodb
+  have not configured yet.
 </Alert>
 
 If you also want to the comment system work properly, you need to add [Mongodb Atlas](https://vercel.com/integrations/mongodbatlas) integration to the project you just deployed successfully by referring to the [integration documentation](https://www.mongodb.com/developer/products/atlas/how-to-connect-mongodb-atlas-to-vercel-using-the-new-integration/)
