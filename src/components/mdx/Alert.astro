@@ -1,0 +1,37 @@
+---
+import { cn } from '@/utils'
+
+interface Props {
+  type?: 'info' | 'warning' | 'danger' | 'success'
+  title?: string
+}
+
+const { type, title }: Props = Astro.props
+
+const colorByType = (type) => {
+  switch (type) {
+    case 'info':
+      return 'info'
+    case 'warning':
+      return 'warning'
+    case 'danger':
+      return 'danger'
+    case 'success':
+      return 'success'
+    default:
+      return 'info'
+  }
+}
+---
+
+<aside
+  class={cn(
+    'font-semibold rounded-xl border dark:border-none dark:ring-1 p-4',
+    type || type !== 'info'
+      ? `bg-200-${colorByType(type)}`
+      : 'bg-grayLight dark:bg-grayDeep',
+  )}
+>
+  <h3>{title}</h3>
+  <slot />
+</aside>
