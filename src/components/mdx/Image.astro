@@ -1,5 +1,14 @@
 ---
-const props = Astro.props
+interface Props {
+  src: string
+  alt: string
+}
+
+const { src, alt }: Props = Astro.props
 ---
 
-<img {...props} class="rounded-xl text-center" />
+<img
+  src={src}
+  alt={alt}
+  class="h-full min-w-full object-cover hover:scale-110 transition-transform"
+/>
