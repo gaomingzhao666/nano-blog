@@ -5,7 +5,7 @@ import BaseLayout from '@/layouts/BaseLayout'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 import { getPosts } from '@/utils'
 
-const MAX_POSTS = null // max number of posts to show on the home page
+// const MAX_POSTS = null // max number of posts to show on the home page
 const posts = await getPosts()
 
 const lang = getLangFromUrl(Astro.url)

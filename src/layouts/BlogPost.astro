@@ -14,7 +14,7 @@ type Props = {
   readTime: string
 }
 
-const { data, readTime, headings, id } = Astro.props
+const { data, readTime } = Astro.props
 const { title, description, pubDate, heroImage, tags } = data
 
 const articleDate = pubDate.toISOString()
@@ -78,10 +78,7 @@ const t = useTranslations(lang)
 
 <script>
   const fnObserver = () => {
-    const handleIntersection = (
-      entries: IntersectionObserverEntry[],
-      observer: IntersectionObserver,
-    ) => {
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         const index = document.querySelector(
           `aside a[href="#${entry.target.id}"]`,

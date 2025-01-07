@@ -1,9 +1,7 @@
 ---
-// THIS COMPONENT NEEDS TO BE REWRITE!!
 import type { CollectionEntry } from 'astro:content'
 import CarrouselPerView from '@/components/CarouselPerView/CarouselPerView'
 import { cn } from '@/utils'
-import { Image } from 'astro:assets'
 
 type Props = {
   posts: CollectionEntry<'blog'>[]
@@ -15,15 +13,11 @@ const { posts }: Props = Astro.props
 <section class={cn()}>
   {
     posts.length > 0 ? (
-      // posts.map((post) => {
-      // return (
       <section class="flex flex-wrap gap-2">
         <CarrouselPerView posts={posts} />
       </section>
     ) : (
-      // )
-      // })
-      <span class="text-gray-500">There are no related posts yet. 😢</span>
+      <p class="text-gray-500">There are no related posts yet. 😢</p>
     )
   }
 </section>
