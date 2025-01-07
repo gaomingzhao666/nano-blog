@@ -1,0 +1,96 @@
+---
+title: 'Create a Modern Blog System with Astro in 10 mins'
+description: 'Step by step guide for Learn how to build and deploy a modern blog system with a comment system powered by Github Discussion and without needs with a database by using a open-source template with Astro.'
+pubDate: 'Jan 05 2025'
+heroImage: '../../assets/images/posts/2025-01-07/title/index.mini.svg'
+tags:
+  ['blog', 'tutorial', 'web development', 'astro', 'typescript', 'tailwindcss']
+---
+
+import Alert from '@/components/mdx/Alert'
+import Image from '@/components/mdx/Image'
+import indexImage from '@/assets/images/posts/2025-01-04/contents/index-light.png'
+
+Nano Blog is a performant, lightweight and SEO friendly open-source blog template made by modern web technologies like `Astro`, `TypeScript`, `TailwindCSS` etc.
+
+It integrates with `Github Discussion` as the comment system, which means you don't need to have a database to store the comments, and the comments are stored safely in the `Github Server`.
+
+There is the [Github Repository](https://github.com/gaomingzhao666/nano-blog) and the [Demo Website](https://nano-blog-nine.vercel.app).
+
+This tutorial will guide you through the process of building and deploying a modern blog system using this open-source template.
+
+## Prerequisites
+
+<Alert>
+  Before start, make sure you have:
+
+  <ul>
+    <li>basic knowledge about `HTML`, `CSS` and `JS/TS`</li>
+    <li>known about web development framework, preferable `Vue`, `React` or `Svelte` would be better but not must</li>
+    <li>a `Github` account if you want to deploying</li>
+    <li>installed `Node LTS v20` above on your device</li>
+    <li>installed versioning control tool `Git`</li>
+  </ul>
+</Alert>
+
+## Installation
+
+There have two ways to getting started with this template, you can choose the one you prefer.
+
+### Clone the Template from Github - Recommend
+
+Clone the template repository to local can keep compatible with the dependencies and avoid incompatible with the breaking changes from `Astro` major version, you can running the following command in your terminal:
+
+```bash
+git clone https://github.com/gaomingzhao666/nano-blog.git
+cd nano-blog
+```
+
+### Create a new Project with the Template by Astro cli
+
+You can also create a new project with the template by using the `Astro cli`, which is the official cli tool for `Astro` project, you can run the following command in your terminal:
+
+```bash
+# pnpm - recommend
+pnpm create astro@latest --template gaomingzhao666/nano-blog
+
+# npm - node default package manager
+npm create astro@latest -- --template gaomingzhao666/nano-blog
+
+# yarn
+yarn create astro --template gaomingzhao666/nano-blog
+```
+
+<Alert>
+  Be notice that this way may encounter some compatibility issues with the
+  template because `nano-blog` may doesn't update the `Astro` to the major
+  version of `Astro` at first when it just came out due to stability.
+</Alert>
+
+Once you have done one of the method above, you can install the dependencies that are required to run the project, by running one of the following commands depending on your package manager:
+
+```bash
+# pnpm - recommend
+pnpm dev
+# yarn
+yarn run dev
+# npm - node default package manager
+npm run dev
+```
+
+Once the project is successfully running, you can open your browser and navigate to `http://localhost:xxxx`, the `xxxx` will be display automatically according to the port of the `Vite` version that the `Astro` version of the project depending on.
+
+If you see all of the posts displayed correctly, good job! You have done all of stuffs for the installation.
+
+## Insert Your Posts
+
+The posts contents are stored in the `/src/content/blog` folder, you can insert your posts by creating a new `.md` (markdown) or `.mdx` (extended markdown) file in this folder, but we recommend to use the `.mdx` file because it supports more features than the `.md` files.
+
+For example, you can import any components from the `/src/components/mdx` folder and use them in the `.mdx` file, those components are especially designed for the `.mdx` files.
+
+<Alert>
+  Be notice that you can only use components in the `mdx` files.
+</Alert>
+
+Enjoy and have fun with your new blog system! 🎉
+
