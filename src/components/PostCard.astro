@@ -20,14 +20,13 @@ interface Props {
     heroImage: HeroImage
   }
   readTime: number
-  slug: string
   withoutTags?: boolean
 }
 
 const {
+  id,
   data: { title, description, pubDate, heroImage },
   readTime,
-  slug,
   withoutTags = false,
 }: Props = Astro.props
 
@@ -40,7 +39,7 @@ const tags = await getTags()
 <article class="grid grid-rows-[300px_0] group">
   <a
     class="rounded-xl overflow-hidden"
-    href={lang === 'en' ? `/post/${slug}` : `/${lang}/post/${slug}`}
+    href={lang === 'en' ? `/post/${id}` : `/${lang}/post/${id}`}
   >
     <Image
       src={heroImage}
@@ -55,7 +54,7 @@ const tags = await getTags()
   </section>
 
   <section class="mt-8">
-    <a href={lang === 'en' ? `/post/${slug}` : `/${lang}/post/${slug}`}>
+    <a href={lang === 'en' ? `/post/${id}` : `/${lang}/post/${id}`}>
       <p class="text-2xl font-semibold -tracking-wider">
         {title}
       </p>

@@ -2,9 +2,9 @@
 import { cn } from '@/utils'
 
 export interface Heading {
+  id: string
   depth: number
   text: string
-  slug: string
   subheadings: Heading[]
 }
 
@@ -17,7 +17,7 @@ const { heading }: Props = Astro.props
 
 <li class="">
   <a
-    href={'#' + heading.slug}
+    href={'#' + heading.id}
     class={cn(
       `bg-gray hover:bg-grayDeep hover:text-white py-2 px-4 rounded-xl mb-2 first-letter:uppercase w-fit line-clamp-2`,
     )}

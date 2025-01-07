@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content'
+import { type CollectionEntry, getCollection, render } from 'astro:content'
 import BlogPost from '@/layouts/BlogPost'
 import Code from '@/components/mdx/Code'
 import ListRelatedPosts from '@/components/ListRelatedPosts'
@@ -13,7 +13,7 @@ export const getStaticPaths = async () => {
   const posts = await getPosts()
 
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { id: post.id },
     props: post,
   }))
 }
@@ -25,7 +25,7 @@ const getRelatedPosts = (post: Props) => {
   const lowercaseTags = post.data.tags.map((tag) => tag.toLowerCase())
   const relatedPosts = posts.filter(
     (p) =>
-      p.slug !== post.slug &&
+      p.id !== post.id &&
       p.data.tags.some((t) => lowercaseTags.includes(t.toLowerCase())),
   )
   return relatedPosts.slice(0, MAX_POSTS)
@@ -33,7 +33,7 @@ const getRelatedPosts = (post: Props) => {
 
 const relatedPosts = getRelatedPosts(post)
 
-const { Content, headings, remarkPluginFrontmatter } = await post.render()
+const { Content, headings, remarkPluginFrontmatter } = await render(post)
 ---
 
 <BlogPost
