@@ -5,6 +5,7 @@ import Code from '@/components/mdx/Code'
 import ListRelatedPosts from '@/components/ListRelatedPosts'
 import Share from '@/components/Share'
 import TableOfContents from '@/components/TableOfContents'
+import Comments from '@/components/Comments'
 import { getPosts } from '@/utils'
 import SButton from '@/components/mdx/SButton'
 
@@ -63,6 +64,8 @@ const { Content, headings, remarkPluginFrontmatter } = await post.render()
       <footer>
         <h2 class="font-bold text-lg dark:text-white mb-6">Related Posts</h2>
         <ListRelatedPosts posts={relatedPosts} />
+
+        <Comments />
       </footer>
     </article>
   </section>
