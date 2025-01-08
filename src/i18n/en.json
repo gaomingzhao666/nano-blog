@@ -11,5 +11,6 @@
   "published": "Published on",
   "minutes": "min read",
   "share": "Share",
-  "index": "Index"
+  "index": "Index",
+  "noRelatedPosts": "There is no related posts yet :("
 }

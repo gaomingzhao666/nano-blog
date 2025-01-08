@@ -1,23 +1,26 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import CarrouselPerView from '@/components/CarouselPerView/CarouselPerView'
-import { cn } from '@/utils'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
 type Props = {
   posts: CollectionEntry<'blog'>[]
 }
 
 const { posts }: Props = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
-<section class={cn()}>
+<section>
   {
     posts.length > 0 ? (
       <section class="flex flex-wrap gap-2">
         <CarrouselPerView posts={posts} />
       </section>
     ) : (
-      <p class="text-gray-500">There are no related posts yet. 😢</p>
+      <p class="text-gray-500">{t('noRelatedPosts')}</p>
     )
   }
 </section>

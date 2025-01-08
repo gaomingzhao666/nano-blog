@@ -11,5 +11,6 @@
   "published": "レリーズ オン",
   "minutes": "分くらい",
   "share": "シェア",
-  "index": "索引"
+  "index": "索引",
+  "noRelatedPosts": "似てるポストは見つかりません :("
 }
