@@ -3,14 +3,10 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/gaomingzhao666/nano-blog">
-    <img src="/public/favicon.ico" alt="Logo" width="100" height="100">
-  </a>
-
   <h3 align="center">Nano Blog</h3>
 
   <p align="center">
-    📕 A performant, lightweight and SEO friendly modern blog system made by Astro 📕
+    📕 Astroで作られた高性能で軽量、SEOに優れたモダンなブログシステム 📕
     <br />
     <br />
     <a href="https://github.com/gaomingzhao666/nano-blog/blob/master/README.md">English</a>
@@ -20,76 +16,76 @@
 </div>
 
 <details open>
-  <summary>Directory</summary>
+  <summary>目次</summary>
   <ul>
-    <li><a href="#introduction">Introduction</a> </li>
-    <li><a href="#build-with">Build with</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#runtime-requirement">Runtime Requirement</a></li>
-    <li><a href="#installation">Installation</a></li>
+    <li><a href="#紹介">紹介</a> </li>
+    <li><a href="#技術スタック">技術スタック</a></li>
+    <li><a href="#フィーチャー">フィーチャー</a></li>
+    <li><a href="#ロードマップ">ロードマップ</a></li>
+    <li><a href="#環境要件">環境要件</a></li>
+    <li><a href="#インストール">インストール</a></li>
   </ul>
 </details>
 
-## Introduction
+## 紹介
 
 <p align="center">
     <img src="/public/screenshot/post-dark.svg">
 </p>
 
-> The image shown here is the posts-page for medium-size, [click here](https://github.com/gaomingzhao666/nano-blog/tree/main/public/screenshot) to see more detailed screenshot for this application.
+> ここに表示されている画像は中等サイズのポストページです。詳細なスクリーンショットを見るには、[こちらをクリック](https://github.com/gaomingzhao666/nano-blog/tree/main/public/screenshot)してください。
 
-Nano-blog is a modern blog system build with Astro ecosystem, which is one of the most popular meta-framework for content-focusing web application, in this case as a blog system.
+Nano-blogはAstroエコシステムで構築されたモダンなブログシステムで、コンテンツに焦点を当てたWebアプリケーションのための最も人気のあるメタフレームワークの一つです。
 
-## Build With
+## 技術スタック
 
 - Astro
 - TailwindCSS
-- Localize with build-in i18n functionality
-- Typescript with ES6+ syntax and ESM
+- 組み込みのi18n機能による国際化
+- ES6+構文とESMを使用したTypeScript
 
-## Features
+## フィーチャー
 
-- [√] Minimal styling
-- [√] Responsive Layout
-- [√] Super Performance
-- [√] SEO Friendly
-- [√] Markdown & MDX support
-- [√] Code Highlighting
-- [√] Dark Mode
-- [√] Automatic Computing Reading Time
-- [√] [Pagefind](https://pagefind.app/) Integration for Content Searching
-- [√] Related Posts (updated on v2.1)
-- [√] `English` and `Japanese` Localization (i18n)
+- [√] 簡潔なスタイル
+- [√] レスポンシブレイアウト
+- [√] 高性能
+- [√] SEOに優しい
+- [√] MarkdownとMDXサポート
+- [√] コードハイライト
+- [√] ダークモード
+- [√] 自動読書時間計算
+- [√] コンテンツ検索のための[Pagefind](https://pagefind.app/)統合
+- [√] 関連投稿（v2.1で更新）
+- [√] `英語`と`日本語`のローカライズ（i18n）
 
-## Roadmap
+## ロードマップ
 
-- [x] update to Astro5 (testing)
-- [x] Giscus Comment Integration (developing)
+- [x] Astro5へのアップデート（テスト中）
+- [x] Giscusコメント統合（開発中）
 
-## Runtime Requirement
+## 環境要件
 
-- NodeJS LTS 20 or above
+- NodeJS LTS 20以上
 
-## Installation
+## インストール
 
-### Clone Repository - recommend
+### 直接リポジトリをクローン - おすすめ
 
-Firstly, clone this repository to local by running the following command:
+まず、以下のコマンドを実行してこのリポジトリをローカルにクローンします：
 
 ```sh
-$ git clone https://github.com/gaomingzhao666/nano-blog.git # clone
+$ git clone https://github.com/gaomingzhao666/nano-blog.git # クローン
 $ cd nano-blog
 ```
 
-Once clone is done without any errors, you should install dependencies and start this project by running:
+クローンがエラーなく完了したら、以下のコマンドを実行して依存関係をインストールし、このプロジェクトを開始します：
 
 ```sh
-# pnpm - recommend
+# pnpm - おすすめ
 $ pnpm install
 $ pnpm start
 
-# npm - node default package manager
+# npm - Nodeのデフォルトパッケージマネージャー
 $ npm install
 $ npm run start
 
@@ -97,20 +93,20 @@ $ npm run start
 $ yarn run start
 ```
 
-### Create a New Project using Astro Cli
+### Astro CLIを使用して新しいプロジェクトを作成
 
 ```sh
-# pnpm - recommend
+# pnpm - おすすめ
 pnpm create astro@latest --template gaomingzhao666/nano-blog
 
-# npm - node default package manager
+# npm - Nodeのデフォルトパッケージマネージャー
 npm create astro@latest -- --template gaomingzhao666/nano-blog
 
 # yarn
 yarn create astro --template gaomingzhao666/nano-blog
 ```
 
-> Please note that this method may encounter some compatibility issues with the template because nano-blog may not update to the major version of Astro immediately upon release due to stability concerns. Currently, nano-blog is using Astro v4.16.18.
+> この方法は、テンプレートとの互換性の問題が発生する可能性があることに注意してください。nano-blogは安定性の懸念から、Astroのビッグバージョンがリリースされてもすぐに更新されない場合があります。現在、nano-blogはAstro v4.16.18を使用しています。
 
 [stars-shield]: https://img.shields.io/github/stars/gaomingzhao666/nano-blog?style=for-the-badge
 [stars-url]: https://github.com/gaomingzhao666/nano-blog/stargazers

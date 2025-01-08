@@ -3,10 +3,6 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/gaomingzhao666/nano-blog">
-    <img src="/public/favicon.ico" alt="Logo" width="100" height="100">
-  </a>
-
   <h3 align="center">Nano Blog</h3>
 
   <p align="center">
