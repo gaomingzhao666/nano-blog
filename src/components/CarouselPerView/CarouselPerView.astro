@@ -12,7 +12,7 @@ const { posts }: Props = Astro.props
 <!-- thanks to Embla Carousel -->
 <section class="embla">
   <section class="embla__viewport">
-    <section class="embla__container">
+    <div class="embla__container">
       {
         posts.map(async (post) => {
           const { remarkPluginFrontmatter } = await post.render()
@@ -32,21 +32,29 @@ const { posts }: Props = Astro.props
           )
         })
       }
-    </section>
+    </div>
   </section>
 
   <!-- carousel controllers -->
-  <section class="embla__controls">
-    <section class="embla__buttons">
-      <button class="embla__button embla__button--prev" type="button">
+  <nav class="embla__controls">
+    <div class="embla__buttons">
+      <button
+        class="embla__button embla__button--prev"
+        type="button"
+        aria-label="Previous slide"
+      >
         <ArrowLeft />
       </button>
 
-      <button class="embla__button embla__button--next" type="button">
+      <button
+        class="embla__button embla__button--next"
+        type="button"
+        aria-label="Next slide"
+      >
         <ArrowRight />
       </button>
-    </section>
-  </section>
-</section>
+    </div>
+  </nav>
 
-<script src="./ts/index"></script>
+  <script src="./ts/index"></script>
+</section>
