@@ -29,13 +29,13 @@ const { title, contents, type, color }: Props = Astro.props
 </button>
 
 <!-- Modal Container -->
-<section
+<dialog
   id="modal"
   class="hidden fixed inset-0 justify-center items-center transition-opacity opacity-0"
 >
-  <section
+  <div
     id="modalContent"
-    class="w-screen h-screen bg-white dark:bg-black p-8 transform transition-transform"
+    class="w-screen h-screen bg-white dark:bg-black dark:text-white p-8 transform transition-transform"
   >
     <section class="flex justify-between items-center mb-20">
       <h1 class="text-3xl">{title}</h1>
@@ -53,8 +53,8 @@ const { title, contents, type, color }: Props = Astro.props
         ))
       }
     </section>
-  </section>
-</section>
+  </div>
+</dialog>
 
 <script>
   // Select modal elements
@@ -70,6 +70,7 @@ const { title, contents, type, color }: Props = Astro.props
   const openModal = () => {
     if (modal && modalContent) {
       modal.style.display = 'flex' // Show the modal
+
       requestAnimationFrame(() => {
         modal.style.opacity = '1' // Fully opaque
         modalContent.classList.add('transition-transform', 'show') // Trigger scale animation
@@ -81,6 +82,7 @@ const { title, contents, type, color }: Props = Astro.props
   const closeModal = () => {
     if (modal && modalContent) {
       modal.style.opacity = '0' // Fade out
+
       setTimeout(() => {
         modal.style.display = 'none' // Hide modal
         modalContent.classList.remove('transition-transform', 'show') // Reset show class
