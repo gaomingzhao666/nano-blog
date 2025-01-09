@@ -18,13 +18,7 @@
   h4,
   h5,
   h6 {
-    @apply text-zinc-800 dark:text-zinc-100   !important;
-  }
-
-  html.dark .shiki,
-  html.dark .shiki span {
-    color: var(--shiki-dark) !important;
-    background-color: theme(colors.gray.900) !important;
+    @apply text-zinc-800 dark:text-zinc-100 !important;
   }
 }
 
