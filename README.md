@@ -49,12 +49,13 @@ Nano-blog is a modern blog system build with Astro ecosystem, which is one of th
 - [√] Minimal styling
 - [√] Responsive Layout
 - [√] Super Performance
+- [√] Clean Dependency Injection
 - [√] SEO Friendly
 - [√] Markdown & MDX support
 - [√] Code Highlighting
 - [√] Dark Mode
 - [√] Automatic Computing Reading Time
-- [√] [Pagefind](https://pagefind.app/) Integration for Content Searching
+- [√] [Pagefind](https://pagefind.app/) Integration for Content Searching (needs to be rewrite)
 - [√] Related Posts (updated on v2.1)
 - [√] `English` and `Japanese` Localization (i18n)
 - [√] Giscus Comment system that powered by Github Discussion (added on v2.2)
@@ -62,6 +63,7 @@ Nano-blog is a modern blog system build with Astro ecosystem, which is one of th
 ## Roadmap
 
 - [x] update to Astro5 (testing)
+- [x] adding directory functionality (different with the exists `TableOfContents.astro` ) for mobile device
 
 ## Runtime Requirement
 
