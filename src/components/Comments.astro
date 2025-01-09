@@ -1,5 +1,12 @@
+---
+import { getLangFromUrl } from '@/i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+---
+
 <section class="mx-auto">
   <script
+    is:inline
     src="https://giscus.app/client.js"
     data-repo="gaomingzhao666/nano-blog"
     data-repo-id="R_kgDONBEXlA"
@@ -11,17 +18,19 @@
     data-emit-metadata="0"
     data-input-position="bottom"
     data-theme="preferred_color_scheme"
-    data-lang="en"
+    data-lang={lang}
     data-loading="lazy"
     crossorigin="anonymous"
     async></script>
 </section>
 
 <script is:inline>
+  // update giscus theme by sending message
   const updateGiscusTheme = () => {
     const theme = document.documentElement.classList.contains('dark')
       ? 'dark'
       : 'light'
+
     const iframe = document.querySelector('iframe.giscus-frame')
 
     if (iframe)
@@ -31,8 +40,10 @@
       )
   }
 
+  // update giscus theme when html class changes
   const observer = new MutationObserver(updateGiscusTheme)
-  observer.observe(document.documentElement, {
+  const html = document.querySelector('html')
+  observer.observe(html, {
     attributes: true,
     attributeFilter: ['class'],
   })
