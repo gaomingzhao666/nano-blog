@@ -19,23 +19,13 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkReadingTime],
     shikiConfig: {
-      theme: 'github-dark',
+      theme: 'dracula',
       wrap: true,
     },
   },
 
   integrations: [
-    mdx({
-      // syntaxHighlight: 'shiki',
-      // shikiConfig: {
-      //   // experimentalThemes: {
-      //   //   light: 'vitesse-light',
-      //   //   dark: 'material-theme-palenight',
-      //   // },
-      //   theme: 'github-dark',
-      //   wrap: true,
-      // },
-    }),
+    mdx(),
 
     sitemap({
       i18n: {
