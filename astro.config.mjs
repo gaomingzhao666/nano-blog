@@ -19,7 +19,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkReadingTime],
     shikiConfig: {
-      theme: 'dracula',
+      theme: 'github-dark',
       wrap: true,
     },
   },
