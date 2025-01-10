@@ -4,15 +4,7 @@ import CheckIcon from '@/components/icons/Check'
 ---
 
 <pre
-  class="relative bg-grayDeep">
-  <button aria-label="copy-button" id='copy-button' class="absolute z-20 top-2 right-2 rounded-xl transition-opacity hover:text-gray-400">
-    <CopyIcon />
-  </button>
-  <span id='check-span' class="absolute z-10 top-2 right-2 rounded-xl transition-opacity opacity-0">
-    <CheckIcon />
-  </span>
-  <slot />
-</pre>
+  class="relative bg-grayDeep"><button aria-label="copy-button" id='copy-button' class="absolute z-20 top-2 right-2 rounded-xl transition-opacity hover:text-gray-400"><CopyIcon /></button><span id='check-span' class="absolute z-10 top-2 right-2 rounded-xl transition-opacity opacity-0"><CheckIcon /></span><slot /></pre>
 
 <script>
   const copyBlock = () => {
