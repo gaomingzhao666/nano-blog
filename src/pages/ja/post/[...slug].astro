@@ -7,7 +7,6 @@ import Share from '@/components/Share'
 import TableOfContents from '@/components/TableOfContents'
 import Comments from '@/components/Comments'
 import { getPosts } from '@/utils'
-import SButton from '@/components/mdx/SButton'
 
 const posts = await getCollection('blog')
 export const getStaticPaths = async () => {
@@ -59,7 +58,7 @@ const { Content, headings, remarkPluginFrontmatter } = await post.render()
       <section
         class="prose prose-lg md:prose-xl dark:prose-invert mb-12 min-w-full"
       >
-        <Content components={{ pre: Code, SButton }} />
+        <Content components={{ pre: Code }} />
       </section>
 
       <!-- related posts -->
