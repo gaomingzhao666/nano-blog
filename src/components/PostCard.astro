@@ -67,12 +67,13 @@ const t = useTranslations(lang)
 
     <footer class="flex flex-wrap gap-x-1 gap-y-2">
       {
-        withoutTags ? <></> : 
-        tags.map((tag) => (
-          <a href={`/tags/${tag}`}>
-            <PostTag tag={tag} />
-          </a>
-        ))
+        tags.map((tag) =>
+          withoutTags ? null : (
+            <a href={`/tags/${tag}`}>
+              <PostTag tag={tag} />
+            </a>
+          ),
+        )
       }
     </footer>
   </section>
