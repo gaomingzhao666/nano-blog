@@ -26,12 +26,11 @@ const colorByType = (type) => {
 
 <aside
   class={cn(
-    'font-semibold rounded-xl border dark:border-none dark:ring-1 p-4',
-    type || type !== 'info'
+    'font-semibold rounded-xl border shadow dark:border-none dark:ring-1 px-10 py-1',
+    type && type !== 'info'
       ? `bg-200-${colorByType(type)}`
       : 'bg-grayLight dark:bg-grayDeep',
   )}
 >
-  <h3>{title}</h3>
   <slot />
 </aside>

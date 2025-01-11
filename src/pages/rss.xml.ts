@@ -4,6 +4,7 @@ import { siteConfig } from '@/site-config'
 
 export const GET = async (context: any) => {
   const posts = await getCollection('blog')
+
   return rss({
     title: siteConfig.title,
     description: siteConfig.description,
