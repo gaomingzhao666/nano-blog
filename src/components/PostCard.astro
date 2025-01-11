@@ -24,12 +24,8 @@ interface Props {
 }
 
 const {
-<<<<<<< HEAD
   id,
-  data: { title, description, pubDate, heroImage },
-=======
   data: { title, description, pubDate, heroImage, tags },
->>>>>>> e323e34052ab12e0319f8a95e7351ed9324ce4db
   readTime,
   withoutTags = false,
 }: Props = Astro.props
@@ -56,13 +52,8 @@ const t = useTranslations(lang)
   </section>
 
   <section class="mt-8">
-<<<<<<< HEAD
     <a href={lang === 'en' ? `/post/${id}` : `/${lang}/post/${id}`}>
-      <p class="text-2xl font-semibold -tracking-wider">
-=======
-    <a href={lang === 'en' ? `/post/${slug}` : `/${lang}/post/${slug}`}>
       <h3 class="text-2xl font-semibold -tracking-wider">
->>>>>>> e323e34052ab12e0319f8a95e7351ed9324ce4db
         {title}
       </h3>
 
