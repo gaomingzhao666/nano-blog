@@ -13,7 +13,7 @@
     "@astrojs/rss": "^4.0.11",
     "astro": "^4.16.18",
     "astro-font": "^0.1.81",
-    "embla-carousel": "^8.5.1",
+    "embla-carousel": "^8.5.2",
     "sharp": "^0.33.5"
   },
   "devDependencies": {
