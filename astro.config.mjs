@@ -7,7 +7,7 @@ import { remarkReadingTime } from './src/utils/readTime'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://nano-blog-nine.vercel.app',
+  site: 'https://nano-blog-bice.vercel.app',
   devToolbar: {
     enabled: false,
   },

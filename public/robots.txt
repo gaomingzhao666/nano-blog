@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nano-blog-nine.vercel.app/sitemap-index.xml
+Sitemap: https://nano-blog-bice.vercel.app/sitemap-index.xml
