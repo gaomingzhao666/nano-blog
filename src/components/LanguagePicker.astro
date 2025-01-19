@@ -26,6 +26,7 @@ import Language from '@/components/icons/Language'
           class={
             'option cursor-pointer p-2 block rounded-lg hover:bg-gray-200 dark:hover:bg-grayDeep dark:text-white'
           }
+          data-lang={lang}
         >
           <button>{label}</button>
         </HeaderLink>
@@ -33,3 +34,16 @@ import Language from '@/components/icons/Language'
     }
   </section>
 </section>
+
+<script>
+  const langOptions = document.querySelectorAll('.option')
+
+  langOptions.forEach((option) => {
+    option.addEventListener('click', () => {
+      const lang = option.getAttribute('data-lang')
+      if (lang) {
+        localStorage.setItem('lang', lang)
+      }
+    })
+  })
+</script>

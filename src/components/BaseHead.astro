@@ -2,6 +2,8 @@
 import { siteConfig } from '@/site-config'
 import '../styles/global.css'
 import { ViewTransitions } from 'astro:transitions'
+import { join } from 'path'
+import { AstroFont } from 'astro-font'
 
 export interface Props {
   title: string
@@ -16,6 +18,7 @@ const {
   ogImage,
   articleDate,
 }: Props = Astro.props
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const socialImageURL = new URL(ogImage ? ogImage : '/open-graph.png', Astro.url)
   .href
@@ -23,10 +26,9 @@ const socialImageURL = new URL(ogImage ? ogImage : '/open-graph.png', Astro.url)
 const titleSeparator = '•'
 
 const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
-
-import { join } from 'path'
-import { AstroFont } from 'astro-font'
 ---
+
+<meta http-equiv="refresh" content="no data" id="redirectMeta" />
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
@@ -144,3 +146,31 @@ import { AstroFont } from 'astro-font'
     },
   ]}
 />
+
+<script>
+  const initLang = () => {
+    const redirectMeta = document.querySelector('#redirectMeta')
+    const currentLang = localStorage.getItem('lang')
+
+    if (redirectMeta && currentLang)
+      if (currentLang !== 'en')
+        redirectMeta.setAttribute('content', `0; url=/${currentLang}`)
+  }
+
+  // which means, lock == '1' equals locked, and lock == undefined equals not locked
+  const lock = (lockBehavior) => {
+    if (lockBehavior) sessionStorage.setItem('lock', '1')
+    else sessionStorage.removeItem('lock')
+  }
+  const isLocked = () => (sessionStorage.getItem('lock') ? true : false)
+
+  // only effect on first load
+  window.addEventListener('DOMContentLoaded', () => {
+    console.log(isLocked())
+
+    if (!isLocked()) {
+      initLang()
+      lock(true)
+    }
+  })
+</script>
