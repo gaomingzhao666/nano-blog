@@ -57,7 +57,7 @@ Nano-blog is a modern blog system build with Astro ecosystem, which is one of th
 - [√] Automatic Computing Reading Time
 - [√] [Pagefind](https://pagefind.app/) Integration for Content Searching (needs to be rewrite)
 - [√] Related Posts (updated on v2.1)
-- [√] `English` and `Japanese` Localization (i18n) (updated on v2.3)
+- [√] `English` and `Japanese` Localization (i18n) (updated on v2.4)
 - [√] Giscus Comment system that powered by Github Discussion (added on v2.2)
 
 ## Roadmap
