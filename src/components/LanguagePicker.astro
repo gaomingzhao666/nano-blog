@@ -2,6 +2,19 @@
 import { languages } from '@/i18n/ui'
 import HeaderLink from '@/components/HeaderLink'
 import Language from '@/components/icons/Language'
+import { getLangFromUrl } from '@/i18n/utils'
+
+// full url
+const url = Astro.url
+// which means the url without the prefix http://localhost:xxxx
+const pureUrl = url.pathname
+// url prefix
+const urlPrefix = url.hostname
+
+// current lang
+const lang = getLangFromUrl(url)
+// url without current lang, included prefix /
+const urlWithoutLang = pureUrl.replace(`/${lang}`, '')
 ---
 
 <section class="relative">
@@ -22,7 +35,11 @@ import Language from '@/components/icons/Language'
     {
       Object.entries(languages).map(([lang, label]) => (
         <HeaderLink
-          href={lang === 'en' ? '/' : `/${lang}`}
+          href={
+            lang === 'en'
+              ? `${urlWithoutLang}`
+              : `${urlPrefix}/${lang}${urlWithoutLang}`
+          }
           class={
             'option cursor-pointer p-2 block rounded-lg hover:bg-gray-200 dark:hover:bg-grayDeep dark:text-white'
           }
