@@ -62,8 +62,10 @@ Nano-blog is a modern blog system build with Astro ecosystem, which is one of th
 
 ## Roadmap
 
-- [x] update to Astro5 (testing)
+- [x] update to `Astro v5` (testing)
 - [x] adding directory functionality (different with the exists `TableOfContents.astro` ) for mobile device
+- [x] update to `TailwindCSS v4`
+- [x] switch `Pagefind` to `Astro-pagefind` (probably)
 
 ## Runtime Requirement
 
