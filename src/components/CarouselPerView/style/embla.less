@@ -5,6 +5,7 @@
 
   // static width
   width: 856px;
+  position: relative;
   overflow: hidden;
 
   .embla__viewport {
@@ -35,17 +36,18 @@
 }
 
 .embla__controls {
+  position: absolute;
+  top: 9rem;
+  width: 100%;
   .embla__buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 1rem;
+    padding: 0 1rem;
 
     .embla__button {
-      touch-action: manipulation;
       cursor: pointer;
-
       z-index: 10;
     }
   }
