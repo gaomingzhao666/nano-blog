@@ -1,0 +1,60 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import { cn } from '@/utils'
+
+interface Props extends HTMLAttributes<'div'> {
+  isTransition?: boolean
+  text: string
+  placement?: 'top' | 'right' | 'bottom' | 'left'
+}
+
+const { isTransition = true, text, placement = 'bottom', ...rest } = Astro.props
+
+const transitionClasses = isTransition ? 'transition' : ''
+const placementClasses = (() => {
+  switch (placement) {
+    case 'top':
+      return 'placeTop'
+    case 'right':
+      return 'placeRight'
+    case 'left':
+      return 'placeLeft'
+    case 'bottom':
+      return 'placeBottom'
+    default:
+      return 'placeBottom'
+  }
+})()
+---
+
+<section class="relative group" {...rest}>
+  <slot />
+
+  <aside
+    class={cn(
+      'w-full absolute opacity-0 z-10 border rounded-xl px-3 py-1.5 group-hover:opacity-100',
+      transitionClasses,
+      placementClasses,
+    )}
+  >
+    {text}
+  </aside>
+</section>
+
+<style scoped>
+  /* preset vanilla CSS */
+  .placeTop {
+    bottom: 120%;
+  }
+  .placeRight {
+    top: 0;
+    left: 120%;
+  }
+  .placeLeft {
+    top: 0;
+    right: 120%;
+  }
+  .placeBottom {
+    top: 120%;
+  }
+</style>
