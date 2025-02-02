@@ -47,6 +47,7 @@ Nano-blog is a modern blog system build with Astro ecosystem, which is one of th
 ## Features
 
 - [√] Minimal styling
+- [√] All components are written in `.astro`
 - [√] Responsive Layout
 - [√] Super Performance
 - [√] Clean Dependency Injection
