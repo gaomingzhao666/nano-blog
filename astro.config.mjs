@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
+import pagefind from 'astro-pagefind'
 import { remarkReadingTime } from './src/utils/readTime'
 
 // https://astro.build/config
@@ -26,6 +27,8 @@ export default defineConfig({
 
   integrations: [
     mdx(),
+    tailwind(),
+    pagefind(),
 
     sitemap({
       i18n: {
@@ -36,7 +39,5 @@ export default defineConfig({
         },
       },
     }),
-
-    tailwind(),
   ],
 })
