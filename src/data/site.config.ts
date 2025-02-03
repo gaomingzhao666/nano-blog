@@ -11,7 +11,7 @@ export const siteConfig: SiteConfig = {
   author: 'Nano', // Site author
   title: 'Nano Blog', // Site title.
   description:
-    'Nano Blog is a performant, lightweight and SEO friendly modern blog system made by Astro, TypeScript and TailwindCSS.', // Description to display in the meta tags
+    'Nano Blog is a performant, lightweight and SEO friendly modern blog system made by Astro, TypeScript and TailwindCSS, without any database and backend', // Description to display in the meta tags
   lang: 'en',
   ogLocale: 'en',
   shareMessage: 'Share this post', // Message to share a post on social media
