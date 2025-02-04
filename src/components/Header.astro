@@ -1,8 +1,7 @@
 ---
 import HeaderLink from '@/components/HeaderLink'
 import GithubIcon from '@/components/icons/Github'
-// import Search from '@/components/Search'
-import Search from 'astro-pagefind/components/Search'
+import SearchPage from '@/components/SearchPage'
 import BurgerIcon from '@/components/icons/Burger'
 import ToggleTheme from '@/components/ToggleTheme'
 import LanguagePicker from '@/components/LanguagePicker'
@@ -38,12 +37,7 @@ const t = useTranslations(lang)
         aria-label="Open Github"><GithubIcon /></a
       >
 
-      <!-- <Search aria-label="Search Blog Contents" /> -->
-      <Search
-        id="search1"
-        className="pagefind-ui yellow"
-        uiOptions={{ showImages: false }}
-      />
+      <SearchPage title="Search" />
       <ToggleTheme aria-label="Switch Blog Theme" />
 
       <nav class="md:hidden">
@@ -71,18 +65,28 @@ const t = useTranslations(lang)
 
 <style>
   .pagefind-ui {
-    --pagefind-ui-scale: 0.75;
-    --pagefind-ui-primary: navy;
-    --pagefind-ui-text: black;
-    --pagefind-ui-border: slategrey;
-    --pagefind-ui-border-width: 1px;
-    --pagefind-ui-border-radius: 0.25rem;
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: #034ad8;
+    --pagefind-ui-text: #393939;
+    --pagefind-ui-background: #ffffff;
+    --pagefind-ui-border: #eeeeee;
+    --pagefind-ui-tag: #eeeeee;
+    --pagefind-ui-border-width: 2px;
+    --pagefind-ui-border-radius: 8px;
+    --pagefind-ui-image-border-radius: 8px;
+    --pagefind-ui-image-box-ratio: 3 / 2;
     --pagefind-ui-font: sans-serif;
-
-    width: 50%;
   }
 
-  .pagefind-ui.yellow {
+  body.dark {
+    --pagefind-ui-primary: #eeeeee;
+    --pagefind-ui-text: #eeeeee;
+    --pagefind-ui-background: #152028;
+    --pagefind-ui-border: #152028;
+    --pagefind-ui-tag: #152028;
+  }
+
+  /* .pagefind-ui.yellow {
     --pagefind-ui-background: lightyellow;
   }
 
@@ -113,5 +117,5 @@ const t = useTranslations(lang)
 
   .pagefind-ui .pagefind-ui__result-excerpt {
     color: var(--pagefind-ui-text);
-  }
+  } */
 </style>
