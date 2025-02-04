@@ -1,0 +1,88 @@
+---
+import CloseIcon from '@/components/icons/Close'
+import SearchIcon from '@/components/icons/Search'
+import Search from 'astro-pagefind/components/Search'
+
+interface Props {
+  title: string
+}
+
+const { title }: Props = Astro.props
+---
+
+<!-- because the button size is different with the icon size, need to set the same width and height with the icon to keep it layout correctly -->
+<button
+  id="openSearchPage"
+  class="w-[24px] h-[24px]"
+  aria-label="Search Blog Contents"
+>
+  <SearchIcon />
+</button>
+
+<dialog
+  id="SearchPage"
+  class="hidden fixed inset-0 justify-center items-center transition-opacity opacity-0"
+>
+  <div
+    id="SearchPageContent"
+    class="w-screen h-screen bg-white dark:bg-black dark:text-white p-8 transform transition-transform"
+  >
+    <section class="flex justify-between items-center mb-20">
+      <h1 class="text-3xl">{title}</h1>
+      <button id="closeSearchPage" aria-label="Close Search Page">
+        <CloseIcon />
+      </button>
+    </section>
+
+    <section class="text-center">
+      <Search
+        id="search"
+        className="pagefind-ui"
+        uiOptions={{ showImages: false }}
+      />
+    </section>
+  </div>
+</dialog>
+
+<script>
+  const SearchPage: HTMLElement | null = document.getElementById('SearchPage')
+  const SearchPageContent: HTMLElement | null =
+    document.getElementById('SearchPageContent')
+  const openSearchPage: HTMLElement | null =
+    document.getElementById('openSearchPage')
+  const closeSearchPage: HTMLElement | null =
+    document.getElementById('closeSearchPage')
+
+  const openModal = () => {
+    if (SearchPage && SearchPageContent) {
+      SearchPage.style.display = 'flex'
+
+      requestAnimationFrame(() => {
+        SearchPage.style.opacity = '1'
+        SearchPageContent.classList.add('transition-transform', 'show') // Trigger scale animation
+      })
+    }
+  }
+
+  const closeModal = () => {
+    if (SearchPage && SearchPageContent) {
+      SearchPage.style.opacity = '0'
+
+      setTimeout(() => {
+        SearchPage.style.display = 'none'
+        SearchPageContent.classList.remove('transition-transform', 'show') // Reset show class
+      }, 300)
+    }
+  }
+
+  // click outside of modal content to close modal
+  // if (modal)
+  //   modal.addEventListener('click', (e) => {
+  //     if (e.target === modal) {
+  //       closeModal()
+  //     }
+  //   })
+
+  if (closeSearchPage) closeSearchPage.addEventListener('click', closeModal)
+  if (openSearchPage) openSearchPage.addEventListener('click', openModal)
+</script>
