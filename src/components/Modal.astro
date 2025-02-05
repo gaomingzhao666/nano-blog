@@ -1,6 +1,6 @@
 ---
 import { cn } from '@/utils'
-import Close from '@/components/icons/Close'
+import CloseIcon from '@/components/icons/Close'
 
 type Contents = {
   label: string
@@ -16,31 +16,26 @@ interface Props {
 const { title, contents, type, color }: Props = Astro.props
 ---
 
-<!-- Button to open the modal -->
 <button
   id="openModalButton"
-  class-={cn(
-    'text-white px-6 py-3',
-    type === 'solid' && color ? `bg-${color}-500  rounded-md` : ``,
-  )}
+  class-={cn(type === 'solid' && color ? `bg-${color}-500  rounded-md` : ``)}
 >
   <!-- the text of the button that to open modal -->
   <slot />
 </button>
 
-<!-- Modal Container -->
 <dialog
   id="modal"
   class="hidden fixed inset-0 justify-center items-center transition-opacity opacity-0"
 >
   <div
     id="modalContent"
-    class="w-screen h-screen bg-white dark:bg-black dark:text-white p-8 transform transition-transform"
+    class="w-screen h-screen bg-white dark:bg-black dark:text-white p-10 transform transition-transform"
   >
     <section class="flex justify-between items-center mb-20">
       <h1 class="text-3xl">{title}</h1>
       <button id="closeModalButton" aria-label="Close Modal">
-        <Close />
+        <CloseIcon />
       </button>
     </section>
 
@@ -57,7 +52,6 @@ const { title, contents, type, color }: Props = Astro.props
 </dialog>
 
 <script>
-  // Select modal elements
   const modal: HTMLElement | null = document.getElementById('modal')
   const modalContent: HTMLElement | null =
     document.getElementById('modalContent')
@@ -66,27 +60,25 @@ const { title, contents, type, color }: Props = Astro.props
   const closeModalButton: HTMLElement | null =
     document.getElementById('closeModalButton')
 
-  // Function to open the modal
   const openModal = () => {
     if (modal && modalContent) {
-      modal.style.display = 'flex' // Show the modal
+      modal.style.display = 'flex'
 
       requestAnimationFrame(() => {
-        modal.style.opacity = '1' // Fully opaque
+        modal.style.opacity = '1'
         modalContent.classList.add('transition-transform', 'show') // Trigger scale animation
       })
     }
   }
 
-  // Function to close the modal
   const closeModal = () => {
     if (modal && modalContent) {
-      modal.style.opacity = '0' // Fade out
+      modal.style.opacity = '0'
 
       setTimeout(() => {
-        modal.style.display = 'none' // Hide modal
+        modal.style.display = 'none'
         modalContent.classList.remove('transition-transform', 'show') // Reset show class
-      }, 300) // Match this duration with the CSS transition duration
+      }, 300)
     }
   }
 
@@ -98,7 +90,6 @@ const { title, contents, type, color }: Props = Astro.props
   //     }
   //   })
 
-  // Event listeners
   if (closeModalButton) closeModalButton.addEventListener('click', closeModal)
   if (openModalButton) openModalButton.addEventListener('click', openModal)
 </script>

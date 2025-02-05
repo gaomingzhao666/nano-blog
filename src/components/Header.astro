@@ -1,7 +1,7 @@
 ---
 import HeaderLink from '@/components/HeaderLink'
 import GithubIcon from '@/components/icons/Github'
-import Search from '@/components/Search'
+import SearchPage from '@/components/SearchPage'
 import BurgerIcon from '@/components/icons/Burger'
 import ToggleTheme from '@/components/ToggleTheme'
 import LanguagePicker from '@/components/LanguagePicker'
@@ -37,7 +37,7 @@ const t = useTranslations(lang)
         aria-label="Open Github"><GithubIcon /></a
       >
 
-      <Search aria-label="Search Blog Contents" />
+      <SearchPage title="Search" />
       <ToggleTheme aria-label="Switch Blog Theme" />
 
       <nav class="md:hidden">
