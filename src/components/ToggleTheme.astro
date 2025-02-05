@@ -17,22 +17,17 @@ import MoonIcon from '@/components/icons/Moon'
 <script is:inline>
   const theme = (() => {
     const localStorageTheme = localStorage?.getItem('theme') ?? ''
-    if (['dark', 'light'].includes(localStorageTheme)) {
-      return localStorageTheme
-    }
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark'
-    }
+    if (['dark', 'light'].includes(localStorageTheme)) return localStorageTheme
+
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'
+
     return 'light'
   })()
 
-  if (theme === 'light') {
-    document.documentElement.classList.remove('dark')
-  } else {
-    document.documentElement.classList.add('dark')
-  }
+  if (theme === 'light') document.documentElement.classList.remove('dark')
+  else document.documentElement.classList.add('dark')
 
-  window.localStorage.setItem('theme', theme)
+  localStorage.setItem('theme', theme)
 
   const handleToggleClick = () => {
     const element = document.documentElement
