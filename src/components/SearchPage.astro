@@ -5,9 +5,10 @@ import Search from 'astro-pagefind/components/Search'
 
 interface Props {
   title: string
+  rerender?: boolean
 }
 
-const { title }: Props = Astro.props
+const { title, rerender = true }: Props = Astro.props
 ---
 
 <!-- because the button size is different with the icon size, need to set the same width and height with the icon to keep it layout correctly -->
@@ -34,7 +35,7 @@ const { title }: Props = Astro.props
       </button>
     </section>
 
-    <section class="text-center">
+    <section class="text-start">
       <Search
         id="search"
         className="pagefind-ui"
@@ -45,46 +46,48 @@ const { title }: Props = Astro.props
 </dialog>
 
 <script>
-  const SearchPage: HTMLElement | null = document.getElementById('SearchPage')
-  const SearchPageContent: HTMLElement | null =
-    document.getElementById('SearchPageContent')
-  const openSearchPage: HTMLElement | null =
-    document.getElementById('openSearchPage')
-  const closeSearchPage: HTMLElement | null =
-    document.getElementById('closeSearchPage')
+  document.addEventListener('DOMContentLoaded', () => {
+    const SearchPage: HTMLElement | null = document.getElementById('SearchPage')
+    const SearchPageContent: HTMLElement | null =
+      document.getElementById('SearchPageContent')
+    const openSearchPage: HTMLElement | null =
+      document.getElementById('openSearchPage')
+    const closeSearchPage: HTMLElement | null =
+      document.getElementById('closeSearchPage')
 
-  const openModal = () => {
-    if (SearchPage && SearchPageContent) {
-      SearchPage.style.display = 'flex'
+    const openModal = () => {
+      if (SearchPage && SearchPageContent) {
+        SearchPage.style.display = 'flex'
 
-      requestAnimationFrame(() => {
-        SearchPage.style.opacity = '1'
-        SearchPageContent.classList.add('transition-transform', 'show') // Trigger scale animation
-      })
+        requestAnimationFrame(() => {
+          SearchPage.style.opacity = '1'
+          SearchPageContent.classList.add('transition-transform', 'show') // Trigger scale animation
+        })
+      }
     }
-  }
 
-  const closeModal = () => {
-    if (SearchPage && SearchPageContent) {
-      SearchPage.style.opacity = '0'
+    const closeModal = () => {
+      if (SearchPage && SearchPageContent) {
+        SearchPage.style.opacity = '0'
 
-      setTimeout(() => {
-        SearchPage.style.display = 'none'
-        SearchPageContent.classList.remove('transition-transform', 'show') // Reset show class
-      }, 300)
+        setTimeout(() => {
+          SearchPage.style.display = 'none'
+          SearchPageContent.classList.remove('transition-transform', 'show') // Reset show class
+        }, 300)
+      }
     }
-  }
 
-  // click outside of modal content to close modal
-  // if (modal)
-  //   modal.addEventListener('click', (e) => {
-  //     if (e.target === modal) {
-  //       closeModal()
-  //     }
-  //   })
+    // click outside of modal content to close modal
+    // if (modal)
+    //   modal.addEventListener('click', (e) => {
+    //     if (e.target === modal) {
+    //       closeModal()
+    //     }
+    //   })
 
-  if (closeSearchPage) closeSearchPage.addEventListener('click', closeModal)
-  if (openSearchPage) openSearchPage.addEventListener('click', openModal)
+    if (closeSearchPage) closeSearchPage.addEventListener('click', closeModal)
+    if (openSearchPage) openSearchPage.addEventListener('click', openModal)
+  })
 </script>
 
 <style>
