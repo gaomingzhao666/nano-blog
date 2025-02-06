@@ -39,7 +39,7 @@ const { title, rerender = true }: Props = Astro.props
       <Search
         id="search"
         className="pagefind-ui"
-        uiOptions={{ showImages: false }}
+        uiOptions={{ showImages: true }}
       />
     </section>
   </div>
@@ -118,8 +118,8 @@ const { title, rerender = true }: Props = Astro.props
   }
 
   html.dark {
-    --pagefind-ui-primary: #1f2b3a;
-    --pagefind-ui-text: #eeeeee;
+    --pagefind-ui-primary: #f8f8f8;
+    --pagefind-ui-text: #f8f8f8;
     --pagefind-ui-background: #1f2b3a;
     --pagefind-ui-border: #1f2b3a;
     --pagefind-ui-tag: #1f2b3a;
