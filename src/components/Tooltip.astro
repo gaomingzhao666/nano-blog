@@ -1,14 +1,13 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
 import { cn } from '@/utils'
 
-interface Props extends HTMLAttributes<'div'> {
+interface Props {
   isTransition?: boolean
   text: string
   placement?: 'top' | 'right' | 'bottom' | 'left'
 }
 
-const { isTransition = true, text, placement = 'bottom', ...rest } = Astro.props
+const { isTransition = true, text, placement = 'bottom' } = Astro.props
 
 const transitionClasses = isTransition ? 'transition' : ''
 const placementClasses = (() => {
@@ -27,7 +26,7 @@ const placementClasses = (() => {
 })()
 ---
 
-<section class="relative group" {...rest}>
+<section class="relative group">
   <slot />
 
   <aside
@@ -42,7 +41,6 @@ const placementClasses = (() => {
 </section>
 
 <style scoped>
-  /* preset vanilla CSS */
   .placeTop {
     bottom: 120%;
   }
