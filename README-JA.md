@@ -56,7 +56,7 @@ Nano-blogはAstroエコシステムで構築されたモダンなブログシス
 - [√] コードハイライト
 - [√] ダークモード
 - [√] 自動読書時間計算
-- [√] コンテンツ検索のための[Pagefind](https://pagefind.app/)集成
+- [√] コンテンツ検索のための[Pagefind](https://pagefind.app/)集成（v2.6でリライトした）
 - [√] 関連投稿（v2.1で更新）
 - [√] `英語`と`日本語`の国際化（i18n）(v2.4で改善)
 - [√] GitHub Discussionsを利用したGiscusコメントシステムの集成（v2.2で追加）
@@ -66,7 +66,6 @@ Nano-blogはAstroエコシステムで構築されたモダンなブログシス
 - [x] `Astro v5`へのアップグレード（テスト中）
 - [x] モバイル上の目次機能を追加する
 - [x] `TailwindCSS v4`へのアップグレード
-- [x] `Pagefind`から`Astro-pagefind`に移転する（かも）
 
 ## 環境要件
 
