@@ -16,7 +16,7 @@ tags:
 ---
 
 import Alert from '@/components/mdx/Alert'
-import Image from '@/components/mdx/Image'
+import { Image } from 'astro:assets'
 import indexImage from '@/assets/images/posts/2025-01-04/contents/index-light.png'
 
 Nano Portfolio is a modern open-source portfolio template that is easy to use and customize, once config can automatically import your Github information. It is built with `Vue`, `Nuxt`, `TypeScript`, `TailwindCSS` and `Github Octokit APIs`.
@@ -77,9 +77,11 @@ Once the project is successfully running, you can open your browser and navigate
 
 And you will see the template looks like the screenshot below:
 
-{/* ![nano-portfolio](../../assets/images/posts/2025-01-04/contents/index-light.png) */}
-
-<Image src={indexImage} alt={`img of the home page of nano-portfolio`} />
+<Image
+  src={indexImage}
+  class="rounded-xl"
+  alt={`img of the home page of nano-portfolio`}
+/>
 
 It means you have successfully cloned the template to your local machine and run it locally.
 
