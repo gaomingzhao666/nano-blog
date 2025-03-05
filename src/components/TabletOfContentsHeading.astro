@@ -15,7 +15,7 @@ interface Props {
 const { heading }: Props = Astro.props
 ---
 
-<li class="">
+<li>
   <a
     href={'#' + heading.slug}
     class={cn(
@@ -24,6 +24,7 @@ const { heading }: Props = Astro.props
   >
     {heading.text}
   </a>
+
   {
     heading.subheadings.length > 0 && (
       <ul class="ml-4">
