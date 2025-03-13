@@ -6,7 +6,7 @@ interface Props {
   title?: string
 }
 
-const { type, title }: Props = Astro.props
+const { type = 'info', title }: Props = Astro.props
 
 const colorByType = (type) => {
   switch (type) {
@@ -26,7 +26,7 @@ const colorByType = (type) => {
 
 <aside
   class={cn(
-    'font-semibold rounded-xl border shadow-sm dark:border-none dark:ring-1 px-10 py-1',
+    'font-semibold rounded-xl border shadow-sm dark:border-none dark:ring-1 px-3 py-2',
     type && type !== 'info'
       ? `bg-200-${colorByType(type)}`
       : 'dark:bg-gray-900',
