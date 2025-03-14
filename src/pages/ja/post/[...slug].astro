@@ -7,6 +7,10 @@ import Share from '@/components/Share'
 import TableOfContents from '@/components/TableOfContents'
 import Comments from '@/components/Comments'
 import { getPosts } from '@/utils'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 
 const posts = await getCollection('blog')
 export const getStaticPaths = async () => {
@@ -63,7 +67,9 @@ const { Content, headings, remarkPluginFrontmatter } = await post.render()
 
       <!-- related posts -->
       <footer>
-        <h2 class="font-bold text-lg dark:text-white mb-6">Related Posts</h2>
+        <h2 class="font-bold text-lg dark:text-white mb-6">
+          {t('relatedPosts')}
+        </h2>
         <ListRelatedPosts posts={relatedPosts} />
 
         <Comments />
