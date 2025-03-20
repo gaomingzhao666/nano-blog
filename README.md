@@ -46,25 +46,26 @@ Nano-blog is a modern blog system build with Astro ecosystem, which is one of th
 
 ## Features
 
-- [√] Minimal styling
-- [√] All components are written in `.astro`
-- [√] Responsive Layout
-- [√] Super Performance
-- [√] Clean Dependency Injection
-- [√] SEO Friendly
-- [√] Markdown & MDX support
-- [√] Code Highlighting
-- [√] Dark Mode
-- [√] Automatic Computing Reading Time
-- [√] [Pagefind](https://pagefind.app/) Integration for Content Searching (rewritten on v2.6)
-- [√] Related Posts (updated on v2.1)
-- [√] `English` and `Japanese` Localization (i18n) (updated on v2.4)
-- [√] Giscus Comment system that powered by Github Discussion (added on v2.2)
+- [x] Minimal styling
+- [x] All components are written in `.astro`
+- [x] Responsive Layout
+- [x] Super Performance
+- [x] Clean Dependency Injection
+- [x] SEO Friendly
+- [x] Markdown & MDX support
+- [x] Code Highlighting
+- [x] Dark Mode
+- [x] Automatic Computing Reading Time
+- [x] `Table of Content` for different experience between mobile and larger devices (added on v2.7)
+- [x] [Pagefind](https://pagefind.app/) Integration for Content Searching (rewritten on v2.6)
+- [x] Related Posts (updated on v2.1)
+- [x] `English` and `Japanese` Localization (i18n) (updated on v2.4)
+- [x] Giscus Comment system that powered by Github Discussion (added on v2.2)
 
 ## Roadmap
 
 - [x] update to `Astro v5` (testing)
-- [x] adding directory functionality (different with the exists `TableOfContents.astro` ) for mobile device
+- [x] modularize and combine the `TableOfContent.astro` component with the unified `Card.astro` component
 - [x] update to `TailwindCSS v4`
 
 ## Runtime Requirement
