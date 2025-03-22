@@ -1,5 +1,5 @@
 ---
-import TableOfContentsHeadingForMobile from '@/components/TableOfContentsHeadingForMobile'
+import TableOfContentsHeading from '@/components/TableOfContentsHeading'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
 interface TableOfContent {
@@ -37,10 +37,6 @@ const toc = buildToc(headings)
   class="font-semibold rounded-xl border shadow-sm dark:border-none dark:ring-1 dark:bg-gray-900 p-3 mb-8"
 >
   <ul class="space-y-2">
-    {
-      toc.map((heading) => (
-        <TableOfContentsHeadingForMobile heading={heading} />
-      ))
-    }
+    {toc.map((heading) => <TableOfContentsHeading heading={heading} />)}
   </ul>
 </nav>

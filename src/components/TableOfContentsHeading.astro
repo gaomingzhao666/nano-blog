@@ -19,7 +19,7 @@ const { heading }: Props = Astro.props
   <a
     href={'#' + heading.slug}
     class={cn(
-      `bg-grayLight hover:bg-grayDeep hover:text-white py-2 px-4 rounded-xl mb-2 first-letter:uppercase w-fit line-clamp-3`,
+      `bg-grayLight dark:bg-grayDeep hover:bg-grayDeep hover:text-white py-2 px-4 rounded-xl mb-2 first-letter:uppercase w-fit line-clamp-3`,
     )}
   >
     {heading.text}
@@ -27,7 +27,7 @@ const { heading }: Props = Astro.props
 
   {
     heading.subheadings.length > 0 && (
-      <ul class="ml-4">
+      <ul class="ml-5">
         {heading.subheadings.map((subheading) => (
           <Astro.self heading={subheading} />
         ))}
