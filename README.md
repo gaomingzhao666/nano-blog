@@ -65,7 +65,6 @@ Nano-blog is a modern blog system build with Astro ecosystem, which is one of th
 ## Roadmap
 
 - [x] update to `Astro v5` (testing)
-- [x] modularize and combine the `TableOfContent.astro` component with the unified `Card.astro` component
 - [x] update to `TailwindCSS v4`
 
 ## Runtime Requirement
