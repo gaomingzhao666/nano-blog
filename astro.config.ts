@@ -9,9 +9,11 @@ import { remarkReadingTime } from './src/utils/readTime'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nano-blog-bice.vercel.app',
+  trailingSlash: 'always',
   devToolbar: {
     enabled: false,
   },
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'ja'],
