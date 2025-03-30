@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content'
+import { glob } from 'astro/loaders'
 
 // 60 characters
 // With Google's Title update, shorter titles are preferred.
@@ -7,6 +8,7 @@ import { defineCollection, z } from 'astro:content'
 // length: Maximum length: 60 characters or 575 pixels.2
 
 const blog = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content' }),
   // Type-check frontmatter using a schema
   schema: ({ image }) =>
     z.object({
