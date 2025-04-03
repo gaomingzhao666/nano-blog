@@ -11,7 +11,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/rss": "^4.0.11",
-    "@tailwindcss/vite": "^4.0.17",
+    "@tailwindcss/vite": "^4.1.1",
     "astro": "^5.5.5",
     "astro-font": "^1.0.0",
     "astro-pagefind": "^1.8.3",
@@ -36,7 +36,7 @@
     "reading-time": "^1.5.0",
     "slugify": "^1.6.6",
     "tailwind-merge": "^3.0.2",
-    "tailwindcss": "^4.0.17",
+    "tailwindcss": "^4.1.1",
     "typescript": "^5.8.2"
   }
 }
