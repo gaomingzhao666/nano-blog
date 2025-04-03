@@ -2,10 +2,8 @@
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-import tailwind from '@astrojs/tailwind'
 import pagefind from 'astro-pagefind'
 import { remarkReadingTime } from './src/utils/readTime'
-
 import tailwindcss from '@tailwindcss/vite'
 
 // https://astro.build/config
