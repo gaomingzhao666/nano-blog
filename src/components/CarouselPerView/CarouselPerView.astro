@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from 'astro:content'
+import { type CollectionEntry, render } from 'astro:content'
 import PostCard from '@/components/PostCard'
 import ArrowLeft from '@/components/icons/ArrowLeft'
 import ArrowRight from '@/components/icons/ArrowRight'
@@ -15,7 +15,7 @@ const { posts }: Props = Astro.props
     <div class="embla__container">
       {
         posts.map(async (post) => {
-          const { remarkPluginFrontmatter } = await post.render()
+          const { remarkPluginFrontmatter } = await render(post)
 
           return (
             <section class="embla__slide">
