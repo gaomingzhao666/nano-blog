@@ -12,7 +12,7 @@
       "@/layouts/*": ["src/layouts/*.astro"],
       "@/utils": ["src/utils/index.ts"],
       "@/data/*": ["src/data/*"],
-      "@/site-config": ["src/data/site.config.ts"],
+      "@/site-config": ["src/site/site.config.ts"],
       "@/i18n/*": ["src/i18n/*.ts"],
       "@/assets/*": ["src/assets/*"]
     }
