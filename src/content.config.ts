@@ -8,7 +8,7 @@ import { glob } from 'astro/loaders'
 // length: Maximum length: 60 characters or 575 pixels.2
 
 const blog = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
   // Type-check frontmatter using a schema
   schema: ({ image }) =>
     z.object({
