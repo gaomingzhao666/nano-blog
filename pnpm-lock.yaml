@@ -24,8 +24,8 @@ importers:
         specifier: ^1.8.3
         version: 1.8.3(astro@4.16.18(rollup@4.38.0)(typescript@5.8.2))
       embla-carousel:
-        specifier: ^8.5.2
-        version: 8.5.2
+        specifier: ^8.6.0
+        version: 8.6.0
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
@@ -1270,8 +1270,8 @@ packages:
   electron-to-chromium@1.5.128:
     resolution: {integrity: sha512-bo1A4HH/NS522Ws0QNFIzyPcyUUNV/yyy70Ho1xqfGYzPUme2F/xr4tlEOuM6/A538U1vDA7a4XfCd1CKRegKQ==}
 
-  embla-carousel@8.5.2:
-    resolution: {integrity: sha512-xQ9oVLrun/eCG/7ru3R+I5bJ7shsD8fFwLEY7yPe27/+fDHCNj0OT5EoG5ZbFyOxOcG6yTwW8oTz/dWyFnyGpg==}
+  embla-carousel@8.6.0:
+    resolution: {integrity: sha512-SjWyZBHJPbqxHOzckOfo8lHisEaJWmwd23XppYFYVh10bU66/Pn5tkVkbkCMZVdbUE5eTCI2nD8OyIP4Z+uwkA==}
 
   emmet@2.4.11:
     resolution: {integrity: sha512-23QPJB3moh/U9sT4rQzGgeyyGIrcM+GH5uVYg2C6wZIxAIJq7Ng3QLT79tl8FUwDXhyq9SusfknOrofAKqvgyQ==}
@@ -4568,7 +4568,7 @@ snapshots:
 
   electron-to-chromium@1.5.128: {}
 
-  embla-carousel@8.5.2: {}
+  embla-carousel@8.6.0: {}
 
   emmet@2.4.11:
     dependencies:
