@@ -18,8 +18,8 @@ importers:
         specifier: ^4.16.18
         version: 4.16.18(rollup@4.38.0)(typescript@5.8.3)
       astro-font:
-        specifier: ^0.1.81
-        version: 0.1.81
+        specifier: ^1.1.0
+        version: 1.1.0
       astro-pagefind:
         specifier: ^1.8.3
         version: 1.8.3(astro@4.16.18(rollup@4.38.0)(typescript@5.8.3))
@@ -977,8 +977,8 @@ packages:
     resolution: {integrity: sha512-JepyLROIad6f44uyqMF6HKE2QbunNzp3mYKRcPoDGt0QkxXmH222FAFC64WTyQu2Kg8NNEXHTN/sWuUId9sSxw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro-font@0.1.81:
-    resolution: {integrity: sha512-rbrv/+ZSYdgyjBlhkAqfCjMxqqo6iEwnSo/rAdDt/POILsF0ChxMFhefIIzKEukrRGtVjEj1lrLRYk+AdV9scQ==}
+  astro-font@1.1.0:
+    resolution: {integrity: sha512-hj1A0MkaJTeaArBpf1m9s4Nxu1Bn9h0QiEPeR9Dfjle25pT4CH4higzuadWzCRSvhGO2SzbM11YwZEF+cmLDxg==}
 
   astro-pagefind@1.8.3:
     resolution: {integrity: sha512-Nfo1TdlEHdkXTiI0KpimLqX6awK3qWTil7IOJvk5Q8x+0VBTpIEp9QvGgoAxXDe3upAHLVsg4y7U1uUPm7GC9w==}
@@ -4219,7 +4219,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro-font@0.1.81: {}
+  astro-font@1.1.0: {}
 
   astro-pagefind@1.8.3(astro@4.16.18(rollup@4.38.0)(typescript@5.8.3)):
     dependencies:
