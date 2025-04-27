@@ -23,7 +23,6 @@ const { posts }: Props = Astro.props
                 <PostCard
                   id={post.id}
                   data={post.data}
-                  slug={post.slug}
                   withoutTags={true}
                   readTime={remarkPluginFrontmatter.minutesRead}
                 />
