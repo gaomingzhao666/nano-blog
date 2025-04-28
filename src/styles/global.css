@@ -5,8 +5,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-gray-deep: #1f2b3a;
-  --color-gray-light: #f8f8f8;
+  --color-grayDeep: #1f2b3a;
+  --color-grayLight: #f8f8f8;
 
   --font-body:
     Manrope, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
