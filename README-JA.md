@@ -3,7 +3,7 @@
 
 <br />
 <div align="center">
-  <h3 align="center">Nano Blog</h3>
+  <h1 align="center">Nano Blog</h1>
 
   <p align="center">
     📕 Astroで作られた高性能で軽量、SEOに優れたモダンなブログシステム 📕

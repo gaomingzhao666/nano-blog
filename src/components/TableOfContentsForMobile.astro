@@ -5,7 +5,7 @@ import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 interface TableOfContent {
   depth: number
   text: string
-  slug: string
+  id: string
   subheadings: TableOfContent[]
 }
 
@@ -34,7 +34,7 @@ const toc = buildToc(headings)
 ---
 
 <nav
-  class="font-semibold rounded-xl border shadow-sm dark:border-none dark:ring-1 dark:bg-gray-900 p-3 mb-8"
+  class="font-semibold rounded-xl border shadow-xs dark:border-none dark:ring-1 dark:bg-gray-900 p-3 mb-8"
 >
   <ul class="space-y-2">
     {toc.map((heading) => <TableOfContentsHeading heading={heading} />)}

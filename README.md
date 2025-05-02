@@ -3,7 +3,7 @@
 
 <br />
 <div align="center">
-  <h3 align="center">Nano Blog</h3>
+  <h1 align="center">Nano Blog</h1>
 
   <p align="center">
     📕 A performant, lightweight and SEO friendly modern blog system made by Astro 📕

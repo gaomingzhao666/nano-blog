@@ -2,14 +2,14 @@
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-import tailwind from '@astrojs/tailwind'
 import pagefind from 'astro-pagefind'
 import { remarkReadingTime } from './src/utils/readTime'
+import tailwindcss from '@tailwindcss/vite'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nano-blog-bice.vercel.app',
-  trailingSlash: 'always',
+
   devToolbar: {
     enabled: false,
   },
@@ -29,7 +29,6 @@ export default defineConfig({
 
   integrations: [
     mdx(),
-    tailwind(),
     pagefind(),
 
     sitemap({
@@ -42,4 +41,8 @@ export default defineConfig({
       },
     }),
   ],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 })
