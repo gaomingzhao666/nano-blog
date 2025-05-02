@@ -1,9 +1,9 @@
 ---
 import { siteConfig } from '@/site-config'
 import '../styles/global.css'
-// import { ViewTransitions } from 'astro:transitions'
 import { join } from 'path'
 import { AstroFont } from 'astro-font'
+// import { ClientRouter } from 'astro:transitions'
 
 export interface Props {
   title: string
@@ -29,6 +29,9 @@ const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
 ---
 
 <meta http-equiv="refresh" content="no data" id="redirectMeta" />
+
+<!-- View Transition  -->
+<!-- <ClientRouter /> -->
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
