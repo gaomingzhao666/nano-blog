@@ -56,6 +56,7 @@ Nano-blog is a modern blog system build with Astro ecosystem, which is one of th
 - [x] Code Highlighting
 - [x] Dark Mode
 - [x] Automatic Computing Reading Time
+- [x] compatible with newest version of `Astro` and `Tailwind` (updated on v2.8)
 - [x] `Table of Content` for different experience between mobile and larger devices (added on v2.7)
 - [x] [Pagefind](https://pagefind.app/) Integration for Content Searching (rewritten on v2.6)
 - [x] Related Posts (updated on v2.1)
@@ -64,12 +65,12 @@ Nano-blog is a modern blog system build with Astro ecosystem, which is one of th
 
 ## Roadmap
 
-- [x] update to `Astro v5` (testing)
-- [x] update to `TailwindCSS v4`
+- [x] update to `Astro v5` (accomplished on v2.8)
+- [x] update to `TailwindCSS v4` (accomplished on v2.8)
 
 ## Runtime Requirement
 
-- NodeJS LTS 20 or above
+- NodeJS LTS 22 or above
 
 ## Installation
 
