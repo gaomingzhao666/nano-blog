@@ -1,37 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import BaseLayout from '@/layouts/BaseLayout'
-import Browser from '@/assets/icons/Browser.svg'
-import Coding from '@/assets/icons/Coding.svg'
-import Server from '@/assets/icons/Server.svg'
 import hachiware from '../../assets/images/pages/hachiware.jpg'
-
-interface WorkingOn {
-  label: string
-  icon: any // astro component type
-  description: string
-}
-
-const workingOn: WorkingOn[] = [
-  {
-    label: 'Frontend Dev',
-    icon: Browser,
-    description:
-      'Frontend dev is my major work and the thing I always focusing on, I am so passionate with creating user-interface and improve user experience.',
-  },
-  {
-    label: 'Backend Dev',
-    icon: Server,
-    description:
-      'Backend dev is non-major work but I love to use JS-like programming languages such as NodeJS or PHP to build something Full-Stack projects. Recently I am learning PHP and Laravel.',
-  },
-  {
-    label: 'Python Script',
-    icon: Coding,
-    description:
-      'I am interested in doing something like algorithms or tiny apps or programs in Typescript or C/C++, it will not be learning about it deeply but just for something funny.',
-  },
-]
 ---
 
 <BaseLayout title="about">
@@ -64,29 +34,8 @@ const workingOn: WorkingOn[] = [
         src={hachiware}
         format="webp"
         class="hidden md:block md:size-4/12 rounded-3xl hover:scale-105 transition-transform"
-        alt="img of Hachiware chan"
+        alt="img of Nano avatar"
       />
-    </section>
-
-    <section>
-      <h1 class="text-3xl font-bold mb-10">Working on</h1>
-
-      <section class="flex items-center flex-wrap md:flex-nowrap gap-4">
-        {
-          workingOn.map((work) => (
-            <section class="size-full md:size-1/3 p-10 flex flex-col items-center gap-y-4 justify-center bg-grayLight dark:bg-grayDeep rounded-3xl">
-              <Image
-                src={work.icon}
-                format="webp"
-                alt={`img of ${work.label}`}
-              />
-
-              <h2 class="text-2xl font-semibold">{work.label}</h2>
-              <p class="text-slate-500 text-center">{work.description}</p>
-            </section>
-          ))
-        }
-      </section>
     </section>
   </main>
 </BaseLayout>

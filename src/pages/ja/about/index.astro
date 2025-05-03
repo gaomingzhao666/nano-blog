@@ -1,37 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import BaseLayout from '@/layouts/BaseLayout'
-import Browser from '@/assets/icons/Browser.svg'
-import Coding from '@/assets/icons/Coding.svg'
-import Server from '@/assets/icons/Server.svg'
 import hachiware from '../../../assets/images/pages/hachiware.jpg'
-
-interface WorkingOn {
-  label: string
-  icon: any // astro component type
-  description: string
-}
-
-const workingOn: WorkingOn[] = [
-  {
-    label: 'フロントエンド',
-    icon: Browser,
-    description:
-      'フロントエンド開発は私の主な仕事であり、常に注力している分野です。ユーザーインターフェースの作成とユーザーエクスペリエンスの向上に対して非常に情熱を持っています。',
-  },
-  {
-    label: 'バックエンド',
-    icon: Server,
-    description:
-      'バックエンド開発は主要な仕事ではありませんが、NodeJSやPHPなどのJavaScriptに似たプログラミング言語を使ってフルスタックプロジェクトを構築するのが好きです。',
-  },
-  {
-    label: '自動化スクリプト',
-    icon: Coding,
-    description:
-      '私は、退屈な作業を自動化するためにPythonのスクリプトを書くことに興味があります。深層学習について学ぶわけではなく、ただ面白いことをするためです。',
-  },
-]
 ---
 
 <BaseLayout title="なの アバウト">
@@ -47,7 +17,7 @@ const workingOn: WorkingOn[] = [
           <p>
             すべての文書に多言語翻訳を提供しているわけではなく、内容は私の気分に応じて英語または日本語のいずれかの単一言語で書かれます。
           </p>
-          <p>どうぞお気楽に使って～</p>
+          <p>どうぞお気楽に使ってね！</p>
         </article>
 
         <button
@@ -63,29 +33,8 @@ const workingOn: WorkingOn[] = [
         src={hachiware}
         format="webp"
         class="hidden md:block md:size-4/12 rounded-3xl hover:scale-105 transition-transform"
-        alt="可愛ハチワレの写真"
+        alt="Nanoのアバター"
       />
-    </section>
-
-    <section>
-      <h1 class="text-3xl font-bold mb-10">やていること</h1>
-
-      <section class="flex items-center flex-wrap md:flex-nowrap gap-4">
-        {
-          workingOn.map((work) => (
-            <section class="size-full md:size-1/3 p-10 flex flex-col items-center gap-y-4 justify-center bg-grayLight dark:bg-grayDeep rounded-3xl">
-              <Image
-                src={work.icon}
-                format="webp"
-                alt={`img of ${work.label}`}
-              />
-
-              <h2 class="text-2xl font-semibold">{work.label}</h2>
-              <p class="text-slate-500 text-center">{work.description}</p>
-            </section>
-          ))
-        }
-      </section>
     </section>
   </main>
 </BaseLayout>
