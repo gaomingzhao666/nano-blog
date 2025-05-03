@@ -111,7 +111,7 @@ npm create astro@latest -- --template gaomingzhao666/nano-blog
 yarn create astro --template gaomingzhao666/nano-blog
 ```
 
-> Please note that this method may encounter some compatibility issues with the template because nano-blog may not update to the major version of Astro immediately upon release due to stability concerns. Currently, nano-blog is using Astro v4.16.18.
+> Please note that this method may encounter some compatibility issues with the template because nano-blog may not update to the major version of Astro immediately upon release due to stability concerns. Currently, nano-blog is using the latest version of `Astro v5.x` and `Tailwind v4`.
 
 [stars-shield]: https://img.shields.io/github/stars/gaomingzhao666/nano-blog?style=for-the-badge
 [stars-url]: https://github.com/gaomingzhao666/nano-blog/stargazers

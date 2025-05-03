@@ -111,7 +111,7 @@ npm create astro@latest -- --template gaomingzhao666/nano-blog
 yarn create astro --template gaomingzhao666/nano-blog
 ```
 
-> この方法は、テンプレートとの互換性の問題が発生する可能性があることに注意してください。nano-blogは安定性の懸念から、Astroのビッグバージョンがリリースされてもすぐに更新されない場合があります。現在、nano-blogはAstro v4.16.18を使用しています。
+> この方法は、テンプレートとの互換性の問題が発生する可能性があることに注意してください。nano-blogは安定性の懸念から、`Astro`のビッグバージョンがリリースされてもすぐに更新されない場合があります。現在、nano-blogは最新版`Astro v5`と`Tailwind v4`を使用しています。
 
 [stars-shield]: https://img.shields.io/github/stars/gaomingzhao666/nano-blog?style=for-the-badge
 [stars-url]: https://github.com/gaomingzhao666/nano-blog/stargazers
