@@ -1,0 +1,141 @@
+---
+title: 'How to Configure Custom ESLint Rules in a Vue/Vite app'
+description: 'Handle error when insert custom ESlint rules in eslint.config.ts file in a Vue/Vite app.'
+pubDate: 'May 08 2025'
+heroImage: '@/assets/images/posts/2025/2025-05-08/title/index.png'
+tags: ['guide', 'vite', 'vue', 'eslint', 'web development', 'bug']
+---
+
+import Alert from '@/components/mdx/Alert'
+
+## The Story
+
+I created a simple skeleton vue3/vite app with a little bit basic component `Header.vue` and `Navbar.vue`, and the rule `multi-word-component-names` is set as `error` as default, so the `Header.vue` actually thrawed a error, I want to change the rule as `off`, here is the code in `eslint.config.ts`:
+
+❎ Can not work
+
+```ts
+// /src/eslint.config.ts
+import { globalIgnores } from 'eslint/config'
+import {
+  defineConfigWithVueTs,
+  vueTsConfigs,
+} from '@vue/eslint-config-typescript'
+import pluginVue from 'eslint-plugin-vue'
+import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
+
+// To allow more languages other than `ts` in `.vue` files, uncomment the following lines:
+// import { configureVueProject } from '@vue/eslint-config-typescript'
+// configureVueProject({ scriptLangs: ['ts', 'tsx'] })
+// More info at https://github.com/vuejs/eslint-config-typescript/#advanced-setup
+
+export default defineConfigWithVueTs(
+  {
+    name: 'app/files-to-lint',
+    files: ['**/*.{ts,mts,tsx,vue}'],
+  },
+  // custom eslint rules
+  {
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
+  },
+
+  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
+
+  pluginVue.configs['flat/essential'],
+  vueTsConfigs.recommended,
+  skipFormatting,
+)
+```
+
+Actually, if you look the plugin `eslint-config-typescript` documentation, you will find that the approach above is fully corrected, but just no effects whatever you rerun the VSCode or rerun the command `npm run dev`.
+
+## The Solution
+
+### Unperfected Solution
+
+Indeed, the rules object can be applied as a single object without the `rules` key and work properly just like the code below:
+
+✅ Can be work but got a type error
+
+```ts
+// /src/eslint.config.ts
+import { globalIgnores } from 'eslint/config'
+import {
+  defineConfigWithVueTs,
+  vueTsConfigs,
+} from '@vue/eslint-config-typescript'
+import pluginVue from 'eslint-plugin-vue'
+import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
+
+// To allow more languages other than `ts` in `.vue` files, uncomment the following lines:
+// import { configureVueProject } from '@vue/eslint-config-typescript'
+// configureVueProject({ scriptLangs: ['ts', 'tsx'] })
+// More info at https://github.com/vuejs/eslint-config-typescript/#advanced-setup
+
+export default defineConfigWithVueTs(
+  {
+    name: 'app/files-to-lint',
+    files: ['**/*.{ts,mts,tsx,vue}'],
+  },
+  // custom eslint rules
+  {
+    'vue/multi-word-component-names': 'off',
+  },
+
+  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
+
+  pluginVue.configs['flat/essential'],
+  vueTsConfigs.recommended,
+  skipFormatting,
+)
+```
+
+It's lint codes and work properly but still got a type error said `Object literal may only specify known properties, and "vue/multi-word-component-names" does not exist in type 'InfiniteDepthConfigWithExtendsAndVueSupport'`.
+
+### Perfected Solution
+
+The perfect solution is to use the `rules` key and put the rules object in the RIGHT BACK of the `vueTsConfigs.recommended` object, like the code below:
+
+✅ Worked properly without any error
+
+```ts
+import { globalIgnores } from 'eslint/config'
+import {
+  defineConfigWithVueTs,
+  vueTsConfigs,
+} from '@vue/eslint-config-typescript'
+import pluginVue from 'eslint-plugin-vue'
+import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
+
+// To allow more languages other than `ts` in `.vue` files, uncomment the following lines:
+// import { configureVueProject } from '@vue/eslint-config-typescript'
+// configureVueProject({ scriptLangs: ['ts', 'tsx'] })
+// More info at https://github.com/vuejs/eslint-config-typescript/#advanced-setup
+
+export default defineConfigWithVueTs(
+  {
+    name: 'app/files-to-lint',
+    files: ['**/*.{ts,mts,tsx,vue}'],
+  },
+
+  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
+
+  pluginVue.configs['flat/essential'],
+  vueTsConfigs.recommended,
+
+  // custom eslint rules
+  {
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
+  },
+  skipFormatting,
+)
+```
+
+<Alert>
+  Must be right back of the `vueTsConfigs.recommended` object, otherwise it will
+  not work.
+</Alert>
