@@ -35,7 +35,7 @@
 
 > The image shown here is the posts-page for medium-size, [click here](https://github.com/gaomingzhao666/nano-blog/tree/main/public/screenshot) to see more detailed screenshot for this application.
 
-Nano-blog is a modern blog system build with Astro ecosystem, which is one of the most popular meta-framework for content-focusing web application, in this case as a blog system.
+Nano-blog is a modern blog system build with Astro and Tailwind ecosystem, this template is base on [openBlog](https://github.com/danielcgilibert/blog-template) but given more optimization which is including more feature, active maintenance, more modern syntax and modules, more fast on adopting new major version of Astro and Tailwind.
 
 ## Build With
 

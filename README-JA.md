@@ -35,7 +35,7 @@
 
 > ここに表示されている画像は中等サイズのポストページです。詳細なスクリーンショットを見るには、[こちらをクリック](https://github.com/gaomingzhao666/nano-blog/tree/main/public/screenshot)してください。
 
-Nano-blogはAstroエコシステムで構築されたモダンなブログシステムで、コンテンツに焦点を当てたWebアプリケーションのための最も人気のあるメタフレームワークの一つです。
+Nano-blogはAstroとTailwindエコシステムを基盤として構築された現代ブログシステム。このテンプレートは、[openBlog](https://github.com/danielcgilibert/blog-template)を基にして以上、より多くの機能、活躍的な保守、最新の構文やモジュール、およびAstroやTailwindの新しいメジャーバージョンを最適化しています。
 
 ## 技術スタック
 
