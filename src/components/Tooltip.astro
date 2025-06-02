@@ -7,7 +7,7 @@ interface Props {
   placement?: 'top' | 'right' | 'bottom' | 'left'
 }
 
-const { isTransition = true, text, placement = 'bottom' } = Astro.props
+const { isTransition = true, text, placement = 'bottom' }: Props = Astro.props
 
 const transitionClasses = isTransition ? 'transition' : ''
 const placementClasses = (() => {
