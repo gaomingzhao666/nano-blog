@@ -2,7 +2,6 @@
 import { siteConfig } from '@/site-config'
 import { join } from 'path'
 import { AstroFont } from 'astro-font'
-// import { ClientRouter } from 'astro:transitions'
 
 export interface Props {
   title: string
@@ -29,9 +28,6 @@ const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
 
 <meta http-equiv="refresh" content="no data" id="redirectMeta" />
 
-<!-- View Transition  -->
-<!-- <ClientRouter /> -->
-
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -43,9 +39,6 @@ const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
 
 <!-- Primary Meta Tags -->
 <title>{siteTitle}</title>
-
-<!-- ViewTransitions  -->
-<!-- <ViewTransitions /> -->
 
 <!-- SEO -->
 <meta name="title" content={siteTitle} />
@@ -168,8 +161,6 @@ const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
 
   // only effect on first load
   window.addEventListener('DOMContentLoaded', () => {
-    console.log(isLocked())
-
     if (!isLocked()) {
       initLang()
       lock(true)
