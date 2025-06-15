@@ -10,15 +10,15 @@ type Contents = {
 interface Props {
   title: string
   contents: Contents[]
-  type: 'solid' | 'outline' // change the type of modal button
+  type?: 'solid' | 'outline' // change the type of modal button
   color?: string // change the color of modal button
 }
-const { title, contents, type, color }: Props = Astro.props
+const { title, contents, type = 'outline', color }: Props = Astro.props
 ---
 
 <button
   id="openModalButton"
-  class-={cn(type === 'solid' && color ? `bg-${color}-500  rounded-md` : ``)}
+  class={cn(type === 'solid' && color ? `bg-${color}-500 rounded-md` : ``)}
 >
   <!-- the text of the button that to open modal -->
   <slot />
