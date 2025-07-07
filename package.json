@@ -12,7 +12,7 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/rss": "^4.0.12",
     "@tailwindcss/vite": "^4.1.11",
-    "astro": "^5.10.1",
+    "astro": "^5.11.0",
     "astro-font": "^1.1.0",
     "astro-pagefind": "^1.8.3",
     "embla-carousel": "^8.6.0",
