@@ -42,6 +42,9 @@ const t = useTranslations(lang)
     <Image
       src={heroImage}
       class="h-full min-w-full object-cover hover:scale-110 transition-transform"
+      quality="low"
+      decoding="async"
+      loading="lazy"
       alt={`img of ${title}`}
     />
   </a>
