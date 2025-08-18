@@ -19,7 +19,7 @@
     "sharp": "^0.34.3"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^4.3.3",
+    "@astrojs/mdx": "^4.3.4",
     "@astrojs/sitemap": "^3.4.2",
     "@tailwindcss/typography": "^0.5.16",
     "@typescript-eslint/parser": "^8.39.1",
