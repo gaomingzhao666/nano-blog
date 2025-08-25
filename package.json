@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@astrojs/mdx": "^4.3.4",
-    "@astrojs/sitemap": "^3.4.2",
+    "@astrojs/sitemap": "^3.5.1",
     "@tailwindcss/typography": "^0.5.16",
     "@typescript-eslint/parser": "^8.39.1",
     "clsx": "^2.1.1",
