@@ -16,7 +16,7 @@
     "astro-font": "^1.1.0",
     "astro-pagefind": "^1.8.5",
     "embla-carousel": "^8.6.0",
-    "sharp": "^0.34.4"
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@astrojs/mdx": "^4.3.9",
