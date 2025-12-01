@@ -9,7 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.5",
+    "@astrojs/check": "^0.9.6",
     "@astrojs/rss": "^4.0.14",
     "@tailwindcss/vite": "^4.1.14",
     "astro": "^5.15.4",
