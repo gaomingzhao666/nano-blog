@@ -70,7 +70,7 @@ Nano-blog is a modern blog system build with Astro and Tailwind ecosystem, this 
 
 ## Runtime Requirement
 
-- NodeJS LTS 22 or above
+- NodeJS LTS 24 or above
 
 ## Installation
 

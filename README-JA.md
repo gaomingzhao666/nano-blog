@@ -70,7 +70,7 @@ Nano-blogはAstroとTailwindエコシステムを基盤として構築された�
 
 ## 環境要件
 
-- NodeJS LTS 22以上
+- NodeJS LTS 24以上
 
 ## インストール
 
