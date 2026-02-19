@@ -22,7 +22,7 @@
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/sitemap": "^3.7.0",
     "@tailwindcss/typography": "^0.5.19",
-    "@typescript-eslint/parser": "^8.54.0",
+    "@typescript-eslint/parser": "^8.56.0",
     "clsx": "^2.1.1",
     "eslint": "^9.39.2",
     "eslint-plugin-astro": "^1.6.0",
