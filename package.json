@@ -27,7 +27,7 @@
     "eslint": "^9.39.2",
     "eslint-plugin-astro": "^1.6.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^16.4.0",
     "mdast-util-to-string": "^4.0.0",
     "prettier": "^3.8.1",
     "prettier-config-standard": "^7.0.0",
