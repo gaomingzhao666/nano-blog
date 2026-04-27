@@ -12,14 +12,14 @@
     "@astrojs/check": "^0.9.8",
     "@astrojs/rss": "^4.0.18",
     "@tailwindcss/vite": "^4.2.2",
-    "astro": "^5.18.1",
+    "astro": "^6.1.9",
     "astro-font": "^1.1.0",
     "astro-pagefind": "^1.8.6",
     "embla-carousel": "^8.6.0",
     "sharp": "^0.34.5"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^4.3.14",
+    "@astrojs/mdx": "^5.0.4",
     "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/typography": "^0.5.19",
     "@typescript-eslint/parser": "^8.59.0",
