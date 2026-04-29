@@ -8,7 +8,7 @@ interface Props {
 
 const { type = 'info', title }: Props = Astro.props
 
-const colorByType = (type) => {
+const colorByType = (type: Props['type']) => {
   switch (type) {
     case 'info':
       return 'info'
