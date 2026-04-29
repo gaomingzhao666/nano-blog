@@ -1,0 +1,3 @@
+{
+  "buildCommand": "NODE_OPTIONS=--no-deprecation astro check && astro build"
+}
