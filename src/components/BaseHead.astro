@@ -153,17 +153,14 @@ const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
   }
 
   // which means, lock == '1' equals locked, and lock == undefined equals not locked
-  const lock = (lockBehavior) => {
-    if (lockBehavior) sessionStorage.setItem('lock', '1')
-    else sessionStorage.removeItem('lock')
-  }
+  const lock = () => sessionStorage.setItem('lock', '1')
   const isLocked = () => (sessionStorage.getItem('lock') ? true : false)
 
   // only effect on first load
   window.addEventListener('DOMContentLoaded', () => {
     if (!isLocked()) {
       initLang()
-      lock(true)
+      lock()
     }
   })
 </script>
