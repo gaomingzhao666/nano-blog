@@ -1,6 +1,6 @@
 ---
 import { siteConfig } from '@/site-config'
-import { join } from 'path'
+import { fileURLToPath } from 'node:url'
 import { AstroFont } from 'astro-font'
 
 export interface Props {
@@ -24,6 +24,9 @@ const socialImageURL = new URL(ogImage ? ogImage : '/open-graph.png', Astro.url)
 const titleSeparator = '•'
 
 const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
+
+const fontPath = (fileName: string) =>
+  fileURLToPath(new URL(`../../public/fonts/${fileName}`, import.meta.url))
 ---
 
 <meta http-equiv="refresh" content="no data" id="redirectMeta" />
@@ -89,53 +92,38 @@ const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
         {
           weight: '200',
           style: 'normal',
-          path: join(
-            process.cwd(),
-            'public',
-            'fonts',
-            'Manrope-ExtraLight.woff2',
-          ),
+          path: fontPath('Manrope-ExtraLight.woff2'),
         },
         {
           weight: '300',
           style: 'normal',
-          path: join(process.cwd(), 'public', 'fonts', 'Manrope-Light.woff2'),
+          path: fontPath('Manrope-Light.woff2'),
         },
         {
           weight: '400',
           style: 'normal',
-          path: join(process.cwd(), 'public', 'fonts', 'Manrope-Regular.woff2'),
+          path: fontPath('Manrope-Regular.woff2'),
         },
         {
           weight: '500',
           style: 'normal',
-          path: join(process.cwd(), 'public', 'fonts', 'Manrope-Medium.woff2'),
+          path: fontPath('Manrope-Medium.woff2'),
         },
         {
           weight: '600',
           style: 'normal',
-          path: join(
-            process.cwd(),
-            'public',
-            'fonts',
-            'Manrope-SemiBold.woff2',
-          ),
+          path: fontPath('Manrope-SemiBold.woff2'),
         },
         {
           weight: '700',
           preload: true,
           style: 'normal',
-          path: join(process.cwd(), 'public', 'fonts', 'Manrope-Bold.woff2'),
+          path: fontPath('Manrope-Bold.woff2'),
         },
         {
           weight: '800',
           style: 'normal',
-          path: join(
-            process.cwd(),
-            'public',
-            'fonts',
-            'Manrope-ExtraBold.woff2',
-          ),
+          path: fontPath('Manrope-ExtraBold.woff2'),
         },
       ],
     },
@@ -147,14 +135,13 @@ const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
     const redirectMeta = document.querySelector('#redirectMeta')
     const currentLang = localStorage.getItem('lang')
 
-    if (redirectMeta && currentLang)
-      if (currentLang !== 'en')
-        redirectMeta.setAttribute('content', `0; url=/${currentLang}`)
+    if (!redirectMeta || !currentLang || currentLang === 'en') return
+    redirectMeta.setAttribute('content', `0; url=/${currentLang}`)
   }
 
   // which means, lock == '1' equals locked, and lock == undefined equals not locked
   const lock = () => sessionStorage.setItem('lock', '1')
-  const isLocked = () => (sessionStorage.getItem('lock') ? true : false)
+  const isLocked = () => Boolean(sessionStorage.getItem('lock'))
 
   // only effect on first load
   window.addEventListener('DOMContentLoaded', () => {
