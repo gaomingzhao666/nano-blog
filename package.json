@@ -1,6 +1,7 @@
 {
   "name": "nano-blog",
   "type": "module",
+  "packageManager": "pnpm@11.0.1",
   "scripts": {
     "start": "astro dev",
     "build": "astro check && astro build",
@@ -37,5 +38,11 @@
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.4",
     "typescript": "^6.0.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
   }
 }
