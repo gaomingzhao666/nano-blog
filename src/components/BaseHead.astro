@@ -1,6 +1,6 @@
 ---
 import { siteConfig } from '@/site-config'
-import { fileURLToPath } from 'node:url'
+import path from 'node:path'
 import { AstroFont } from 'astro-font'
 
 export interface Props {
@@ -17,16 +17,21 @@ const {
   articleDate,
 }: Props = Astro.props
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site)
-const socialImageURL = new URL(ogImage ? ogImage : '/open-graph.png', Astro.url)
-  .href
+const canonicalHref =
+  Astro.site != null
+    ? new URL(Astro.url.pathname, Astro.site).href
+    : Astro.url.href
+const socialImageHref = new URL(
+  ogImage ?? '/open-graph.png',
+  Astro.url,
+).href
 
 const titleSeparator = '•'
 
 const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
 
 const fontPath = (fileName: string) =>
-  fileURLToPath(new URL(`../../public/fonts/${fileName}`, import.meta.url))
+  path.resolve(import.meta.dirname, '../../public/fonts', fileName)
 ---
 
 <meta http-equiv="refresh" content="no data" id="redirectMeta" />
@@ -38,7 +43,7 @@ const fontPath = (fileName: string) =>
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
+<link rel="canonical" href={canonicalHref} />
 
 <!-- Primary Meta Tags -->
 <title>{siteTitle}</title>
@@ -53,7 +58,7 @@ const fontPath = (fileName: string) =>
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={socialImageURL} />
+<meta property="og:image" content={socialImageHref} />
 {
   articleDate && (
     <>
@@ -68,7 +73,7 @@ const fontPath = (fileName: string) =>
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={socialImageURL} />
+<meta property="twitter:image" content={socialImageHref} />
 
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap-index.xml" />
