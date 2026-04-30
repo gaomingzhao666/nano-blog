@@ -4,7 +4,6 @@
   "exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"],
 
   "compilerOptions": {
-    "strictNullChecks": true,
     "baseUrl": ".",
     "verbatimModuleSyntax": true,
     "paths": {
