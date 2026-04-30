@@ -1,6 +1,6 @@
 ---
 import { siteConfig } from '@/site-config'
-import path from 'node:path'
+import { join } from 'path'
 import { AstroFont } from 'astro-font'
 
 export interface Props {
@@ -17,21 +17,13 @@ const {
   articleDate,
 }: Props = Astro.props
 
-const canonicalHref =
-  Astro.site != null
-    ? new URL(Astro.url.pathname, Astro.site).href
-    : Astro.url.href
-const socialImageHref = new URL(
-  ogImage ?? '/open-graph.png',
-  Astro.url,
-).href
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const socialImageURL = new URL(ogImage ? ogImage : '/open-graph.png', Astro.url)
+  .href
 
 const titleSeparator = '•'
 
 const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
-
-const fontPath = (fileName: string) =>
-  path.resolve(import.meta.dirname, '../../public/fonts', fileName)
 ---
 
 <meta http-equiv="refresh" content="no data" id="redirectMeta" />
@@ -43,7 +35,7 @@ const fontPath = (fileName: string) =>
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
-<link rel="canonical" href={canonicalHref} />
+<link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
 <title>{siteTitle}</title>
@@ -58,7 +50,7 @@ const fontPath = (fileName: string) =>
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={socialImageHref} />
+<meta property="og:image" content={socialImageURL} />
 {
   articleDate && (
     <>
@@ -73,7 +65,7 @@ const fontPath = (fileName: string) =>
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={socialImageHref} />
+<meta property="twitter:image" content={socialImageURL} />
 
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap-index.xml" />
@@ -97,38 +89,53 @@ const fontPath = (fileName: string) =>
         {
           weight: '200',
           style: 'normal',
-          path: fontPath('Manrope-ExtraLight.woff2'),
+          path: join(
+            process.cwd(),
+            'public',
+            'fonts',
+            'Manrope-ExtraLight.woff2',
+          ),
         },
         {
           weight: '300',
           style: 'normal',
-          path: fontPath('Manrope-Light.woff2'),
+          path: join(process.cwd(), 'public', 'fonts', 'Manrope-Light.woff2'),
         },
         {
           weight: '400',
           style: 'normal',
-          path: fontPath('Manrope-Regular.woff2'),
+          path: join(process.cwd(), 'public', 'fonts', 'Manrope-Regular.woff2'),
         },
         {
           weight: '500',
           style: 'normal',
-          path: fontPath('Manrope-Medium.woff2'),
+          path: join(process.cwd(), 'public', 'fonts', 'Manrope-Medium.woff2'),
         },
         {
           weight: '600',
           style: 'normal',
-          path: fontPath('Manrope-SemiBold.woff2'),
+          path: join(
+            process.cwd(),
+            'public',
+            'fonts',
+            'Manrope-SemiBold.woff2',
+          ),
         },
         {
           weight: '700',
           preload: true,
           style: 'normal',
-          path: fontPath('Manrope-Bold.woff2'),
+          path: join(process.cwd(), 'public', 'fonts', 'Manrope-Bold.woff2'),
         },
         {
           weight: '800',
           style: 'normal',
-          path: fontPath('Manrope-ExtraBold.woff2'),
+          path: join(
+            process.cwd(),
+            'public',
+            'fonts',
+            'Manrope-ExtraBold.woff2',
+          ),
         },
       ],
     },
@@ -140,19 +147,23 @@ const fontPath = (fileName: string) =>
     const redirectMeta = document.querySelector('#redirectMeta')
     const currentLang = localStorage.getItem('lang')
 
-    if (!redirectMeta || !currentLang || currentLang === 'en') return
-    redirectMeta.setAttribute('content', `0; url=/${currentLang}`)
+    if (redirectMeta && currentLang)
+      if (currentLang !== 'en')
+        redirectMeta.setAttribute('content', `0; url=/${currentLang}`)
   }
 
   // which means, lock == '1' equals locked, and lock == undefined equals not locked
-  const lock = () => sessionStorage.setItem('lock', '1')
-  const isLocked = () => Boolean(sessionStorage.getItem('lock'))
+  const lock = (lockBehavior) => {
+    if (lockBehavior) sessionStorage.setItem('lock', '1')
+    else sessionStorage.removeItem('lock')
+  }
+  const isLocked = () => (sessionStorage.getItem('lock') ? true : false)
 
   // only effect on first load
   window.addEventListener('DOMContentLoaded', () => {
     if (!isLocked()) {
       initLang()
-      lock()
+      lock(true)
     }
   })
 </script>
