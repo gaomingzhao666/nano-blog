@@ -1,7 +1,6 @@
 {
   "name": "nano-blog",
   "type": "module",
-  "packageManager": "pnpm@11.0.1",
   "scripts": {
     "start": "astro dev",
     "build": "astro check && astro build",
