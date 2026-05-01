@@ -4,6 +4,5 @@ declare module '*.css' {
   const css: string
   export default css
 }
-
 // Side-effect style alias used in `BaseLayout.astro`
-declare module '@/styles';
+declare module '@/styles'
