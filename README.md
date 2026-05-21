@@ -39,8 +39,8 @@ Nano-blog is a modern blog system build with Astro and Tailwind ecosystem, this 
 
 ## Build With
 
-- Astro
-- TailwindCSS
+- Astro v6
+- TailwindCSS v4
 - Localize with build-in i18n functionality
 - Typescript with ES6+ syntax and ESM
 
@@ -65,7 +65,7 @@ Nano-blog is a modern blog system build with Astro and Tailwind ecosystem, this 
 
 ## Roadmap
 
-- [x] update to `Astro v5` (accomplished on v2.8)
+- [x] update to `Astro v6` (accomplished on v2.9)
 - [x] update to `TailwindCSS v4` (accomplished on v2.8)
 
 ## Runtime Requirement
@@ -110,8 +110,6 @@ npm create astro@latest -- --template gaomingzhao666/nano-blog
 # yarn
 yarn create astro --template gaomingzhao666/nano-blog
 ```
-
-> Please note that this method may encounter some compatibility issues with the template because nano-blog may not update to the major version of Astro immediately upon release due to stability concerns. Currently, nano-blog is using the latest version of `Astro v5.x` and `Tailwind v4`.
 
 [stars-shield]: https://img.shields.io/github/stars/gaomingzhao666/nano-blog?style=for-the-badge
 [stars-url]: https://github.com/gaomingzhao666/nano-blog/stargazers
