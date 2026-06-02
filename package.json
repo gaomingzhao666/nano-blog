@@ -36,7 +36,7 @@
     "reading-time": "^1.5.0",
     "slugify": "^1.6.9",
     "tailwind-merge": "^3.5.0",
-    "tailwindcss": "^4.2.4",
+    "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3"
   },
   "pnpm": {
